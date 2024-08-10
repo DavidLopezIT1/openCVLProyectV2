@@ -90,7 +90,7 @@ include "conection.php";
                                                 if($_SESSION){
                                                     // echo "Sesión iniciada";
                                                 }
-                                                header("location:http://localhost/proyect_manager_v1/interfaz.php");
+                                                header("location:http://localhost/Proyecto_soft/openCVLProyect/interfaz.php");
                                             
                                                 # code...
                                                 break;

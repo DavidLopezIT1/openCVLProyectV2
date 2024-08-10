@@ -22,7 +22,7 @@
             $sesion = $_SESSION['nombre'];
                         if($sesion == null || $sesion ==""){
                             echo "<script>alert('Error grave de seguridad, Uster no tiene acceso para este sitio')</script>";
-                            header("location:http://localhost/proyect_manager_v1/cierre_sesion.php");
+                            header("location:http://localhost/Proyecto_soft/openCVLProyect/cierre_sesion.php");
                             die();
                             }   
 
@@ -34,7 +34,7 @@
                 $sesionValue= "<strong class='Bienvenida'>Bienvenido : </strong>" . "<strong>$sesion</strong>";
                 echo $sesionValue;
 
-                echo "<a href='http://localhost/proyect_manager_v1/interfaz.php' class='rutas'>Nivel anterior</a>";
+                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/interfaz.php' class='rutas'>Nivel anterior</a>";
                             
                 /* The line ` = __FILE__;` in the PHP code is assigning the value of
                 the magic constant `__FILE__` to the variable ``. */
@@ -65,7 +65,7 @@
         ?>
 
     <button class="Salida_Segura">
-        <a href="http://localhost/proyect_manager_v1/cierre_sesion.php">Salida Segura</a>
+        <a href="http://localhost/Proyecto_soft/openCVLProyect/cierre_sesion.php">Salida Segura</a>
     </button>
 </header>
 <main> 
@@ -97,7 +97,7 @@
             management system. */ -->
             
             <div class="Parametros">
-                <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-user-secret"></i><br><br><a href="http://localhost/proyect_manager_v1/impo/importadores.php">Importador</a></div>
+                <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-user-secret"></i><br><br><a href="http://localhost/Proyecto_soft/openCVLProyect/impo/importadores.php">Importador</a></div>
                 <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-sitemap"></i><br><br><a href="">Proveedor</a></div>
                 <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-bullseye"></i><br><br><a href="">Productos</a></div>
                 <div class="Imparametrica" name="parametrica"><i class="fa-regular fa-registered"></i><br><br><a href="">Inconterm</a></div>

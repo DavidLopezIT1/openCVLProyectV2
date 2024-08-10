@@ -33,7 +33,7 @@
 
                 if($sesion == null || $sesion ==""){
                     echo "<script>alert('Error grave de seguridad, Uster no tiene acceso para este sitio')</script>";
-                    header("location:http://localhost/proyect_manager_v1/cierre_sesion.php");
+                    header("location:http://localhost/Proyecto_soft/openCVLProyect/cierre_sesion.php");
                     die();     
                 }
 
@@ -45,7 +45,7 @@
                 $sesionValue= "<strong class='Bienvenida'>Bienvenido : </strong>" . "<strong>$sesion</strong>";
                 echo $sesionValue;
 
-                echo "<a href='http://localhost/proyect_manager_v1/interfaz.php' class='rutas'>Nivel anterior</a>";
+                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/interfaz.php' class='rutas'>Nivel anterior</a>";
                             
                 /* The code snippet ` = __FILE__;  = "htdocs";` is
                 assigning the value of the magic constant `__FILE__` to the variable
@@ -81,7 +81,7 @@
         ?>
 
         <button class="Salida_Segura">
-            <a href="http://localhost/proyect_manager_v1/cierre_sesion.php">Salida Segura</a>
+            <a href="http://localhost/Proyecto_soft/openCVLProyect/cierre_sesion.php">Salida Segura</a>
         </button>
 </header>
 
