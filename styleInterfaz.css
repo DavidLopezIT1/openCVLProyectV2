@@ -1,0 +1,118 @@
+body {
+    display: flex;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+#sidebar {
+    width: 30%;
+    min-width: 250px;
+    background: #2c3e50;
+    color: white;
+    padding: 15px;
+    box-sizing: border-box;
+    transition: width 0.3s;
+    position: relative;
+}
+#sidebar.hidden {
+    width: 40px;
+}
+
+#sidebar .user-info2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 210px;
+    text-align: center;
+    margin-left: 25%;
+    margin-bottom: 40px;
+    margin-top: 60px;
+    border: solid 3px white;
+    border-radius: 50%;
+}
+
+#sidebar .user-info {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 60px;
+    
+}
+#sidebar.hidden .user-info {
+    display: none;
+}
+#sidebar .user-info2 img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    /* margin-bottom: 05px; */
+    object-fit: cover;
+}
+#sidebar .toggle-btn {
+    background: #34495e;
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#main {
+    flex: 1;
+    padding: 20px;
+    background: #ecf0f1;
+    /* box-sizing: border-box; */
+    transition: margin-left 0.3s;
+    overflow-y:scroll;
+}
+#main .Salida_Segura{
+    margin-left: 57%;
+    width: 100px;
+    height: 30px;
+    font-size: 10px;
+    background: #3498db;
+    padding: 10px ;
+    color: azure;
+}
+#main header {
+    display: flex;
+    background: #34495e;
+    color: white;
+    padding: 10px ;
+    justify-content: center;
+    align-items: center;
+}
+#main .submodule {
+    background: rgba(255, 255, 255, 0.308);
+    margin: 10px 0;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#main .submodule button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+
+}
+.Panel_Principal{
+    font-size: x-large;
+    font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
+}
+a{
+    text-decoration: none;
+    color: azure;
+}
+#main .Salida_Segura:hover{
+    background-color: teal;
+}
+.ModButtons{
+    color: black;
+}
