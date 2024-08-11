@@ -20,7 +20,7 @@ include "conection.php";
         $sesion = $_SESSION['nombre'];
             if($sesion == null || $sesion ==""){
                 echo "<script>alert('Error grave de seguridad, Uster no tiene acceso para este sitio')</script>";
-                header("location:http://localhost/proyect_manager_v1/cierre_sesion.php");
+                header("location:http://localhost/Proyecto_soft/openCVLProyect/cierre_sesion.php");
                 die();
                 }
                     echo "Bienvenido : " . "<strong>$sesion</strong>";
@@ -79,6 +79,20 @@ include "conection.php";
             </p>
 
         </div>
+
+        <div id="sidebar2">
+            <footer>
+                <!-- <button><a href="ModuleImpo.php">volver</a></button><br><br> -->
+                <p>&copy; 2024 Importaciones - David L</p>
+            </footer>
+        </div>
+
+        <!-- /* The `</div>` closing tag in the provided code is closing a `<div>` element. In HTML, `<div>` is a
+        block-level element that is used to group and style content together. In this specific code snippet,
+        the `<div>` element with the id "sidebar" contains various elements such as user information,
+        buttons, and links. The `</div>` tag is used to close this particular `<div>` element, indicating
+        the end of the content that should be styled and positioned as a group within the sidebar section of
+        the webpage. */ -->
     </div>
 
             <div id="main" scroll>
@@ -124,7 +138,9 @@ include "conection.php";
     <script>
         function toggleSidebar() {
             let sidebar = document.getElementById('sidebar');
+            let sidebar2 = document.getElementById('sidebar2');
             sidebar.classList.toggle('hidden');
+            sidebar2.classList.toggle('hidden')
         }
     </script>
       

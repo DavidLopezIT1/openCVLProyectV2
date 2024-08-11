@@ -45,7 +45,7 @@
                 $sesionValue= "<strong class='Bienvenida'>Bienvenido : </strong>" . "<strong>$sesion</strong>";
                 echo $sesionValue;
 
-                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/interfaz.php' class='rutas'>Nivel anterior</a>";
+                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/impo/importadores.php' class='rutas'>Nivel anterior</a>";
                             
                 /* The code snippet ` = __FILE__;  = "htdocs";` is
                 assigning the value of the magic constant `__FILE__` to the variable
@@ -91,25 +91,31 @@
                         Datos del importador como objeto
                     </legend>
 
+                    <div class="HeaderImportador">
+                        <header>
+                            <h1><p>Datos Importador</p></h1>
+                        </header>
+                    </div>
+
         <?php
                         /* The block of code you provided is initializing variables with specific values
                         related to an importador (importer) entity. Here's a breakdown of what each
                         variable represents: */
 
-                            $nit = 1024775201;
+                            $nit = 1022200003;
                             $tipodocumento = "NIT";
-                            $razonsocial = "Agencia de Aduanas Karen Industrial";
+                            $razonsocial = "Agencia de Aduanas master Industries";
                             $nivelcomercialcod = 1;
                             $nivelcomercialdesc = "Mayorista";
-                            $telefono = 3232214364;
-                            $direccion = "Cra 57B #62 Bis-87";
-                            $correoelectronico = "jesik.jam@gmail.com";
+                            $telefono = 3006445789;
+                            $direccion = "Calle 58l #72 Bis-87";
+                            $correoelectronico = "masterind.jam@gmail.com";
                             $pais = "Colombia";
                             $depto = "Soacha";
                             $administracionmercancia = "Armenia";
-                            $CodigoOEA ="KH2101";
-                            $actividadeconomicacod = "3271";
-                            $actividadeconomicadesc = "Prueba version 2 de actividad economica";
+                            $CodigoOEA ="LM2104";
+                            $actividadeconomicacod = "1371";
+                            $actividadeconomicadesc = "Prueba version 4 de actividad economica";
                             $estado = "Activo"; 
 
             /* The code snippet `  = new importadordatos(, , ,
@@ -142,6 +148,14 @@
                                     echo $prueba->imprimirenpantalla();        
                                 
         ?>
+
+            <div>
+            <footer>
+                <!-- <button><a href="ModuleImpo.php">volver</a></button><br><br> -->
+                <p>&copy; 2024 Importaciones - David L</p>
+            </footer>
+            </div>
+
             </fieldset>
 
                 <br><br>
@@ -171,7 +185,11 @@
                         </button>
 
                     </div>
+                    <div>
+            
 
         </form>
+        
+</div>
 </body>
 </html>

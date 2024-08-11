@@ -173,7 +173,7 @@ class importadordatos {
         }
 
         
-            function shoyimportadortemplate(){
+            function showimportadortemplate($variable, $variable2){
                 
             }
 

@@ -87,7 +87,7 @@
 </header>
 
 <main>
-    <form action="importadores.php" method="post">
+    <form action="importadores.php" method="post" id="miFormulario">
     <div class="container">
         <header class="header2">
             <h1>Importadores</h1>
@@ -114,6 +114,7 @@
                         <th>Teléfono</th>
                         <th>Dirección</th>
                         <th>Estado</th>
+                        <th><input type="checkbox" style=" accent-color: yellow;" id="generalCheckbox" onclick="selectorchecked()"></th>
                     </thead>
 
                     <tbody>
@@ -135,24 +136,36 @@
                                             "<td>" . $a['razonsocial'] . "</td>" .
                                             "<td>" . $a['telefono'] . "</td>" .
                                             "<td>" . $a['direccion'] . "</td>" .
-                                            "<td>" . $a['estado'] . "</td>" . "<tr>";
+                                            "<td>" . $a['estado'] . "</td>" .  
+                                            "<td>" . "<input type='checkbox' style='accent-color: yellow' id='checkboxitem'>" . "</td>" . "<tr>" ;
                                             }   
                                     }else{
                                         $query2="SELECT * FROM siaimportador";
                                         $resultquery2 = $conection->query($query2);
 
                                         while($a = $resultquery2->fetch_assoc()){
-                                            echo "<tr>" . "<td><a href=''>" . $a['nit'] . "<a></td>" .
+                                            echo "<tr>" . "<td><a href='http://localhost/Proyecto_soft/openCVLProyect/impo/importador.php'>" . $a['nit'] . "<a></td>" .
                                             "<td>" . $a['razonsocial'] . "</td>" .
                                             "<td>" . $a['telefono'] . "</td>" .
                                             "<td>" . $a['direccion'] . "</td>" .
-                                            "<td>" . $a['estado'] . "</td>" . "<tr>";
+                                            "<td>" . $a['estado'] . "</td>" .  
+                                            "<td>" . "<input type='checkbox' style='accent-color: yellow' class='checkboxitem'>" . "</td>" . "<tr>" ;
                                         }
                                     }
                                     
-
-
+                   
                             ?>
+
+            <script>
+                function selectorchecked(){ 
+                document.getElementById('generalCheckbox').addEventListener('change', function() {
+                    let itemselector = document.querySelectorAll('#miFormulario.checkboxitem');
+                    itemselector.forEach(function(checkbox){
+                        checkbox.checked = document.getElementById('generalCheckbox').checked;
+                    })
+                })
+            }
+            </script>
 
                     </tbody>
 
@@ -173,7 +186,7 @@
         
         <footer>
             <!-- <button><a href="ModuleImpo.php">volver</a></button><br><br> -->
-            <p>&copy; 2024 Importadores - David L</p>
+            <p>&copy; 2024 Importaciones - David L</p>
         </footer>
     </div>
 

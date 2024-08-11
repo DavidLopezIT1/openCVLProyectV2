@@ -168,6 +168,13 @@
     
 </div>
 
+<div>
+            <footer>
+                <!-- <button><a href="ModuleImpo.php">volver</a></button><br><br> -->
+                <p>&copy; 2024 Importaciones - David L</p>
+            </footer>
+</div>
+
 
 
 </main>

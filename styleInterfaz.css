@@ -18,7 +18,10 @@ body {
 #sidebar.hidden {
     width: 40px;
 }
-
+#sidebar2.hidden {
+    display: none;
+    width: 40px;
+}
 #sidebar .user-info2 {
     display: flex;
     justify-content: center;
@@ -115,4 +118,18 @@ a{
 }
 .ModButtons{
     color: black;
+}
+footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 200px;
+    border-top: 2px solid #34495eba;
+    border-radius: 3px;
+    background-color: #34495eba;
+    box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.311);
+}
+footer p {
+    margin: 0;
+    border-radius: 3px;
+    color: #ffffff;
 }
