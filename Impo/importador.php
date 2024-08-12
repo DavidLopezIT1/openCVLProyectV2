@@ -102,19 +102,19 @@
                         related to an importador (importer) entity. Here's a breakdown of what each
                         variable represents: */
 
-                            $nit = 1022200003;
+                            $nit = 1012458898;
                             $tipodocumento = "NIT";
-                            $razonsocial = "Agencia de Aduanas master Industries";
+                            $razonsocial = "Agencia de Aduanas master Escobar 2";
                             $nivelcomercialcod = 1;
                             $nivelcomercialdesc = "Mayorista";
-                            $telefono = 3006445789;
-                            $direccion = "Calle 58l #72 Bis-87";
-                            $correoelectronico = "masterind.jam@gmail.com";
+                            $telefono = 3212197189;
+                            $direccion = "KLLE 58H #92 Bis-1";
+                            $correoelectronico = "escobar2.aleja2@gmail.com";
                             $pais = "Colombia";
                             $depto = "Soacha";
                             $administracionmercancia = "Armenia";
-                            $CodigoOEA ="LM2104";
-                            $actividadeconomicacod = "1371";
+                            $CodigoOEA ="RRJ55A";
+                            $actividadeconomicacod = "1271";
                             $actividadeconomicadesc = "Prueba version 4 de actividad economica";
                             $estado = "Activo"; 
 

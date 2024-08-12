@@ -4,31 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interfaz de Consulta de Datos</title>
+    <script src="general_scripts.js"></script>
     <script src="https://kit.fontawesome.com/5bcdd05e64.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="importadores.css">
 </head>
 <body >
 
 <header>
-        
     <?php
-
-    /* The lines `include "../functions.php";` and `include "../conection.php";` are including external PHP
-    files into the current PHP script. */
 
     include "../functions.php";
     include "../conection.php";
 
-   /* `session_start();` is a PHP function that initializes a new session or resumes the existing
-   session based on a session identifier passed via a GET or POST request, or a cookie. It is
-   typically used at the beginning of a PHP script to start or resume a session, allowing you to
-   store and retrieve session variables across multiple pages or requests. This function must be
-   called before any output is sent to the browser. */
-
     session_start();
-
-           /* This block of PHP code is responsible for checking the session variable 'nombre' to
-           determine if a user is logged in. Here's a breakdown of what it does: */
 
             $sesion = $_SESSION['nombre'];
 
@@ -38,47 +26,11 @@
                     die();     
                 }
 
-
-                /* The code snippet `= "<strong class='Bienvenida'>Bienvenido : </strong>"
-                . "<strong></strong>"; echo ;` is creating a string variable
-                `` that contains an HTML string for displaying a welcome message. */
-
                 $sesionValue= "<strong class='Bienvenida'>Bienvenido : </strong>" . "<strong>$sesion</strong>";
                 echo $sesionValue;
 
                 echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/impo/ModuleImpo.php' class='rutas'>Nivel anterior</a>";
                             
-                /* The code snippet ` = __FILE__;  = "htdocs";` is
-                assigning the value of the magic constant `__FILE__` to the variable
-                ``. */
-                // $SpecificRouteVar = __FILE__;
-
-                // /* The line `  = "htdocs";` in the PHP code is assigning the string
-                // value "htdocs" to the variable ``. This variable is used later in
-                // the code to help identify a specific substring within another string using the
-                // `strpos()` function. */
-
-                // $palabraEspecifica = "htdocs";
-                
-                // /* The line ` = strpos(, );` in the PHP
-                // code is using the `strpos()` function to find the position of a specific substring
-                // within another string. */
-                
-                // $posicionname = strpos($SpecificRouteVar, $palabraEspecifica);
-                
-                // if ($posicionname !== false) {
-                //     // Calcula la posición inicial del texto que quieres extraer
-                //     $posicionname += strlen($palabraEspecifica);
-                    
-                //     // Extrae el texto desde la posición encontrada hasta el final del SpecificRouteVar$SpecificRouteVar
-                //     $resultado = substr($SpecificRouteVar, $posicionname);
-                    
-                //     // Muestra el resultado
-                //     $RutaAbsoluta = "http://localhost/proyect_manager_v1/impo/ModuleImpo.php";
-                //     // echo $RutaAbsoluta;
-                // } 
-
-                //     $ruta5 ="<a href='$RutaAbsoluta' class='rutas'>Nivel Anterior</a>";
         ?>
 
         <button class="Salida_Segura">
@@ -106,6 +58,40 @@
             <section class="results">
                 <h2>Resultados de la Consulta</h2>
 
+            <div class="icon_Table_Functions">
+                <button style="border:none; background: #33333300;" name="editarbutton"><i class="fa-solid fa-pen" id="icon_Table_Functions"></i></button>
+                <!-- <i class="fa-solid fa-check" id="icon_Table_Functions"></i> -->
+                <button style="border:none; background: #33333300;" name="deletebutton"><i class="fa-solid fa-trash" id="icon_Table_Functions"></i></button>
+                <button style="border:none; background: #33333300;" name="stausbutton"><i class="fa-solid fa-rotate" id="icon_Table_Functions"></i></button>
+            <?php 
+            $editarbutton2 =false;
+            $deletebutton2 = false;
+            $stausbutton2 = false;
+
+            if(isset($_POST['editarbutton'])){
+                $editarbutton = $_POST['editarbutton'];
+                $editarbutton2 =true;
+            }
+            if(isset($_POST['deletebutton'])){
+                $deletebutton = $_POST['deletebutton'];
+                $deletebutton2 = true;
+            }
+            if(isset($_POST['stausbutton'])){
+                $stausbutton = $_POST['stausbutton'];
+                $stausbutton2 = true;
+            }
+
+
+
+
+
+
+
+
+            ?>
+            
+            
+            </div>
                 <table>
                 <br>
                     <thead>
@@ -114,7 +100,7 @@
                         <th>Teléfono</th>
                         <th>Dirección</th>
                         <th>Estado</th>
-                        <th><input type="checkbox" style=" accent-color: yellow;" id="generalCheckbox" onclick="selectorchecked()"></th>
+                        <th><input type="checkbox" style=" accent-color: yellow;" id="generalCheckbox" onclick="selectorChecked ()"></th>
                     </thead>
 
                     <tbody>
@@ -156,36 +142,17 @@
                    
                             ?>
 
-            <script>
-                function selectorchecked(){ 
-                document.getElementById('generalCheckbox').addEventListener('change', function() {
-                    let itemselector = document.querySelectorAll('#miFormulario.checkboxitem');
-                    itemselector.forEach(function(checkbox){
-                        checkbox.checked = document.getElementById('generalCheckbox').checked;
-                    })
-                })
-            }
-            </script>
+
 
                     </tbody>
 
                 </table>
 
-
-                <!-- <div class="result-item">
-                    <h3><a href="importador.php">1001287656</a></h3>
-                    <p>Descripción del resultado 1.</p>
-                </div>
-                <div class="result-item">
-                    <h3>Resultado 2</h3>
-                    <p>Descripción del resultado 2.</p>
-                </div> -->
-                <!-- Más resultados pueden añadirse aquí -->
             </section>
         </main>
         
         <footer>
-            <!-- <button><a href="ModuleImpo.php">volver</a></button><br><br> -->
+
             <p>&copy; 2024 Importaciones - David L</p>
         </footer>
     </div>

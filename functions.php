@@ -54,21 +54,21 @@ class importadordatos {
 
             public function imprimirenpantalla(){
                 echo "<div class ='ContainerGeneralImportador'>";
-                    echo "<h3>" . "Tipodocumento " . "</h3>" . "<input type='text' value ='$this->tipodocumento' class ='datosinputimportador'>" . "<br>" ;
-                    echo "<h3 class='datosinputimportador1'>" . "Nit " . "</h3>" . "<input type='text' value ='$this->nit' class ='datosinputimportador1'>" . "<br>" ;
-                    echo "<h3>" . "Razonsocial " . "</h3>" . "<input type='text' value ='$this->razonsocial' class ='datosinputimportador'>" . "<br>" ;
-                    echo "<h3 class='datosinputimportador1'>" . "Nivelcomercialcod " . "</h3>" . "<input type='text' value ='$this->nivelcomercialcod' class ='datosinputimportador1'>" . "<br>" ;
-                    echo "<h3>" . "Nivelcomercialdesc " . "</h3>" . "<input type='text' value ='$this->nivelcomercialdesc' class ='datosinputimportador'>" . "<br>" ;
-                    echo "<h3 class='datosinputimportador1'>" . "Telefono " . "</h3>" . "<input type='text' value ='$this->telefono' class ='datosinputimportador1'>" . "<br>" ;
-                    echo "<h3>" . "Direccion " . "</h3>" . "<input type='text' value ='$this->direccion' class ='datosinputimportador'>" . "<br>" ;
-                    echo "<h3 class='datosinputimportador1'>" . "Correoelectronico " . "</h3>" . "<input type='text' value ='$this->correoelectronico' class ='datosinputimportador1'>" . "<br>" ;
-                    echo "<h3>" . "Pais " . "</h3>" . "<input type='text' value ='$this->pais' class ='datosinputimportador'>" . "<br>" ;
-                    echo "<h3 class='datosinputimportador1'>" . "Depto " . "</h3>" . "<input type='text' value ='$this->depto' class ='datosinputimportador1'>" . "<br>" ;
-                    echo "<h3>" . "Administracionmercancia " . "</h3>" . "<input type='text' value ='$this->administracionmercancia' class ='datosinputimportador'>" . "<br>" ;
-                    echo "<h3 class='datosinputimportador1'>" . "CodigoOEA " . "</h3>" . "<input type='text' value ='$this->CodigoOEA' class ='datosinputimportador1'>" . "<br>" ;
-                    echo "<h3>" . "Actividadeconomicacod " . "</h3>" . "<input type='text' value ='$this->actividadeconomicacod' class ='datosinputimportador'>" . "<br>" ;
-                    echo "<h3 class='datosinputimportador1'>" . "Actividadeconomicadesc " . "</h3>" . "<input type='text' value ='$this->actividadeconomicadesc' class ='datosinputimportador1'>" . "<br>" ;
-                    echo "<h3>" . "Estado " . "</h3>" . "<input type='text' value ='$this->estado' class ='datosinputimportador'>" ;           
+                    echo "<h3>" . "Tipodocumento " . "</h3>" . "<input type='text' value ='$this->tipodocumento' class ='datosinputimportador' disabled>" . "<br>" ;
+                    echo "<h3 class='datosinputimportador1'>" . "Nit " . "</h3>" . "<input type='text' value ='$this->nit' class ='datosinputimportador1' disabled>" . "<br>" ;
+                    echo "<h3>" . "Razonsocial " . "</h3>" . "<input type='text' value ='$this->razonsocial' class ='datosinputimportador' disabled>" . "<br>" ;
+                    echo "<h3 class='datosinputimportador1'>" . "Nivelcomercialcod " . "</h3>" . "<input type='text' value ='$this->nivelcomercialcod' class ='datosinputimportador1' disabled>" . "<br>" ;
+                    echo "<h3>" . "Nivelcomercialdesc " . "</h3>" . "<input type='text' value ='$this->nivelcomercialdesc' class ='datosinputimportador' disabled>" . "<br>" ;
+                    echo "<h3 class='datosinputimportador1'>" . "Telefono " . "</h3>" . "<input type='text' value ='$this->telefono' class ='datosinputimportador1' disabled>" . "<br>" ;
+                    echo "<h3>" . "Direccion " . "</h3>" . "<input type='text' value ='$this->direccion' class ='datosinputimportador' disabled>" . "<br>" ;
+                    echo "<h3 class='datosinputimportador1'>" . "Correoelectronico " . "</h3>" . "<input type='text' value ='$this->correoelectronico' class ='datosinputimportador1' disabled>" . "<br>" ;
+                    echo "<h3>" . "Pais " . "</h3>" . "<input type='text' value ='$this->pais' class ='datosinputimportador' disabled>" . "<br>" ;
+                    echo "<h3 class='datosinputimportador1'>" . "Depto " . "</h3>" . "<input type='text' value ='$this->depto' class ='datosinputimportador1' disabled>" . "<br>" ;
+                    echo "<h3>" . "Administracionmercancia " . "</h3>" . "<input type='text' value ='$this->administracionmercancia' class ='datosinputimportador' disabled>" . "<br>" ;
+                    echo "<h3 class='datosinputimportador1'>" . "CodigoOEA " . "</h3>" . "<input type='text' value ='$this->CodigoOEA' class ='datosinputimportador1' disabled>" . "<br>" ;
+                    echo "<h3>" . "Actividadeconomicacod " . "</h3>" . "<input type='text' value ='$this->actividadeconomicacod' class ='datosinputimportador' disabled>" . "<br>" ;
+                    echo "<h3 class='datosinputimportador1'>" . "Actividadeconomicadesc " . "</h3>" . "<input type='text' value ='$this->actividadeconomicadesc' class ='datosinputimportador1' disabled>" . "<br>" ;
+                    echo "<h3>" . "Estado " . "</h3>" . "<input type='text' value ='$this->estado' class ='datosinputimportador' disabled>" ;           
                 echo "</div>";
                 }
 
@@ -173,9 +173,52 @@ class importadordatos {
         }
 
         
-            function showimportadortemplate($variable, $variable2){
-                
+
+        class modifyImportador{
+
+            public $variableditar;
+            public $variableliminar;
+            public $variableinactivar;
+
+
+            public function __construct($variableditar, $variableliminar, $variableinactivar){
+                $this->variableditar = $variableditar;
+                $this->variableliminar = $variableliminar;
+                $this->variableinactivar = $variableinactivar;
             }
+
+            public function editimportador($variableditar){
+
+                $queryEdit = "UPDATE siaimportador 
+                                    set tipodocumento = ,
+                                    set razonsocial = ,
+                                    set nivelcomercialcod = ,
+                                    set nivelcomercialdesc = ,
+                                    set telefono = ,
+                                    set direccion = ,
+                                    set correoelectronico = ,
+                                    set pais = ,
+                                    set depto = ,
+                                    set administracionmercancia = ,
+                                    set CodigoOEA = ,
+                                    set actividadeconomicacod = ,
+                                    set actividadeconomicadesc = ,
+                                    set estado =  FROM";
+                if($variableditar){
+
+                }
+            }
+
+             
+                
+
+                // if(){
+
+                // }
+            // }
+
+        }
+        
 
 
 

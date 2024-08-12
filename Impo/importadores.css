@@ -164,3 +164,10 @@ thead {
     z-index: 1;
     
 }
+.icon_Table_Functions > button > #icon_Table_Functions{
+    display: flex;
+    justify-content: flex-start;
+    color: #0567cf;
+    align-items: flex-start;
+    margin-left: 10px;
+}
