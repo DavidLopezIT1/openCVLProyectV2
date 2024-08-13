@@ -123,8 +123,9 @@ main{
 }
 .Buttons_Container_Send{
     display: flex;
-    margin-left: 22%;
-    justify-content: end;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    justify-content: center;
     width: 858px;
     
 }

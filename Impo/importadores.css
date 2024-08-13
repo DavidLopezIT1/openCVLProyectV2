@@ -165,9 +165,11 @@ thead {
     
 }
 .icon_Table_Functions > button > #icon_Table_Functions{
-    display: flex;
-    justify-content: flex-start;
     color: #0567cf;
-    align-items: flex-start;
-    margin-left: 10px;
+
+}
+.icon_Table_Functions > button{
+    cursor:pointer;
+    background-color: #33333300;
+    border :none;
 }

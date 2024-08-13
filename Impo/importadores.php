@@ -59,20 +59,18 @@
                 <h2>Resultados de la Consulta</h2>
 
             <div class="icon_Table_Functions">
-                <button style="border:none; background: #33333300;" name="editarbutton"><i class="fa-solid fa-pen" id="icon_Table_Functions"></i></button>
-                <!-- <i class="fa-solid fa-check" id="icon_Table_Functions"></i> -->
-                <button style="border:none; background: #33333300;" name="deletebutton"><i class="fa-solid fa-trash" id="icon_Table_Functions"></i></button>
-                <button style="border:none; background: #33333300;" name="stausbutton"><i class="fa-solid fa-rotate" id="icon_Table_Functions"></i></button>
+                <button name ="createimport"><i class="fa-solid fa-plus" id="icon_Table_Functions"></i></button>
+                <button name ="editimport"><i class="fa-solid fa-pen" id="icon_Table_Functions" ></i></button>
+                <button name="deletefrom"><i class="fa-solid fa-trash" id="icon_Table_Functions"></i></button>
+                <button name="statusfrom"><i class="fa-solid fa-rotate" id="icon_Table_Functions"></i></button>
             <?php 
-            $editarbutton2 =false;
-            $deletebutton2 = false;
-            $stausbutton2 = false;
+            
+            
 
-            if(isset($_POST['editarbutton'])){
-                $editarbutton = $_POST['editarbutton'];
-                $editarbutton2 =true;
+            if(isset($_POST['createimport'])){
+                header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/importadorCreate.php");
             }
-            if(isset($_POST['deletebutton'])){
+            if(isset($_POST['editimport'])){
                 $deletebutton = $_POST['deletebutton'];
                 $deletebutton2 = true;
             }
@@ -80,16 +78,8 @@
                 $stausbutton = $_POST['stausbutton'];
                 $stausbutton2 = true;
             }
-
-
-
-
-
-
-
-
-            ?>
             
+            ?>
             
             </div>
                 <table>
@@ -117,27 +107,43 @@
                                         $query1="SELECT * FROM siaimportador WHERE nit = '$querbd'";
                                         $resultquery = $conection->query($query1);
 
-                                        while($a = $resultquery->fetch_assoc()){
-                                            echo "<tr>" . "<td><a href=''>" . $a['nit'] . "<a></td>" . 
-                                            "<td>" . $a['razonsocial'] . "</td>" .
-                                            "<td>" . $a['telefono'] . "</td>" .
-                                            "<td>" . $a['direccion'] . "</td>" .
-                                            "<td>" . $a['estado'] . "</td>" .  
-                                            "<td>" . "<input type='checkbox' style='accent-color: yellow' id='checkboxitem'>" . "</td>" . "<tr>" ;
-                                            }   
-                                    }else{
-                                        $query2="SELECT * FROM siaimportador";
-                                        $resultquery2 = $conection->query($query2);
+                                        while ($a = $resultquery->fetch_assoc()) {
+                                            echo "<tr>" .
+                                                 "<td><a href=''>" . htmlspecialchars($a['nit']) . "</a></td>" .
+                                                 "<td>" . htmlspecialchars($a['razonsocial']) . "</td>" .
+                                                 "<td>" . htmlspecialchars($a['telefono']) . "</td>" .
+                                                 "<td>" . htmlspecialchars($a['direccion']) . "</td>" .
+                                                 "<td>" . htmlspecialchars($a['estado']) . "</td>" .
+                                                 "<td><input type='checkbox' style='accent-color: yellow' id='checkboxitem' name='checkboxitemv[]' value='" . htmlspecialchars($a['razonsocial']) . "'></td>" .
+                                                 "</tr>";}   
+                                                }else{
+                                                    $query2="SELECT * FROM siaimportador";
+                                                    $resultquery2 = $conection->query($query2);
 
-                                        while($a = $resultquery2->fetch_assoc()){
-                                            echo "<tr>" . "<td><a href='http://localhost/Proyecto_soft/openCVLProyect/impo/importador.php'>" . $a['nit'] . "<a></td>" .
-                                            "<td>" . $a['razonsocial'] . "</td>" .
-                                            "<td>" . $a['telefono'] . "</td>" .
-                                            "<td>" . $a['direccion'] . "</td>" .
-                                            "<td>" . $a['estado'] . "</td>" .  
-                                            "<td>" . "<input type='checkbox' style='accent-color: yellow' class='checkboxitem'>" . "</td>" . "<tr>" ;
-                                        }
-                                    }
+                                                    while($a = $resultquery2->fetch_assoc()){
+                                                        echo "<tr>" . "<td><a href='http://localhost/Proyecto_soft/openCVLProyect/impo/importadorquery.php'>" . $a['nit'] . "<a></td>" .
+                                                        "<td>" . $a['razonsocial'] . "</td>" .
+                                                        "<td>" . $a['telefono'] . "</td>" .
+                                                        "<td>" . $a['direccion'] . "</td>" .
+                                                        "<td>" . $a['estado'] . "</td>" . 
+                                                        "<td>" . "<input type='checkbox' style='accent-color: yellow' class='checkboxitem' >" . "</td>" . "<tr>" ;
+
+                                                        //
+                                                    }
+                                                }
+                                                        if(isset($_POST['checkboxitemv']) && $_POST['deletefrom']){
+
+                                                            $deletefrom = $_POST['checkboxitemv'];
+
+                                                            $querydelete = "DELETE FROM siaimportador WHERE nit = '$deletefrom'";
+                                                                $querydeleteresult = $conection->query($querydelete);
+                                                                if($querydeleteresult){
+                                                                    echo "<script>alert('Eliminado con exito')</script>";
+                                                                }else{
+                                                                    echo "<script>alert('No se eliminó el registro')</script>";
+                                                                }
+
+                                        }  
                                     
                    
                             ?>

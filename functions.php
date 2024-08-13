@@ -1,157 +1,193 @@
 <?php
 include "../conection.php";
 
-class importadordatos {
+class importadordator {
 
-    public $nit;
-    public $tipodocumento;
-    public $razonsocial;
-    public $nivelcomercialcod;
-    public $nivelcomercialdesc;
-    public $telefono;
-    public $direccion;
-    public $correoelectronico;
-    public $pais;
-    public $depto;
-    public $administracionmercancia;
-    public $CodigoOEA;
-    public $actividadeconomicacod;
-    public $actividadeconomicadesc;
-    public $estado;
+    public $conection;
+
+    public function __construct($conection){
+        $this->conection =$conection;
+    }
    
-        public function __Construct($nit,
-                                    $tipodocumento,
-                                    $razonsocial,
-                                    $nivelcomercialcod,
-                                    $nivelcomercialdesc,
-                                    $telefono,
-                                    $direccion,
-                                    $correoelectronico,
-                                    $pais,
-                                    $depto,
-                                    $administracionmercancia,
-                                    $CodigoOEA,
-                                    $actividadeconomicacod,
-                                    $actividadeconomicadesc,
-                                    $estado){
-                                            $this->nit =$nit ;
-                                            $this->tipodocumento =$tipodocumento ;
-                                            $this->razonsocial =$razonsocial ;
-                                            $this->nivelcomercialcod =$nivelcomercialcod ;
-                                            $this->nivelcomercialdesc =$nivelcomercialdesc ;
-                                            $this->telefono =$telefono ;
-                                            $this->direccion =$direccion ;
-                                            $this->correoelectronico =$correoelectronico ;
-                                            $this->pais =$pais ;
-                                            $this->depto =$depto ;
-                                            $this->administracionmercancia =$administracionmercancia ;
-                                            $this->CodigoOEA =$CodigoOEA ;
-                                            $this->actividadeconomicacod =$actividadeconomicacod ;
-                                            $this->actividadeconomicadesc =$actividadeconomicadesc ;
-                                            $this->estado =$estado ;
+
+            public function imprimirenpantalla($conection){
+                echo "<div class ='ContainerGeneralImportador'>";
+                    echo "<h3>" . "Tipodocumento " . "</h3>" . "<input type='text' name='tipodocumento' class ='datosinputimportador' name='prueba1'>" . "<br>" ;
+                    echo "<h3 class='datosinputimportador1'>" . "Nit " . "</h3>" . "<input type='text' name='nit' class ='datosinputimportador1' >" . "<br>" ;
+                    echo "<h3>" . "Razonsocial " . "</h3>" . "<input type='text' name='razonsocial' class ='datosinputimportador' >" . "<br>" ;
+                    echo "<h3 class='datosinputimportador1'>" . "Nivelcomercialcod " . "</h3>" . "<input type='text' name='nivelcomercialcod' class ='datosinputimportador1' >" . "<br>" ;
+                    echo "<h3>" . "Nivelcomercialdesc " . "</h3>" . "<input type='text' name='nivelcomercialdesc' class ='datosinputimportador' >" . "<br>" ;
+                    echo "<h3 class='datosinputimportador1'>" . "Telefono " . "</h3>" . "<input type='text' name='telefono' class ='datosinputimportador1' >" . "<br>" ;
+                    echo "<h3>" . "Direccion " . "</h3>" . "<input type='text' name='direccion' class ='datosinputimportador' >" . "<br>" ;
+                    echo "<h3 class='datosinputimportador1'>" . "Correoelectronico " . "</h3>" . "<input type='text' name='correoelectronico' class ='datosinputimportador1' >" . "<br>" ;
+                    echo "<h3>" . "Pais " . "</h3>" . "<input type='text' name='pais' class ='datosinputimportador' >" . "<br>" ;
+                    echo "<h3 class='datosinputimportador1'>" . "Depto " . "</h3>" . "<input type='text' name='depto' class ='datosinputimportador1' >" . "<br>" ;
+                    echo "<h3>" . "Administracionmercancia " . "</h3>" . "<input type='text' name='administracionmercancia' class ='datosinputimportador' >" . "<br>" ;
+                    echo "<h3 class='datosinputimportador1'>" . "CodigoOEA " . "</h3>" . "<input type='text' name='CodigoOEA' class ='datosinputimportador1' >" . "<br>" ;
+                    echo "<h3>" . "Actividadeconomicacod " . "</h3>" . "<input type='text' name='actividadeconomicacod' class ='datosinputimportador' >" . "<br>" ;
+                    echo "<h3 class='datosinputimportador1'>" . "Actividadeconomicadesc " . "</h3>" . "<input type='text' name='actividadeconomicadesc' class ='datosinputimportador1' >" . "<br>" ;
+                    echo "<h3>" . "Estado " . "</h3>" . "<input type='text' name='estado' class ='datosinputimportador' >" ;       
+                    echo "</div>";
+                    echo "<div class='Buttons_Container_Send'> 
+                                            <button name='SendInfo'>Crear Importador</button>
+                                            <button name='SalidaImportador'>
+                                                <a href='importadores.php' class='Salida_Segura2'>
+                                                    Salir
+                                                </a>
+                                            </button>
+                                        </div>  ";;    
+                    
+                
+
+                        if(isset($_POST['tipodocumento'])){
+                            $tipodocumento = $_POST['tipodocumento'];
+                        }else{
+                            $tipodocumento = "";
+                        }
+                        if(isset($_POST['nit'])){
+                            $nit = $_POST['nit'];
+                        }else{
+                            $nit = "";
+                        }
+                        if(isset($_POST['razonsocial'])){
+                            $razonsocial = $_POST['razonsocial'];
+                        }else{
+                            $razonsocial = "";
+                        }
+                        if(isset($_POST['nivelcomercialcod'])){
+                            $nivelcomercialcod = $_POST['nivelcomercialcod'];
+                        }else{
+                            $nivelcomercialcod = "";
+                        }
+                        if(isset($_POST['nivelcomercialdesc'])){
+                            $nivelcomercialdesc = $_POST['nivelcomercialdesc'];
+                        }else{
+                            $nivelcomercialdesc = "";
+                        }
+                        if(isset($_POST['telefono'])){
+                            $telefono = $_POST['telefono'];
+                        }else{
+                            $telefono = "";
+                        }
+                        if(isset($_POST['direccion'])){
+                            $direccion = $_POST['direccion'];
+                        }else{
+                            $direccion = "";
+                        }
+                        if(isset($_POST['correoelectronico'])){
+                            $correoelectronico = $_POST['correoelectronico'];
+                        }else{
+                            $correoelectronico = "";
+                        }
+                        if(isset($_POST['pais'])){
+                            $pais = $_POST['pais'];
+                        }else{
+                            $pais = "";
+                        }
+                        if(isset($_POST['depto'])){
+                            $depto = $_POST['depto'];
+                        }else{
+                            $depto = "";
+                        }
+                        if(isset($_POST['administracionmercancia'])){
+                            $administracionmercancia = $_POST['administracionmercancia'];
+                        }else{
+                            $administracionmercancia = "";
+                        }
+                        if(isset($_POST['CodigoOEA'])){
+                            $CodigoOEA = $_POST['CodigoOEA'];
+                        }else{
+                            $CodigoOEA = "";
+                        }
+                        if(isset($_POST['actividadeconomicacod'])){
+                            $actividadeconomicacod = $_POST['actividadeconomicacod'];
+                        }else{
+                            $actividadeconomicacod = "";
+                        }
+                        if(isset($_POST['actividadeconomicadesc'])){
+                            $actividadeconomicadesc = $_POST['actividadeconomicadesc'];
+                        }else{
+                            $actividadeconomicadesc = "";
+                        }
+                        if(isset($_POST['actividadeconomicadesc'])){
+                            $actividadeconomicadesc = $_POST['actividadeconomicadesc'];
+                        }else{
+                            $actividadeconomicadesc = "";
+                        }
+                        if(isset($_POST['estado'])){
+                            $estado = $_POST['estado'];
+                        }else{
+                            $estado = "";
+                        }
+
+                        
+
+                        if(isset($_POST['SendInfo'])){ 
+
+                        $selectImportador ="SELECT * FROM siaimportador";
+                        $Selectquery = $conection->query($selectImportador);
+                        $datosIguales=false;
+                        
+                        while($e = $Selectquery->fetch_assoc()){
+                            
+                            if ($e['nit'] === $nit || 
+                                $e['razonsocial'] === $razonsocial || 
+                                $e['telefono'] === $telefono  || 
+                                $e['direccion'] === $direccion  || 
+                                $e['correoelectronico'] === $correoelectronico || 
+                                $e['CodigoOEA'] === $CodigoOEA
+                                )  {
+
+                                    $datosIguales=true;
+                                    if($datosIguales){ 
+                                    $ResultadoError = "<script>alert('Datos del importador existen en la base de datos, verifique.')</script>";
+                                    echo $ResultadoError;
                                     }
 
+                                }elseif(!$datosIguales){
+                                
+                                    $insertImportador = "INSERT INTO siaimportador (nit, 
+                                    tipodocumento, 
+                                    razonsocial, 
+                                    nivelcomercialcod, 
+                                    nivelcomercialdesc, 
+                                    telefono, 
+                                    direccion,
+                                    correoelectronico,
+                                    pais, 
+                                    depto, 
+                                    administracionmercancia, 
+                                    CodigoOEA,
+                                    actividadeconomicacod,
+                                    actividadeconomicadesc,
+                                    estado
+                                    ) VALUES ('$nit',
+                                                '$tipodocumento',
+                                                '$razonsocial',
+                                                '$nivelcomercialcod',
+                                                '$nivelcomercialdesc',
+                                                '$telefono',
+                                                '$direccion',
+                                                '$correoelectronico',
+                                                '$pais',
+                                                '$depto',
+                                                '$administracionmercancia',
+                                                '$CodigoOEA',
+                                                '$actividadeconomicacod',
+                                                '$actividadeconomicadesc',
+                                                '$estado'
+                                                )";
+    
+                                    $Insertquery = $conection->query($insertImportador);
+                        }
+                    }
 
-            public function imprimirenpantalla(){
-                echo "<div class ='ContainerGeneralImportador'>";
-                    echo "<h3>" . "Tipodocumento " . "</h3>" . "<input type='text' value ='$this->tipodocumento' class ='datosinputimportador' disabled>" . "<br>" ;
-                    echo "<h3 class='datosinputimportador1'>" . "Nit " . "</h3>" . "<input type='text' value ='$this->nit' class ='datosinputimportador1' disabled>" . "<br>" ;
-                    echo "<h3>" . "Razonsocial " . "</h3>" . "<input type='text' value ='$this->razonsocial' class ='datosinputimportador' disabled>" . "<br>" ;
-                    echo "<h3 class='datosinputimportador1'>" . "Nivelcomercialcod " . "</h3>" . "<input type='text' value ='$this->nivelcomercialcod' class ='datosinputimportador1' disabled>" . "<br>" ;
-                    echo "<h3>" . "Nivelcomercialdesc " . "</h3>" . "<input type='text' value ='$this->nivelcomercialdesc' class ='datosinputimportador' disabled>" . "<br>" ;
-                    echo "<h3 class='datosinputimportador1'>" . "Telefono " . "</h3>" . "<input type='text' value ='$this->telefono' class ='datosinputimportador1' disabled>" . "<br>" ;
-                    echo "<h3>" . "Direccion " . "</h3>" . "<input type='text' value ='$this->direccion' class ='datosinputimportador' disabled>" . "<br>" ;
-                    echo "<h3 class='datosinputimportador1'>" . "Correoelectronico " . "</h3>" . "<input type='text' value ='$this->correoelectronico' class ='datosinputimportador1' disabled>" . "<br>" ;
-                    echo "<h3>" . "Pais " . "</h3>" . "<input type='text' value ='$this->pais' class ='datosinputimportador' disabled>" . "<br>" ;
-                    echo "<h3 class='datosinputimportador1'>" . "Depto " . "</h3>" . "<input type='text' value ='$this->depto' class ='datosinputimportador1' disabled>" . "<br>" ;
-                    echo "<h3>" . "Administracionmercancia " . "</h3>" . "<input type='text' value ='$this->administracionmercancia' class ='datosinputimportador' disabled>" . "<br>" ;
-                    echo "<h3 class='datosinputimportador1'>" . "CodigoOEA " . "</h3>" . "<input type='text' value ='$this->CodigoOEA' class ='datosinputimportador1' disabled>" . "<br>" ;
-                    echo "<h3>" . "Actividadeconomicacod " . "</h3>" . "<input type='text' value ='$this->actividadeconomicacod' class ='datosinputimportador' disabled>" . "<br>" ;
-                    echo "<h3 class='datosinputimportador1'>" . "Actividadeconomicadesc " . "</h3>" . "<input type='text' value ='$this->actividadeconomicadesc' class ='datosinputimportador1' disabled>" . "<br>" ;
-                    echo "<h3>" . "Estado " . "</h3>" . "<input type='text' value ='$this->estado' class ='datosinputimportador' disabled>" ;           
-                echo "</div>";
                 }
 
-                
-               public function ConsultareInsertImportador($conection){
-
-                                    $selectImportador ="SELECT * FROM siaimportador";
-                                    $Selectquery = $conection->query($selectImportador);
-                                    $datosIguales=false;
-                                    
-                                    while($e = $Selectquery->fetch_assoc()){
-                                        
-                                        if ($e['nit'] === $this->nit || 
-                                            $e['razonsocial'] === $this->razonsocial || 
-                                            $e['telefono'] === $this->telefono  || 
-                                            $e['direccion'] === $this->direccion  || 
-                                            $e['correoelectronico'] === $this->correoelectronico || 
-                                            $e['CodigoOEA'] ===$this->CodigoOEA
-                                            )  {
-
-                                                $datosIguales=true;
-                                                if($datosIguales){ 
-                                                $ResultadoError = "<script>alert('Datos del importador existen en la base de datos, verifique.')</script>";
-                                                echo $ResultadoError;
-                                                }
-
-                                            }elseif(!$datosIguales){
-                                            
-                                                $insertImportador = "INSERT INTO siaimportador (nit, 
-                                                tipodocumento, 
-                                                razonsocial, 
-                                                nivelcomercialcod, 
-                                                nivelcomercialdesc, 
-                                                telefono, 
-                                                direccion,
-                                                correoelectronico,
-                                                pais, 
-                                                depto, 
-                                                administracionmercancia, 
-                                                CodigoOEA,
-                                                actividadeconomicacod,
-                                                actividadeconomicadesc,
-                                                estado
-                                                ) VALUES ('$this->nit',
-                                                            '$this->tipodocumento',
-                                                            '$this->razonsocial',
-                                                            '$this->nivelcomercialcod',
-                                                            '$this->nivelcomercialdesc',
-                                                            '$this->telefono',
-                                                            '$this->direccion',
-                                                            '$this->correoelectronico',
-                                                            '$this->pais',
-                                                            '$this->depto',
-                                                            '$this->administracionmercancia',
-                                                            '$this->CodigoOEA',
-                                                            '$this->actividadeconomicacod',
-                                                            '$this->actividadeconomicadesc',
-                                                            '$this->estado'
-                                                            )";
-                
-                                                $Insertquery = $conection->query($insertImportador);
-                                    }
-                                }
-
-                            }
+            }
+           
 }
 
-    // class Estructura_importadores{
-    //     public $conection;
-    //     public $variable;
-    //     public $botonenviar;
-    //     // public $direccion;
-    //     // public $estado;
-
-
-    //     public function __construct($conection, $variable, $botonenviar){
-    //         $this->conection = $conection;
-    //         $this->variable = $variable;
-    //         $this->botonenviar = $botonenviar;
-    //     //     $this->direccion = $direccion;
-    //     //     $this->estado = $estado;
-
-    //     }
 
          function ShowImportador($conection ){
             $selectquerysearchimport = "SELECT * FROM siaimportador";
@@ -174,54 +210,10 @@ class importadordatos {
 
         
 
-        class modifyImportador{
-
-            public $variableditar;
-            public $variableliminar;
-            public $variableinactivar;
-
-
-            public function __construct($variableditar, $variableliminar, $variableinactivar){
-                $this->variableditar = $variableditar;
-                $this->variableliminar = $variableliminar;
-                $this->variableinactivar = $variableinactivar;
-            }
-
-            public function editimportador($variableditar){
-
-                $queryEdit = "UPDATE siaimportador 
-                                    set tipodocumento = ,
-                                    set razonsocial = ,
-                                    set nivelcomercialcod = ,
-                                    set nivelcomercialdesc = ,
-                                    set telefono = ,
-                                    set direccion = ,
-                                    set correoelectronico = ,
-                                    set pais = ,
-                                    set depto = ,
-                                    set administracionmercancia = ,
-                                    set CodigoOEA = ,
-                                    set actividadeconomicacod = ,
-                                    set actividadeconomicadesc = ,
-                                    set estado =  FROM";
-                if($variableditar){
-
-                }
-            }
-
-             
-                
-
-                // if(){
-
-                // }
-            // }
-
-        }
+      
         
 
 
 
 
 
-?>
