@@ -95,58 +95,63 @@
 
                     <tbody>
                             <?php 
-                                 $variabledecontrol =false;                   
-                                 $querbd="";
-
-                                 if(isset($_POST['querbd'])){
-                                    $querbd=$_POST['querbd'];
-                                    $variabledecontrol =true;
+                                
+                                $variabledecontrol = false;                   
+                                $querbd = "";
+                                $valueCheckbox = null; // Inicializamos la variable global
+                                
+                                if (isset($_POST['querbd'])) {
+                                    $querbd = $_POST['querbd'];
+                                    $variabledecontrol = true;
                                 }
-
-                                    if($variabledecontrol =true && $querbd !=""){
-                                        $query1="SELECT * FROM siaimportador WHERE nit = '$querbd'";
-                                        $resultquery = $conection->query($query1);
-
-                                        while ($a = $resultquery->fetch_assoc()) {
-                                            echo "<tr>" .
-                                                 "<td><a href=''>" . htmlspecialchars($a['nit']) . "</a></td>" .
-                                                 "<td>" . htmlspecialchars($a['razonsocial']) . "</td>" .
-                                                 "<td>" . htmlspecialchars($a['telefono']) . "</td>" .
-                                                 "<td>" . htmlspecialchars($a['direccion']) . "</td>" .
-                                                 "<td>" . htmlspecialchars($a['estado']) . "</td>" .
-                                                 "<td><input type='checkbox' style='accent-color: yellow' id='checkboxitem' name='checkboxitemv[]' value='" . htmlspecialchars($a['razonsocial']) . "'></td>" .
-                                                 "</tr>";}   
-                                                }else{
-                                                    $query2="SELECT * FROM siaimportador";
-                                                    $resultquery2 = $conection->query($query2);
-
-                                                    while($a = $resultquery2->fetch_assoc()){
-                                                        echo "<tr>" . "<td><a href='http://localhost/Proyecto_soft/openCVLProyect/impo/importadorquery.php'>" . $a['nit'] . "<a></td>" .
-                                                        "<td>" . $a['razonsocial'] . "</td>" .
-                                                        "<td>" . $a['telefono'] . "</td>" .
-                                                        "<td>" . $a['direccion'] . "</td>" .
-                                                        "<td>" . $a['estado'] . "</td>" . 
-                                                        "<td>" . "<input type='checkbox' style='accent-color: yellow' class='checkboxitem' >" . "</td>" . "<tr>" ;
-
-                                                        //
-                                                    }
-                                                }
-                                                        if(isset($_POST['checkboxitemv']) && $_POST['deletefrom']){
-
-                                                            $deletefrom = $_POST['checkboxitemv'];
-
-                                                            $querydelete = "DELETE FROM siaimportador WHERE nit = '$deletefrom'";
-                                                                $querydeleteresult = $conection->query($querydelete);
-                                                                if($querydeleteresult){
-                                                                    echo "<script>alert('Eliminado con exito')</script>";
-                                                                }else{
-                                                                    echo "<script>alert('No se eliminó el registro')</script>";
-                                                                }
-
-                                        }  
-                                    
+                                
+                                if ($variabledecontrol && $querbd != "") {
+                                    $query1 = "SELECT * FROM siaimportador WHERE nit = '" . mysqli_real_escape_string($conection, $querbd) . "'";
+                                    $resultquery = $conection->query($query1);
+                                
+                                    while ($a = $resultquery->fetch_assoc()) {
+                                        echo "<tr>" .
+                                             "<td><a href=''>" . htmlspecialchars($a['nit']) . "</a></td>" .
+                                             "<td>" . htmlspecialchars($a['razonsocial']) . "</td>" .
+                                             "<td>" . htmlspecialchars($a['telefono']) . "</td>" .
+                                             "<td>" . htmlspecialchars($a['direccion']) . "</td>" .
+                                             "<td>" . htmlspecialchars($a['estado']) . "</td>" .
+                                             "<td><input type='checkbox' style='accent-color: yellow' class='checkboxitem' name='checkboxitemv[]' value='" . htmlspecialchars($a['id']) . "'></td>" .
+                                             "</tr>";
+                                    }
+                                } else {
+                                    $query2 = "SELECT * FROM siaimportador";
+                                    $resultquery2 = $conection->query($query2);
+                                
+                                    while ($a = $resultquery2->fetch_assoc()) {
+                                        echo "<tr>" .
+                                             "<td><a href='http://localhost/Proyecto_soft/openCVLProyect/impo/importadorquery.php'>" . htmlspecialchars($a['nit']) . "</a></td>" .
+                                             "<td>" . htmlspecialchars($a['razonsocial']) . "</td>" .
+                                             "<td>" . htmlspecialchars($a['telefono']) . "</td>" .
+                                             "<td>" . htmlspecialchars($a['direccion']) . "</td>" .
+                                             "<td>" . htmlspecialchars($a['estado']) . "</td>" .
+                                             "<td><input type='checkbox' style='accent-color: yellow' class='checkboxitem' name='checkboxitemv[]' value='" . htmlspecialchars($a['id']) . "'></td>" .
+                                             "</tr>";
+                                    }
+                                }
+                                
+                                if (isset($_POST['checkboxitemv']) && isset($_POST['deletefrom'])) {
+                                    foreach ($_POST['checkboxitemv'] as $selectedId) {
+                                        $selectedId = mysqli_real_escape_string($conection, $selectedId);
+                                        $querydelete = "DELETE FROM siaimportador WHERE id = '$selectedId'";
+                                        $querydeleteresult = $conection->query($querydelete);
+                                        
+                                        if ($querydeleteresult) {
+                                            echo "<script>alert('Eliminado con éxito')</script>";
+                                        } else {
+                                            echo "<script>alert('No se eliminó el registro')</script>";
+                                        }
+                                    }
+                                }
+                                ?>
+                                
                    
-                            ?>
+                          
 
 
 
