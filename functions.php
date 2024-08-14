@@ -41,13 +41,10 @@ class importadordator {
 
                         if(isset($_POST['tipodocumento'])){
                             $tipodocumento = $_POST['tipodocumento'];
-                        }else{
-                            $tipodocumento = "";
                         }
+                        
                         if(isset($_POST['nit'])){
                             $nit = $_POST['nit'];
-                        }else{
-                            $nit = "";
                         }
                         if(isset($_POST['razonsocial'])){
                             $razonsocial = $_POST['razonsocial'];
@@ -138,10 +135,12 @@ class importadordator {
                                 $e['CodigoOEA'] === $CodigoOEA
                                 )  {
 
-                                    $datosIguales=true;
+                                    $datosIguales = true;
+
                                     if($datosIguales){ 
                                     $ResultadoError = "<script>alert('Datos del importador existen en la base de datos, verifique.')</script>";
                                     echo $ResultadoError;
+                                    die();
                                     }
 
                                 }elseif(!$datosIguales){
@@ -179,6 +178,7 @@ class importadordator {
                                                 )";
     
                                     $Insertquery = $conection->query($insertImportador);
+                                    break;
                         }
                     }
 

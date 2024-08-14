@@ -143,6 +143,10 @@
                                         
                                         if ($querydeleteresult) {
                                             echo "<script>alert('Eliminado con éxito')</script>";
+                                            // echo"<script type='text/javascript'>
+                                            //         window.location.reload();
+                                            //     </script>";
+                                            //     break;
                                         } else {
                                             echo "<script>alert('No se eliminó el registro')</script>";
                                         }
@@ -152,7 +156,6 @@
                                 
                    
                           
-
 
 
                     </tbody>
