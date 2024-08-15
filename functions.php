@@ -286,13 +286,12 @@ class importadordator {
                                     if($Insertquery){
                                         echo "<script>alert('Datos de importador insertados con exito.')</script>";
                                         $constestatusImport=$conection->query($SelectEstadoDelImportador);
+                                        if($constestatusImport){
+                                            header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/importadores.php");
+                                        }
                                     }
                                     break;
                                     } 
-                                    
-                                  
-
-
                     }
 
                 }
