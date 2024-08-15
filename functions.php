@@ -41,10 +41,14 @@ class importadordator {
 
                         if(isset($_POST['tipodocumento'])){
                             $tipodocumento = $_POST['tipodocumento'];
+                        }else{
+                            $tipodocumento = "";
                         }
                         
                         if(isset($_POST['nit'])){
                             $nit = $_POST['nit'];
+                        }else{
+                            $nit = "";
                         }
                         if(isset($_POST['razonsocial'])){
                             $razonsocial = $_POST['razonsocial'];
@@ -123,18 +127,13 @@ class importadordator {
 
                         $selectImportador ="SELECT * FROM siaimportador";
                         $Selectquery = $conection->query($selectImportador);
+
                         $datosIguales=false;
-                        
+                        $datosVacios = false;
+
                         while($e = $Selectquery->fetch_assoc()){
                             
-                            if ($e['nit'] === $nit || 
-                                $e['razonsocial'] === $razonsocial || 
-                                $e['telefono'] === $telefono  || 
-                                $e['direccion'] === $direccion  || 
-                                $e['correoelectronico'] === $correoelectronico || 
-                                $e['CodigoOEA'] === $CodigoOEA
-                                )  {
-
+                           if ($e['nit'] === $nit) {
                                     $datosIguales = true;
 
                                     if($datosIguales){ 
@@ -142,8 +141,110 @@ class importadordator {
                                     echo $ResultadoError;
                                     die();
                                     }
+                                }if($nit ==""){
+                                    $datosVacios = true;
 
-                                }elseif(!$datosIguales){
+                                    if ($datosVacios) {
+                                        $ResultadoError2 = "<script>alert('Debe completar todos los datos del importador, verifique.')</script>";
+                                    echo $ResultadoError2;
+                                    die();
+                                    }
+                                }
+
+                            if ($e['razonsocial'] === $razonsocial) {
+                                    $datosIguales = true;
+
+                                    if($datosIguales){ 
+                                    $ResultadoError = "<script>alert('Datos del importador existen en la base de datos, verifique.')</script>";
+                                    echo $ResultadoError;
+                                    die();
+                                    }
+                                }if($razonsocial ==""){
+                                    $datosVacios = true;
+
+                                    if ($datosVacios) {
+                                        $ResultadoError2 = "<script>alert('Debe completar todos los datos del importador, verifique.')</script>";
+                                    echo $ResultadoError2;
+                                    die();
+                                    }
+                                }
+
+                            if ($e['telefono'] === $telefono) {
+                                    $datosIguales = true;
+
+                                    if($datosIguales){ 
+                                    $ResultadoError = "<script>alert('Datos del importador existen en la base de datos, verifique.')</script>";
+                                    echo $ResultadoError;
+                                    die();
+                                    }
+                                }if($telefono ==""){
+                                $datosVacios = true;
+
+                                    if ($datosVacios) {
+                                        $ResultadoError2 = "<script>alert('Debe completar todos los datos del importador, verifique.')</script>";
+                                    echo $ResultadoError2;
+                                    die();
+                                    }
+                                }
+
+                            if ($e['direccion'] === $direccion) {
+                                    $datosIguales = true;
+
+                                    if($datosIguales){ 
+                                    $ResultadoError = "<script>alert('Datos del importador existen en la base de datos, verifique.')</script>";
+                                    echo $ResultadoError;
+                                    die();
+                                    }
+                                }if($direccion ==""){
+                                $datosVacios = true;
+
+                                    if ($datosVacios) {
+                                        $ResultadoError2 = "<script>alert('Debe completar todos los datos del importador, verifique.')</script>";
+                                    echo $ResultadoError2;
+                                    die();
+                                    }
+                                }
+
+                        
+                            if ($e['correoelectronico'] === $correoelectronico) {
+                                $datosIguales = true;
+
+                                    if($datosIguales){ 
+                                    $ResultadoError = "<script>alert('Datos del importador existen en la base de datos, verifique.')</script>";
+                                    echo $ResultadoError;
+                                    die();
+                                    }
+                                }if($correoelectronico ==""){
+                                $datosVacios = true;
+
+                                    if ($datosVacios) {
+                                        $ResultadoError2 = "<script>alert('Debe completar todos los datos del importador, verifique.')</script>";
+                                    echo $ResultadoError2;
+                                    die();
+                                    }
+                                }
+
+
+                            if ($e['CodigoOEA'] === $CodigoOEA) {
+                                $datosIguales = true;
+    
+                                    if($datosIguales){ 
+                                    $ResultadoError = "<script>alert('Datos del importador existen en la base de datos, verifique.')</script>";
+                                    echo $ResultadoError;
+                                    die();
+                                    }
+                                }if($CodigoOEA ==""){
+                                $datosVacios = true;
+    
+                                    if ($datosVacios) {
+                                        $ResultadoError2 = "<script>alert('Debe completar todos los datos del importador, verifique.')</script>";
+                                    echo $ResultadoError2;
+                                    die();
+                                    }
+                                }
+                           
+
+                                elseif(!$datosIguales){
                                 
                                     $insertImportador = "INSERT INTO siaimportador (nit, 
                                     tipodocumento, 
@@ -178,8 +279,20 @@ class importadordator {
                                                 )";
     
                                     $Insertquery = $conection->query($insertImportador);
+
+                                    $estadoDelImportador = "Activo";
+                                    $SelectEstadoDelImportador = "UPDATE siaimportador SET estado ='$estadoDelImportador' WHERE nit = $nit";
+
+                                    if($Insertquery){
+                                        echo "<script>alert('Datos de importador insertados con exito.')</script>";
+                                        $constestatusImport=$conection->query($SelectEstadoDelImportador);
+                                    }
                                     break;
-                        }
+                                    } 
+                                    
+                                  
+
+
                     }
 
                 }
