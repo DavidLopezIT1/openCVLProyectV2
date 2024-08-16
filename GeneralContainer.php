@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="importador.css">
+    <link rel="stylesheet" href="importadorGeneral.css">
     <title>Importador</title>
 </head>
 <body >
@@ -12,12 +12,9 @@
         
     <?php
 
-    /* The lines `include "../functions.php";` and `include "../conection.php";` are including external PHP
-    files into the current PHP script. */
+    include "functions.php";
+    include "conection.php";
 
-    include "../functions.php";
-    include "../conection.php";
-    
    /* `session_start();` is a PHP function that initializes a new session or resumes the existing
    session based on a session identifier passed via a GET or POST request, or a cookie. It is
    typically used at the beginning of a PHP script to start or resume a session, allowing you to
@@ -85,7 +82,7 @@
         </button>
 </header>
 
-        <form action="importadorCreate.php" method ="post">
+        <form action="importadorquery.php" method ="post">
                 <fieldset>
                     <legend>
                         Datos del importador como objeto
@@ -118,35 +115,7 @@
                             $actividadeconomicadesc = "Prueba version 4 de actividad economica";
                             $estado = "Activo"; 
 
-            /* The code snippet `  = new importadordatos(, , ,
-            , , , , , ,
-            , , , , ,
-            );` is creating a new instance of a class named `importadordatos` and initializing it
-            with the provided parameters. */
-
-                // $prueba = new importadordatos($nit, 
-                //                                 $tipodocumento,
-                //                                 $razonsocial,
-                //                                 $nivelcomercialcod,
-                //                                 $nivelcomercialdesc,
-                //                                 $telefono,
-                //                                 $direccion,
-                //                                 $correoelectronico,
-                //                                 $pais,
-                //                                 $depto,
-                //                                 $administracionmercancia,
-                //                                 $CodigoOEA,
-                //                                 $actividadeconomicacod,
-                //                                 $actividadeconomicadesc,
-                //                                 $estado
-                //                             );
-                                            
-                //                     /* The line `echo ->imprimirenpantalla();` is calling a method named
-                //                     `imprimirenpantalla()` on the object `` and then outputting the
-                //                     result of that method to the screen. */
-
-                //                     echo $prueba->imprimirenpantalla();        
-                                
+           
         ?>
 
             <div>
@@ -164,12 +133,7 @@
                         <button name="SendInfo">Enviar Datos</button>
                         
                             <?php
-                                    
-                                /* This PHP code block is checking if the form with the name "SendInfo" has been
-                                submitted. If the form has been submitted, it calls the method
-                                `ConsultareInsertImportador()` on the object `` passing the ``
-                                variable as a parameter. This method likely handles the logic to consult or insert data
-                                related to the importador based on the form submission. */
+
                                     
                                     
                                     // if(isset($_POST['SendInfo'])){

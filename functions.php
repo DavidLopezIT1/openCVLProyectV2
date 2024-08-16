@@ -1,5 +1,6 @@
 <?php
-include "../conection.php";
+
+
 
 class importadordator {
 
@@ -299,7 +300,6 @@ class importadordator {
             }
            
 }
-
 
          function ShowImportador($conection ){
             $selectquerysearchimport = "SELECT * FROM siaimportador";

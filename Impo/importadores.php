@@ -66,16 +66,14 @@
                         header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/importadorCreate.php");
                     }
                     if(isset($_POST['editimport'])){
-                        $deletebutton = $_POST['deletebutton'];
-                        $deletebutton2 = true;
+                        $editimport = $_POST['editimport'];
+                        // header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/importadorEdit.php" . urlencode());
                     }
                     if(isset($_POST['stausbutton'])){
                         $stausbutton = $_POST['stausbutton'];
                         $stausbutton2 = true;
                     }
-
-            ?>
-            
+            ?>  
     </div>
         <table>
         <br>
@@ -94,13 +92,11 @@
                             
                     $variabledecontrol = false;                   
                     $querbd = "";
-                    $valueCheckbox = null; // Inicializamos la variable global
                             
                             if (isset($_POST['querbd'])) {
                                 $querbd = $_POST['querbd'];
                                 $variabledecontrol = true;
                             }
-                            
                             if ($variabledecontrol && $querbd != "") {
                                 $query1 = "SELECT * FROM siaimportador WHERE nit = '" . mysqli_real_escape_string($conection, $querbd) . "'";
                                 $resultquery = $conection->query($query1);
@@ -130,10 +126,9 @@
                                          "</tr>";
                                 }
                             }
-                            
                             if (isset($_POST['checkboxitemv']) && isset($_POST['deletefrom'])) {
 
-                                foreach ($_POST['checkboxitemv'] as $selectedId) {
+                                foreach ($_POST['checkboxitemv'] AS $selectedId) {
 
                                     $selectedId = mysqli_real_escape_string($conection, $selectedId);
                                     $querydelete = "DELETE FROM siaimportador WHERE id = '$selectedId'";
@@ -177,7 +172,23 @@
                                                 
                                                 }
                                             }
-                                    }    
+                                    }  
+
+                            if(isset($_POST['checkboxitemv']) && $_POST['editimport']){
+                                $url = "http://localhost/Proyecto_soft/openCVLProyect/impo/importadorEdit.php";
+
+                                foreach($_POST['checkboxitemv'] AS $queryEditV1){
+                                    $idEdit = array("idEdit" => $queryEditV1);
+                                }
+                                $curlinit = curl_init($url);
+                                curl_setopt($curlinit, CURLOPT_RETURNTRANSFER, true);
+                                curl_setopt($curlinit, CURLOPT_POST, true); // Usar el método POST
+                                curl_setopt($curlinit, CURLOPT_POSTFIELDS, http_build_query($idEdit)); // Convertir datos a formato query string
+                                $response = curl_exec($curlinit);
+                                echo"<script>Window.location.href ='http://localhost/Proyecto_soft/openCVLProyect/impo/importadorEdit.php'</script>";
+                            }
+                                    
+
                 ?>
                                 
         </tbody>

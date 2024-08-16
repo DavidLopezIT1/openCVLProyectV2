@@ -88,66 +88,44 @@
         <form action="importadorquery.php" method ="post">
                 <fieldset>
                     <legend>
-                        Datos del importador como objeto
+                        Editar / Importador 
                     </legend>
 
                     <div class="HeaderImportador">
                         <header>
-                            <h1><p>Datos Importador</p></h1>
+                            <h1><p>Editar Datos Importador</p></h1>
                         </header>
                     </div>
 
         <?php
-                        /* The block of code you provided is initializing variables with specific values
-                        related to an importador (importer) entity. Here's a breakdown of what each
-                        variable represents: */
 
-                            $nit = 1012458898;
-                            $tipodocumento = "NIT";
-                            $razonsocial = "Agencia de Aduanas master Escobar 2";
-                            $nivelcomercialcod = 1;
-                            $nivelcomercialdesc = "Mayorista";
-                            $telefono = 3212197189;
-                            $direccion = "KLLE 58H #92 Bis-1";
-                            $correoelectronico = "escobar2.aleja2@gmail.com";
-                            $pais = "Colombia";
-                            $depto = "Soacha";
-                            $administracionmercancia = "Armenia";
-                            $CodigoOEA ="RRJ55A";
-                            $actividadeconomicacod = "1271";
-                            $actividadeconomicadesc = "Prueba version 4 de actividad economica";
-                            $estado = "Activo"; 
+                            // $nit = 1012458898;
+                            // $tipodocumento = "NIT";
+                            // $razonsocial = "Agencia de Aduanas master Escobar 2";
+                            // $nivelcomercialcod = 1;
+                            // $nivelcomercialdesc = "Mayorista";
+                            // $telefono = 3212197189;
+                            // $direccion = "KLLE 58H #92 Bis-1";
+                            // $correoelectronico = "escobar2.aleja2@gmail.com";
+                            // $pais = "Colombia";
+                            // $depto = "Soacha";
+                            // $administracionmercancia = "Armenia";
+                            // $CodigoOEA ="RRJ55A";
+                            // $actividadeconomicacod = "1271";
+                            // $actividadeconomicadesc = "Prueba version 4 de actividad economica";
+                            // $estado = "Activo"; 
 
-            /* The code snippet `  = new importadordatos(, , ,
-            , , , , , ,
-            , , , , ,
-            );` is creating a new instance of a class named `importadordatos` and initializing it
-            with the provided parameters. */
-
-                $prueba = new importadordatos($nit, 
-                                                $tipodocumento,
-                                                $razonsocial,
-                                                $nivelcomercialcod,
-                                                $nivelcomercialdesc,
-                                                $telefono,
-                                                $direccion,
-                                                $correoelectronico,
-                                                $pais,
-                                                $depto,
-                                                $administracionmercancia,
-                                                $CodigoOEA,
-                                                $actividadeconomicacod,
-                                                $actividadeconomicadesc,
-                                                $estado
-                                            );
-                                            
-                                    /* The line `echo ->imprimirenpantalla();` is calling a method named
-                                    `imprimirenpantalla()` on the object `` and then outputting the
-                                    result of that method to the screen. */
-
-                                    echo $prueba->imprimirenpantalla();        
-                                
+           
         ?>
+
+<?php
+if (isset($_POST['idEdit'])) {
+    $id = intval($_POST['idEdit']); // Sanitizar el dato recibido
+    echo "ID recibido: " . $id;
+} else {
+    echo "No se ha recibido el ID.";
+}
+?>
 
             <div>
             <footer>
@@ -164,17 +142,12 @@
                         <button name="SendInfo">Enviar Datos</button>
                         
                             <?php
-                                    
-                                /* This PHP code block is checking if the form with the name "SendInfo" has been
-                                submitted. If the form has been submitted, it calls the method
-                                `ConsultareInsertImportador()` on the object `` passing the ``
-                                variable as a parameter. This method likely handles the logic to consult or insert data
-                                related to the importador based on the form submission. */
+
                                     
                                     
-                                    if(isset($_POST['SendInfo'])){
-                                        $prueba->ConsultareInsertImportador($conection);
-                                    }
+                                    // if(isset($_POST['SendInfo'])){
+                                    //     $prueba->ConsultareInsertImportador($conection);
+                                    // }
                                         
                             ?>
                             
