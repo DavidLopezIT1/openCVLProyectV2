@@ -98,9 +98,20 @@
                     </div>
 
         <?php
-                        /* The block of code you provided is initializing variables with specific values
-                        related to an importador (importer) entity. Here's a breakdown of what each
-                        variable represents: */
+
+    $variablefor=$_POST['deletebackgroundbutton'];
+    // echo $variablefor;
+    //     $varPru ="";
+
+            $consultarBD ="SELET * FROM siaimportador WHERE nit = '$variablefor' ";
+            $queryconsultarBD = $conection->query($consultarBD);
+                
+            while($l = $queryconsultarBD->fetch_assoc()){
+                echo $l;
+            }
+
+                 $queryimportcustom = new ImportadorQueryGeneral($conection,$varPru);
+                 echo $queryimportcustom->imprimirenpantallaqueryimport($conection,$varPru );
 
                             $nit = 1012458898;
                             $tipodocumento = "NIT";
@@ -118,34 +129,7 @@
                             $actividadeconomicadesc = "Prueba version 4 de actividad economica";
                             $estado = "Activo"; 
 
-            /* The code snippet `  = new importadordatos(, , ,
-            , , , , , ,
-            , , , , ,
-            );` is creating a new instance of a class named `importadordatos` and initializing it
-            with the provided parameters. */
-
-                // $prueba = new importadordatos($nit, 
-                //                                 $tipodocumento,
-                //                                 $razonsocial,
-                //                                 $nivelcomercialcod,
-                //                                 $nivelcomercialdesc,
-                //                                 $telefono,
-                //                                 $direccion,
-                //                                 $correoelectronico,
-                //                                 $pais,
-                //                                 $depto,
-                //                                 $administracionmercancia,
-                //                                 $CodigoOEA,
-                //                                 $actividadeconomicacod,
-                //                                 $actividadeconomicadesc,
-                //                                 $estado
-                //                             );
-                                            
-                //                     /* The line `echo ->imprimirenpantalla();` is calling a method named
-                //                     `imprimirenpantalla()` on the object `` and then outputting the
-                //                     result of that method to the screen. */
-
-                //                     echo $prueba->imprimirenpantalla();        
+                    
                                 
         ?>
 
@@ -189,7 +173,13 @@
             
 
         </form>
+
+
+
+
+
+        
         
 </div>
 </body>
-</html>
+</html> 

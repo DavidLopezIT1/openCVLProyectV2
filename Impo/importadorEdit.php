@@ -97,35 +97,23 @@
                         </header>
                     </div>
 
-        <?php
-
-                            // $nit = 1012458898;
-                            // $tipodocumento = "NIT";
-                            // $razonsocial = "Agencia de Aduanas master Escobar 2";
-                            // $nivelcomercialcod = 1;
-                            // $nivelcomercialdesc = "Mayorista";
-                            // $telefono = 3212197189;
-                            // $direccion = "KLLE 58H #92 Bis-1";
-                            // $correoelectronico = "escobar2.aleja2@gmail.com";
-                            // $pais = "Colombia";
-                            // $depto = "Soacha";
-                            // $administracionmercancia = "Armenia";
-                            // $CodigoOEA ="RRJ55A";
-                            // $actividadeconomicacod = "1271";
-                            // $actividadeconomicadesc = "Prueba version 4 de actividad economica";
-                            // $estado = "Activo"; 
-
-           
-        ?>
-
 <?php
-if (isset($_POST['idEdit'])) {
-    $id = intval($_POST['idEdit']); // Sanitizar el dato recibido
-    echo "ID recibido: " . $id;
-} else {
-    echo "No se ha recibido el ID.";
-}
+            $recibirvariable = $_GET['checkboxitemv'];
+            foreach($recibirvariable AS $rowID){
+                $rowID ;
+            }
+
+
+                    
+                  $impresionEditImportador = new ImportadorEdit($conection);
+                    echo $impresionEditImportador->imprimirenpantallaEdit($conection, $rowID);
+
+                    // if(isset($_POST['SendInfo'])){
+                    //     $prueba->ConsultareInsertImportador($conection);
+                    // }
+                        
 ?>
+
 
             <div>
             <footer>
@@ -141,15 +129,7 @@ if (isset($_POST['idEdit'])) {
                     <div class="Buttons_Container_Send"> 
                         <button name="SendInfo">Enviar Datos</button>
                         
-                            <?php
-
-                                    
-                                    
-                                    // if(isset($_POST['SendInfo'])){
-                                    //     $prueba->ConsultareInsertImportador($conection);
-                                    // }
-                                        
-                            ?>
+                            
                             
                         <button name="SalidaImportador">
                             <a href="importadores.php" class="Salida_Segura2">
@@ -163,6 +143,12 @@ if (isset($_POST['idEdit'])) {
 
         </form>
         
+        <?php 
+        
+        
+        ?>
+
+
 </div>
 </body>
 </html>

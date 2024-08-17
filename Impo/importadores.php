@@ -35,6 +35,29 @@
 </header>
 
 <main>
+
+<script>
+
+function changedform1(parameter, param2){
+    document.getElementById('miFormulario');
+    let generalformethod = document.getElementById('miFormulario');
+    generalformethod.action = parameter;
+    generalformethod.method = param2;
+
+    // document.getElementById('miFormulario').submit();
+}
+
+function changedform2(parameter, param3){
+    document.getElementById('miFormulario');
+    let generalformethod = document.getElementById('miFormulario');
+    generalformethod.action = parameter;
+    generalformethod.method = param2;
+
+    // document.getElementById('miFormulario').submit();
+}
+
+</script>
+
     <form action="importadores.php" method="post" id="miFormulario">
     <div class="container">
         <header class="header2">
@@ -56,7 +79,7 @@
 
             <div class="icon_Table_Functions">
                 <button name ="createimport"><i class="fa-solid fa-plus" id="icon_Table_Functions"></i></button>
-                <button name ="editimport"><i class="fa-solid fa-pen" id="icon_Table_Functions" ></i></button>
+                <button name ="editimport" onclick="changedform1('importadorEdit.php', 'get')"><i class="fa-solid fa-pen" id="icon_Table_Functions" ></i></button>
                 <button name="deletefrom"><i class="fa-solid fa-trash" id="icon_Table_Functions"></i></button>
                 <button name="statusfrom"><i class="fa-solid fa-rotate" id="icon_Table_Functions"></i></button>
 
@@ -67,7 +90,8 @@
                     }
                     if(isset($_POST['editimport'])){
                         $editimport = $_POST['editimport'];
-                        // header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/importadorEdit.php" . urlencode());
+                    }else{
+                        $editimport ="";
                     }
                     if(isset($_POST['stausbutton'])){
                         $stausbutton = $_POST['stausbutton'];
@@ -93,17 +117,17 @@
                     $variabledecontrol = false;                   
                     $querbd = "";
                             
-                            if (isset($_POST['querbd'])) {
+                            if(isset($_POST['querbd'])) {
                                 $querbd = $_POST['querbd'];
                                 $variabledecontrol = true;
                             }
-                            if ($variabledecontrol && $querbd != "") {
+                            if($variabledecontrol && $querbd != "") {
                                 $query1 = "SELECT * FROM siaimportador WHERE nit = '" . mysqli_real_escape_string($conection, $querbd) . "'";
                                 $resultquery = $conection->query($query1);
                             
-                                while ($a = $resultquery->fetch_assoc()) {
+                                while($a = $resultquery->fetch_assoc()) {
                                     echo "<tr>" .
-                                         "<td><a href=''>" . htmlspecialchars($a['nit']) . "</a></td>" .
+                                         "<td><button class='deletebackground' name'deletebackgroundbutton' onclick='changedform2('importadorquery.php', 'get')'><a href='http://localhost/Proyecto_soft/openCVLProyect/impo/importadorquery.php'>" . htmlspecialchars($a['nit']) . "</a></button></td>" .
                                          "<td>" . htmlspecialchars($a['razonsocial']) . "</td>" .
                                          "<td>" . htmlspecialchars($a['telefono']) . "</td>" .
                                          "<td>" . htmlspecialchars($a['direccion']) . "</td>" .
@@ -111,13 +135,13 @@
                                          "<td><input type='checkbox' style='accent-color: yellow' class='checkboxitem' name='checkboxitemv[]' value='" . htmlspecialchars($a['id']) . "'></td>" .
                                          "</tr>";
                                 }
-                            } else {
+                            } else{
                                 $query2 = "SELECT * FROM siaimportador";
                                 $resultquery2 = $conection->query($query2);
                             
-                                while ($a = $resultquery2->fetch_assoc()) {
+                                while($a = $resultquery2->fetch_assoc()) {
                                     echo "<tr>" .
-                                         "<td><a href='http://localhost/Proyecto_soft/openCVLProyect/impo/importadorquery.php'>" . htmlspecialchars($a['nit']) . "</a></td>" .
+                                    "<td><button class='deletebackground' name='deletebackgroundbutton' value='" . htmlspecialchars($a['nit']) . "' onclick=\"changedform2('importadorquery.php', 'get')\">" . htmlspecialchars($a['nit']) . "</button></td>" . 
                                          "<td>" . htmlspecialchars($a['razonsocial']) . "</td>" .
                                          "<td>" . htmlspecialchars($a['telefono']) . "</td>" .
                                          "<td>" . htmlspecialchars($a['direccion']) . "</td>" .
@@ -126,9 +150,9 @@
                                          "</tr>";
                                 }
                             }
-                            if (isset($_POST['checkboxitemv']) && isset($_POST['deletefrom'])) {
+                            if(isset($_POST['checkboxitemv']) && isset($_POST['deletefrom'])) {
 
-                                foreach ($_POST['checkboxitemv'] AS $selectedId) {
+                                foreach($_POST['checkboxitemv'] AS $selectedId) {
 
                                     $selectedId = mysqli_real_escape_string($conection, $selectedId);
                                     $querydelete = "DELETE FROM siaimportador WHERE id = '$selectedId'";
@@ -143,7 +167,7 @@
                             }
                                 if(isset($_POST['checkboxitemv']) && isset($_POST['statusfrom'])){
 
-                                        foreach ($_POST['checkboxitemv'] AS $keystatus1){
+                                        foreach($_POST['checkboxitemv'] AS $keystatus1){
                                             $querystatussql ="SELECT * FROM siaimportador";
                                             $resultquerystatussql = $conection->query($querystatussql);
                                             $statusInact = "Inactivo";
@@ -157,6 +181,7 @@
                                                             $selectedIdstatus = mysqli_real_escape_string($conection, $selectedIdstatus);
                                                             $querystatus = "UPDATE siaimportador SET estado = 'Inactivo' WHERE id = '$selectedIdstatus'";
                                                             $resulrQuerystatus = $conection->query($querystatus);
+                                                            echo"<script>alert('Importador Inactivado exitosamente')</script>";
                                                             break;
                                                         }
 
@@ -166,6 +191,7 @@
                                                             $selectedIdstatus = mysqli_real_escape_string($conection, $selectedIdstatus);
                                                             $querystatus2 = "UPDATE siaimportador SET estado = 'Activo' WHERE id = '$selectedIdstatus'";
                                                             $resulrQuerystatus = $conection->query($querystatus2);
+                                                            echo"<script>alert('Importador Activado exitosamente')</script>";
                                                             break;
                                                             }
                                                         }
@@ -174,18 +200,16 @@
                                             }
                                     }  
 
-                            if(isset($_POST['checkboxitemv']) && $_POST['editimport']){
-                                $url = "http://localhost/Proyecto_soft/openCVLProyect/impo/importadorEdit.php";
-
+                            if(isset($_POST['checkboxitemv']) && $editimport!=""){
+                               
                                 foreach($_POST['checkboxitemv'] AS $queryEditV1){
-                                    $idEdit = array("idEdit" => $queryEditV1);
+                                  echo $queryEditV1;
+
                                 }
-                                $curlinit = curl_init($url);
-                                curl_setopt($curlinit, CURLOPT_RETURNTRANSFER, true);
-                                curl_setopt($curlinit, CURLOPT_POST, true); // Usar el método POST
-                                curl_setopt($curlinit, CURLOPT_POSTFIELDS, http_build_query($idEdit)); // Convertir datos a formato query string
-                                $response = curl_exec($curlinit);
-                                echo"<script>Window.location.href ='http://localhost/Proyecto_soft/openCVLProyect/impo/importadorEdit.php'</script>";
+                            }
+
+                            if(isset($_POST['deletebackgroundbutton'])){
+                                $variablefor=$_POST['deletebackgroundbutton'];
                             }
                                     
 
@@ -205,5 +229,14 @@
 
     </form>
 
+            <script>
+                
+            </script>
+
+
+
+
+
 </body>
 </html>
+

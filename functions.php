@@ -1,7 +1,5 @@
 <?php
 
-
-
 class importadordator {
 
     public $conection;
@@ -321,11 +319,81 @@ class importadordator {
         }
 
         
+                class ImportadorEdit{
 
-      
-        
+                        public $conection;
+                    
+                        public function __construct($conection){
+                            $this->conection =$conection;
+                        }
+                    
+                    
+                                public function imprimirenpantallaEdit($conection, $parampostscript){
+
+                                    $queryBD = "SELECT * FROM siaimportador WHERE id = '$parampostscript'";
+                                    $ExecutequeryBD = $this->conection->query($queryBD);
+                                    while($varR = $ExecutequeryBD->fetch_assoc()) {
+                                        
+                                    echo "<div class ='ContainerGeneralImportador'>";
+                                        echo "<h3>" . "Tipodocumento " . "</h3>" . "<input type='text' name='tipodocumento' class ='datosinputimportador' name='prueba1'>" . "<br>" ;
+                                        echo "<h3 class='datosinputimportador1'>" . "Nit " . "</h3>" . "<input type='text' name='nit' class ='datosinputimportador1' >" . "<br>" ;
+                                        echo "<h3>" . "Razonsocial " . "</h3>" . "<input type='text' name='razonsocial' class ='datosinputimportador' >" . "<br>" ;
+                                        echo "<h3 class='datosinputimportador1'>" . "Nivelcomercialcod " . "</h3>" . "<input type='text' name='nivelcomercialcod' class ='datosinputimportador1' >" . "<br>" ;
+                                        echo "<h3>" . "Nivelcomercialdesc " . "</h3>" . "<input type='text' name='nivelcomercialdesc' class ='datosinputimportador' >" . "<br>" ;
+                                        echo "<h3 class='datosinputimportador1'>" . "Telefono " . "</h3>" . "<input type='text' name='telefono' class ='datosinputimportador1' >" . "<br>" ;
+                                        echo "<h3>" . "Direccion " . "</h3>" . "<input type='text' name='direccion' class ='datosinputimportador' >" . "<br>" ;
+                                        echo "<h3 class='datosinputimportador1'>" . "Correoelectronico " . "</h3>" . "<input type='text' name='correoelectronico' class ='datosinputimportador1' >" . "<br>" ;
+                                        echo "<h3>" . "Pais " . "</h3>" . "<input type='text' name='pais' class ='datosinputimportador' >" . "<br>" ;
+                                        echo "<h3 class='datosinputimportador1'>" . "Depto " . "</h3>" . "<input type='text' name='depto' class ='datosinputimportador1' >" . "<br>" ;
+                                        echo "<h3>" . "Administracionmercancia " . "</h3>" . "<input type='text' name='administracionmercancia' class ='datosinputimportador' >" . "<br>" ;
+                                        echo "<h3 class='datosinputimportador1'>" . "CodigoOEA " . "</h3>" . "<input type='text' name='CodigoOEA' class ='datosinputimportador1' >" . "<br>" ;
+                                        echo "<h3>" . "Actividadeconomicacod " . "</h3>" . "<input type='text' name='actividadeconomicacod' class ='datosinputimportador' >" . "<br>" ;
+                                        echo "<h3 class='datosinputimportador1'>" . "Actividadeconomicadesc " . "</h3>" . "<input type='text' name='actividadeconomicadesc' class ='datosinputimportador1' >" . "<br>" ;
+                                        echo "<h3>" . "Estado " . "</h3>" . "<input type='text' name='estado' class ='datosinputimportador' >" ;       
+                                        echo "</div>";
+                                    }
+                }
+            
+            }
 
 
+                        class ImportadorQueryGeneral{
 
+                            public $conection;
+                            public $paramid;
+                        
+                            public function __construct($conection, $paramid){
+                                $this->conection =$conection;
+                                $this->paramid =$paramid;
+                            }
+                        
+                        
+                                    public function imprimirenpantallaqueryimport($conection, $paramid){
+
+                                        $queryBD = "SELECT * FROM siaimportador WHERE id ='$paramid'";
+                                        $ExecutequeryBD = $this->conection->query($queryBD);
+                                        while($varR = $ExecutequeryBD->fetch_assoc()) {
+                                            
+                                        echo "<div class ='ContainerGeneralImportador'>";
+                                            echo "<h3>" . "Tipodocumento " . "</h3>" . "<input type='text' name='tipodocumento' class ='datosinputimportador' name='prueba1' value ='{$varR['tipodocumento']}'>" . "<br>" ;
+                                            echo "<h3 class='datosinputimportador1'>" . "Nit " . "</h3>" . "<input type='text' name='nit' class ='datosinputimportador1' >" . "<br>" ;
+                                            echo "<h3>" . "Razonsocial " . "</h3>" . "<input type='text' name='razonsocial' class ='datosinputimportador' >" . "<br>" ;
+                                            echo "<h3 class='datosinputimportador1'>" . "Nivelcomercialcod " . "</h3>" . "<input type='text' name='nivelcomercialcod' class ='datosinputimportador1' >" . "<br>" ;
+                                            echo "<h3>" . "Nivelcomercialdesc " . "</h3>" . "<input type='text' name='nivelcomercialdesc' class ='datosinputimportador' >" . "<br>" ;
+                                            echo "<h3 class='datosinputimportador1'>" . "Telefono " . "</h3>" . "<input type='text' name='telefono' class ='datosinputimportador1' >" . "<br>" ;
+                                            echo "<h3>" . "Direccion " . "</h3>" . "<input type='text' name='direccion' class ='datosinputimportador' >" . "<br>" ;
+                                            echo "<h3 class='datosinputimportador1'>" . "Correoelectronico " . "</h3>" . "<input type='text' name='correoelectronico' class ='datosinputimportador1' >" . "<br>" ;
+                                            echo "<h3>" . "Pais " . "</h3>" . "<input type='text' name='pais' class ='datosinputimportador' >" . "<br>" ;
+                                            echo "<h3 class='datosinputimportador1'>" . "Depto " . "</h3>" . "<input type='text' name='depto' class ='datosinputimportador1' >" . "<br>" ;
+                                            echo "<h3>" . "Administracionmercancia " . "</h3>" . "<input type='text' name='administracionmercancia' class ='datosinputimportador' >" . "<br>" ;
+                                            echo "<h3 class='datosinputimportador1'>" . "CodigoOEA " . "</h3>" . "<input type='text' name='CodigoOEA' class ='datosinputimportador1' >" . "<br>" ;
+                                            echo "<h3>" . "Actividadeconomicacod " . "</h3>" . "<input type='text' name='actividadeconomicacod' class ='datosinputimportador' >" . "<br>" ;
+                                            echo "<h3 class='datosinputimportador1'>" . "Actividadeconomicadesc " . "</h3>" . "<input type='text' name='actividadeconomicadesc' class ='datosinputimportador1' >" . "<br>" ;
+                                            echo "<h3>" . "Estado " . "</h3>" . "<input type='text' name='estado' class ='datosinputimportador' >" ;       
+                                            echo "</div>";
+                                        }
+                    }
+
+                    }
 
 

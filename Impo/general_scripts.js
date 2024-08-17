@@ -11,3 +11,12 @@ document.getElementById('generalCheckbox').addEventListener("change", function()
 });
 }
 
+function changedform1(parameter){
+    document.getElementById('miFormulario').action = parameter;
+    document.getElementById('miFormulario').submit();
+}
+
+function changedform2(parameter){
+    document.getElementById('miFormulario').action = parameter;
+    document.getElementById('miFormulario').submit();
+}
