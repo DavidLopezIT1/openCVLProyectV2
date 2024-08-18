@@ -8,7 +8,8 @@ body {
 #sidebar {
     width: 30%;
     min-width: 250px;
-    background: #2c3e50;
+    /* background: #2c3e50; */
+    background: #010D26;
     color: white;
     padding: 15px;
     box-sizing: border-box;
@@ -22,20 +23,6 @@ body {
     display: none;
     width: 40px;
 }
-#sidebar .user-info2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 210px;
-    text-align: center;
-    margin-left: 25%;
-    margin-bottom: 40px;
-    margin-top: 60px;
-    border: solid 3px white;
-    border-radius: 50%;
-}
-
 #sidebar .user-info {
     text-align: center;
     margin-bottom: 20px;
@@ -45,15 +32,21 @@ body {
 #sidebar.hidden .user-info {
     display: none;
 }
+img{
+    border-radius: 50%;
+    border: solid 6px #3DBCD9;
+}
 #sidebar .user-info2 img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    /* margin-bottom: 05px; */
+    margin-bottom: 25px;
     object-fit: cover;
 }
 #sidebar .toggle-btn {
-    background: #34495e;
+    /* background: #34495e; */
+    /* background: #033E8C; */
+    background: #022859;
     border: none;
     color: white;
     width: 40px;
@@ -65,6 +58,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    border: solid 2px #3DBCD9;
+    
+}
+#sidebar .toggle-btn:hover {
+    background: #3DBCD9;
 }
 #main {
     flex: 1;
@@ -79,13 +77,16 @@ body {
     width: 100px;
     height: 30px;
     font-size: 10px;
-    background: #3498db;
+    background: #022859;
     padding: 10px ;
     color: azure;
+    border: solid 2px #3DBCD9;
+    
 }
 #main header {
     display: flex;
-    background: #34495e;
+    background: #010D26;
+    /* background: #34495e; */
     color: white;
     padding: 10px ;
     justify-content: center;
@@ -114,7 +115,7 @@ a{
     color: azure;
 }
 #main .Salida_Segura:hover{
-    background-color: teal;
+    background-color: #3DBCD9;
 }
 .ModButtons{
     color: black;
@@ -122,10 +123,10 @@ a{
 footer {
     text-align: center;
     padding: 15px;
-    margin-top: 200px;
-    border-top: 2px solid #34495eba;
+    margin-top: 220px;
+    border-top: 2px solid #3DBCD9;
     border-radius: 3px;
-    background-color: #34495eba;
+    background-color: #0D0D0D;
     box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.311);
 }
 footer p {
