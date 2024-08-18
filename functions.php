@@ -372,11 +372,13 @@ class importadordator {
 
                                         $queryBD = "SELECT * FROM siaimportador WHERE id ='$paramid'";
                                         $ExecutequeryBD = $this->conection->query($queryBD);
+
                                         while($varR = $ExecutequeryBD->fetch_assoc()) {
                                             
                                         echo "<div class ='ContainerGeneralImportador'>";
+                                            
                                             echo "<h3>" . "Tipodocumento " . "</h3>" . "<input type='text' name='tipodocumento' class ='datosinputimportador' name='prueba1' value ='{$varR['tipodocumento']}'>" . "<br>" ;
-                                            echo "<h3 class='datosinputimportador1'>" . "Nit " . "</h3>" . "<input type='text' name='nit' class ='datosinputimportador1' >" . "<br>" ;
+                                            echo "<h3 class='datosinputimportador1'>" . "Nit " . "</h3>" . "<input type='text' name='nit' class ='datosinputimportador1'  value ='{$varR['nit']}'>" . "<br>" ;
                                             echo "<h3>" . "Razonsocial " . "</h3>" . "<input type='text' name='razonsocial' class ='datosinputimportador' >" . "<br>" ;
                                             echo "<h3 class='datosinputimportador1'>" . "Nivelcomercialcod " . "</h3>" . "<input type='text' name='nivelcomercialcod' class ='datosinputimportador1' >" . "<br>" ;
                                             echo "<h3>" . "Nivelcomercialdesc " . "</h3>" . "<input type='text' name='nivelcomercialdesc' class ='datosinputimportador' >" . "<br>" ;

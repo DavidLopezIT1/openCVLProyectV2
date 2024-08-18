@@ -67,7 +67,7 @@ function changedform2(parameter, param3){
         <main>
             <div class="search-container">
                 <div class="search-form">
-                    <input type="text" id="querybd" name="querbd" placeholder="Introduce tu consulta" >
+                    <input type="text" id="querybd" name="querbd" placeholder="Consulta Inducida" >
                     <button type="submit" name ="botonconsultaImportadores" >
                     <i class="fa-solid fa-eye"></i>
                     </button>
@@ -127,7 +127,7 @@ function changedform2(parameter, param3){
                             
                                 while($a = $resultquery->fetch_assoc()) {
                                     echo "<tr>" .
-                                         "<td><button class='deletebackground' name'deletebackgroundbutton' onclick='changedform2('importadorquery.php', 'get')'><a href='http://localhost/Proyecto_soft/openCVLProyect/impo/importadorquery.php'>" . htmlspecialchars($a['nit']) . "</a></button></td>" .
+                                    "<td><button class='deletebackground' name='deletebackgroundbutton' value='" . htmlspecialchars($a['nit']) . "' onclick=\"changedform2('importadorquery.php', 'get')\">" . htmlspecialchars($a['nit']) . "</button></td>" . 
                                          "<td>" . htmlspecialchars($a['razonsocial']) . "</td>" .
                                          "<td>" . htmlspecialchars($a['telefono']) . "</td>" .
                                          "<td>" . htmlspecialchars($a['direccion']) . "</td>" .
@@ -203,13 +203,14 @@ function changedform2(parameter, param3){
                             if(isset($_POST['checkboxitemv']) && $editimport!=""){
                                
                                 foreach($_POST['checkboxitemv'] AS $queryEditV1){
-                                  echo $queryEditV1;
+                                     $queryEditV1 = urlencode($queryEditV1);
+                                    echo $queryEditV1;
 
                                 }
                             }
 
                             if(isset($_POST['deletebackgroundbutton'])){
-                                $variablefor=$_POST['deletebackgroundbutton'];
+                                $variablefor= urlencode($_POST['deletebackgroundbutton']);
                             }
                                     
 

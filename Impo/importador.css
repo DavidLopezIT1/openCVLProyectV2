@@ -150,3 +150,7 @@ footer p {
     border-radius: 3px;
     color: #000000;
 }
+legend {
+    color:#007bff; 
+    font-size: 17px;
+}
