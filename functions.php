@@ -25,7 +25,7 @@ class importadordator {
                     echo "<h3 class='datosinputimportador1'>" . "CodigoOEA " . "</h3>" . "<input type='text' name='CodigoOEA' class ='datosinputimportador1' >" . "<br>" ;
                     echo "<h3>" . "Actividadeconomicacod " . "</h3>" . "<input type='text' name='actividadeconomicacod' class ='datosinputimportador' >" . "<br>" ;
                     echo "<h3 class='datosinputimportador1'>" . "Actividadeconomicadesc " . "</h3>" . "<input type='text' name='actividadeconomicadesc' class ='datosinputimportador1' >" . "<br>" ;
-                    echo "<h3>" . "Estado " . "</h3>" . "<input type='text' name='estado' class ='datosinputimportador' >" ;       
+                    echo "<h3>" . "Estado " . "</h3>" . "<input type='text' name='estado' class ='datosinputimportador' disabled>" ;       
                     echo "</div>";
                     echo "<div class='Buttons_Container_Send'> 
                                             <button name='SendInfo'>Crear Importador</button>
@@ -34,7 +34,7 @@ class importadordator {
                                                     Salir
                                                 </a>
                                             </button>
-                                        </div>  ";;    
+                                        </div>  ";  
                     
                 
 
@@ -286,7 +286,7 @@ class importadordator {
                                         echo "<script>alert('Datos de importador insertados con exito.')</script>";
                                         $constestatusImport=$conection->query($SelectEstadoDelImportador);
                                         if($constestatusImport){
-                                            header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/importadores.php");
+                                            header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php");
                                         }
                                     }
                                     break;

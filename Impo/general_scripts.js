@@ -20,3 +20,4 @@ function changedform2(parameter){
     document.getElementById('miFormulario').action = parameter;
     document.getElementById('miFormulario').submit();
 }
+let imprrimir = (__dirname);

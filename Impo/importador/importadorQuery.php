@@ -12,8 +12,8 @@
         
     <?php
 
-    include "../functions.php";
-    include "../conection.php";
+    include 'C:/xampp\htdocs\Proyecto_soft\openCVLProyect/functions.php';
+    include "C:/xampp\htdocs\Proyecto_soft\openCVLProyect/conection.php";
 
     session_start();
 
@@ -28,7 +28,7 @@
                 $sesionValue= "<strong class='Bienvenida'>Bienvenido : </strong>" . "<strong>$sesion</strong>";
                 echo $sesionValue;
 
-                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/impo/importadores.php' class='rutas'>Nivel anterior</a>";
+                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php' class='rutas'>Nivel anterior</a>";
                             
                 $SpecificRouteVar = __FILE__;
 

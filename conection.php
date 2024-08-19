@@ -14,6 +14,6 @@ if($conection->connect_errno){
     //    echo"<script>alert('Conexión exitosa con la base de datos')</script>";
 }
 
-
+// echo __DIR__;
 
 ?>

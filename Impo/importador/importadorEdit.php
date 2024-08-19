@@ -12,8 +12,8 @@
         
     <?php
 
-    include "../functions.php";
-    include "../conection.php";
+    include 'C:/xampp\htdocs\Proyecto_soft\openCVLProyect/functions.php';
+    include "C:/xampp\htdocs\Proyecto_soft\openCVLProyect/conection.php";
 
     session_start();
 
@@ -28,7 +28,7 @@
                 $sesionValue= "<strong class='Bienvenida'>Bienvenido : </strong>" . "<strong>$sesion</strong>";
                 echo $sesionValue;
 
-                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/impo/importadores.php' class='rutas'>Nivel anterior</a>";
+                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php' class='rutas'>Nivel anterior</a>";
                             
                 $SpecificRouteVar = __FILE__;
 
@@ -69,22 +69,12 @@
             foreach($recibirvariable AS $rowID){
                 $rowID ;
             }
-
-
                     
                   $impresionEditImportador = new ImportadorEdit($conection, $rowID);
                     echo $impresionEditImportador->imprimirenpantallaEdit($conection, $rowID);
-
-                    // if(isset($_POST['SendInfo'])){
-                    //     $prueba->ConsultareInsertImportador($conection);
-                    // }
-                        
 ?>
-
-
             <div>
             <footer>
-                <!-- <button><a href="ModuleImpo.php">volver</a></button><br><br> -->
                 <p>&copy; 2024 Importaciones - David L</p>
             </footer>
             </div>
@@ -92,18 +82,26 @@
             </fieldset>
 
                 <br><br>
+                <script>
+                    function
+                    let varpru = document.getElementById('SalidaImportadorId');
+
+                </script>
 
                     <div class="Buttons_Container_Send"> 
                         <button name="SendInfo">Enviar Datos</button>
                         
                             
                             
-                        <button name="SalidaImportador">
+                        <button name="SalidaImportador" id="SalidaImportadorId">
                             <a href="importadores.php" class="Salida_Segura2">
                                 Salir
                             </a>
                         </button>
 
+                        <?php 
+                        
+                        ?>
                     </div>
                     <div>
             

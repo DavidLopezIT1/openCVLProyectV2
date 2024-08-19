@@ -15,8 +15,8 @@
     /* The lines `include "../functions.php";` and `include "../conection.php";` are including external PHP
     files into the current PHP script. */
 
-    include "../functions.php";
-    include "../conection.php";
+    include 'C:/xampp\htdocs\Proyecto_soft\openCVLProyect/functions.php';
+    include "C:/xampp\htdocs\Proyecto_soft\openCVLProyect/conection.php";
     
    /* `session_start();` is a PHP function that initializes a new session or resumes the existing
    session based on a session identifier passed via a GET or POST request, or a cookie. It is
@@ -45,7 +45,7 @@
                 $sesionValue= "<strong class='Bienvenida'>Bienvenido : </strong>" . "<strong>$sesion</strong>";
                 echo $sesionValue;
 
-                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/impo/importadores.php' class='rutas'>Nivel anterior</a>";
+                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php' class='rutas'>Nivel anterior</a>";
                             
                 /* The code snippet ` = __FILE__;  = "htdocs";` is
                 assigning the value of the magic constant `__FILE__` to the variable
