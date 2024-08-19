@@ -11,13 +11,8 @@
 <header>
         
     <?php
-           /* This block of code in PHP is responsible for checking the session variable 'nombre'.
-           Here's what each part does: */
 
             session_start();
-
-            /* This block of PHP code is responsible for checking the session variable 'nombre'. Here's
-            what each part does: */
 
             $sesion = $_SESSION['nombre'];
                         if($sesion == null || $sesion ==""){
@@ -26,31 +21,15 @@
                             die();
                             }   
 
-
-                /* The line `                = "<strong class='Bienvenida'>Bienvenido :
-                </strong>" . "<strong></strong>";` is creating a string variable
-                `` that contains an HTML structure. */
-
                 $sesionValue= "<strong class='Bienvenida'>Bienvenido : </strong>" . "<strong>$sesion</strong>";
                 echo $sesionValue;
 
                 echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/interfaz.php' class='rutas'>Nivel anterior</a>";
-                            
-                /* The line ` = __FILE__;` in the PHP code is assigning the value of
-                the magic constant `__FILE__` to the variable ``. */
 
                 $SpecificRouteVar = __FILE__;
                 $palabraEspecifica = "htdocs";
-                
-                /* The line ` = strpos(, );` in the PHP
-                code is using the `strpos()` function to find the position of the first occurrence
-                of a substring within a string. */
 
                 $posicionname = strpos($SpecificRouteVar, $palabraEspecifica);
-
-                /* This block of PHP code is checking if the variable `` is not equal to
-                `false`. If it's not false, it then adds the length of the string stored in the
-                variable `` to the value of ``. */
                 
                 if ($posicionname !== false) {
                     
@@ -87,14 +66,6 @@
     <form action=""> 
         <fieldset>
             <legend>Parámetros</legend>
-
-            <!-- /* The above code appears to be HTML markup with Font Awesome icons and links. It seems to
-            be creating a list of parameters or categories with corresponding icons and links to
-            different pages or sections of a project management system. Each `<div>` element with
-            the class "Imparametrica" contains an icon and a link to a specific section such as
-            Importador, Proveedor, Productos, Inconterm, Transportador, etc. The links likely lead
-            to different functionalities or information related to each category within the project
-            management system. */ -->
             
             <div class="Parametros">
                 <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-user-secret"></i><br><br><a href="http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php">Importador</a></div>
@@ -135,13 +106,6 @@
         <fieldset>
             <legend>Reportes</legend>
             
-            <!-- /* The above code is HTML markup with PHP comments. It seems to be a section of a web page
-            displaying a list of reports with icons and links for each report. Each report has an
-            icon and a link for a specific type of consultation, such as "Consulta General",
-            "Consulta Productos", "Consulta Importador", and so on. The code structure suggests that
-            it is meant to be a visual representation of a menu or navigation system for accessing
-            different types of reports or consultations. */ -->
-            
             <div class="Reportes">      
                 <div class="ImReporte" name="ImReporte"><i class="fa-solid fa-circle-info"></i><br><br><a href="">Consulta General</a></div>
                 <div class="ImReporte" name="ImReporte"><i class="fa-solid fa-qrcode"></i><br><br><a href="">Consulta Productos</a></div>
@@ -170,7 +134,6 @@
 
 <div>
             <footer>
-                <!-- <button><a href="ModuleImpo.php">volver</a></button><br><br> -->
                 <p>&copy; 2024 Importaciones - David L</p>
             </footer>
 </div>

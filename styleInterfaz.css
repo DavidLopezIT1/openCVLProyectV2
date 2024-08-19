@@ -67,7 +67,7 @@ img{
 #main {
     flex: 1;
     padding: 20px;
-    background: #ecf0f1;
+    background:#022859;
     /* box-sizing: border-box; */
     transition: margin-left 0.3s;
     overflow-y:scroll;
@@ -86,17 +86,19 @@ img{
 #main header {
     display: flex;
     background: #010D26;
-    /* background: #34495e; */
+    border: solid 2px #3DBCD9;
     color: white;
     padding: 10px ;
     justify-content: center;
     align-items: center;
 }
 #main .submodule {
-    background: rgba(255, 255, 255, 0.308);
+    background: #010D26;
+    border: solid 2px #3DBCD9;
     margin: 10px 0;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
 }
 #main .submodule button {
     background: #3498db;
@@ -118,7 +120,7 @@ a{
     background-color: #3DBCD9;
 }
 .ModButtons{
-    color: black;
+    color: rgb(255, 255, 255);
 }
 footer {
     text-align: center;

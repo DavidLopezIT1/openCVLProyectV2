@@ -1,15 +1,18 @@
 html{
     box-sizing: border-box;
     font-size: 12px;
+    background: #0D0D0D;
 }
 header{
     margin-bottom: 5px;
     height: 50px;
     background-color: #010D26;
+    border: solid 2px #3DBCD9;
 }
 fieldset{
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.207);
     margin-bottom: 15px;
+    border-color:  #3DBCD9;
 }
 .Bienvenida{
     margin-left: 18px;
@@ -21,11 +24,10 @@ fieldset{
     
 }
 .Improceso{
-    background-color: #ffffff;
-    border: 1px solid #ffffff;
+    background-color: #010D26;
+    border: 2px solid #3DBCD9;
     padding: 20px;
     text-align: center; 
-    border: solid 1px black;
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.306);
 }
@@ -43,10 +45,11 @@ fieldset{
     border: solid 1px black;
     border-radius: 4px; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.306);
-    
+    background-color: #010D26;
+    border: 2px solid #3DBCD9;
 }
 .Imparametrica:hover, .Improceso:hover, .ImReporte:hover {
-    background-color: #3c404356;
+    background-color: #033E8C;
 }
 
 .Reportes{
@@ -62,7 +65,8 @@ fieldset{
     border: solid 1px black;
     border-radius: 4px; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.306);
-
+    background-color: #010D26;
+    border: 2px solid #3DBCD9;
 }
 .RutaGeneral{
     display: flex;
@@ -76,7 +80,7 @@ fieldset{
 }
 a{
     text-decoration: none;
-    color: rgb(1, 1, 1);
+    color: rgb(255, 255, 255);
     font-family:  'Arial Narrow Bold', sans-serif;
     margin-top: 10px;
 }
@@ -100,25 +104,29 @@ a{
 i{
     font-size: 20px;
     margin-bottom: 14px;
+    color: #ffffff;
 }
 strong{
     color: azure;
 }
 main{
     margin-bottom: 30px;
+    
 }
 footer {
     height: auto;
     text-align: center;
     padding: 15px;
     margin-top: 30px;
-    border-top: 2px solid #ddd;
-    background-color: #0D0D0D;
+    border-top: 2px solid #3DBCD9;
+    background-color: #010D26;
     box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.311);
     border-radius: 3px;
 }
 footer p {
     margin: 0;
     color: #ffffff;
-
+}
+legend{
+    color: #ffffff;
 }
