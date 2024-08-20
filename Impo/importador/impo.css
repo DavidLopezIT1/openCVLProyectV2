@@ -4,11 +4,14 @@ html{
     background: #0D0D0D;
 }
 header{
-    margin-bottom: 5px;
+    width: 98.67%;
     height: 50px;
     background-color: #010D26;
     border: solid 2px #3DBCD9;
+    position: fixed;
+    /* margin-bottom: 200px; */
 }
+
 fieldset{
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.207);
     margin-bottom: 15px;
@@ -100,7 +103,6 @@ a{
 .Salida_Segura:hover{
     background-color: #3DBCD9   ;
 }
-
 i{
     font-size: 20px;
     margin-bottom: 14px;
@@ -110,8 +112,7 @@ strong{
     color: azure;
 }
 main{
-    margin-bottom: 30px;
-    
+    padding-top: 6em;
 }
 footer {
     height: auto;
@@ -127,7 +128,7 @@ footer p {
     margin: 0;
     color: #ffffff;
 }
-legend{
+legend{ 
     color: #ffffff;
 }
  

@@ -10,7 +10,7 @@
 </head>
 <body >
 
-<header>
+<header class="headergeneral">
 
     <?php
     include 'C:/xampp\htdocs\Proyecto_soft\openCVLProyect/functions.php';

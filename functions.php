@@ -28,7 +28,7 @@ class importadordator {
                     echo "<h3>" . "Estado " . "</h3>" . "<input type='text' name='estado' class ='datosinputimportador' disabled>" ;       
                     echo "</div>";
                     echo "<div class='Buttons_Container_Send'> 
-                                            <button name='SendInfo'>Crear Importador</button>
+                                            <button name='SendInfo' class='SendInfo'>Crear Imp</button>
                                             <button name='SalidaImportador'>
                                                 <a href='importadores.php' class='Salida_Segura2'>
                                                     Salir

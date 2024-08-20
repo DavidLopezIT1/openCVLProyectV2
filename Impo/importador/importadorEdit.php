@@ -8,7 +8,7 @@
 </head>
 <body >
 
-<header>
+<header class="headergeneral">
         
     <?php
 
@@ -51,21 +51,24 @@
             <a href="http://localhost/Proyecto_soft/openCVLProyect/cierre_sesion.php">Salida Segura</a>
         </button>
 </header>
-
-        <form action="importadorEdit.php" method ="post">
+<main>
+        <form action="importadores.php" method ="post">
                 <fieldset>
-                    <legend>
-                        Editar / Importador 
-                    </legend>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color:#0D0D0D; font-size: 20px; margin-bottom: 10px;">Editar / Importador</strong>
+                    </div>
 
                     <div class="HeaderImportador">
-                        <header>
-                            <h1><p>Editar Datos Importador</p></h1>
+                        <header  class="HeaderImportador2">
+                            <h1><p  style=" margin-bottom: 20px;">Editar Datos Importador</p></h1>
                         </header>
                     </div>
 
 <?php
             $recibirvariable = $_GET['checkboxitemv'];
+            $recibirvariable;
+            
             foreach($recibirvariable AS $rowID){
                 $rowID ;
             }
@@ -100,14 +103,18 @@
                         </button>
 
                         <?php 
-                        
+                        if(isset($_POST['SalidaImportador'])){
+                            $buttonfef=$_POST['SalidaImportador'];
+                            header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php ");
+
+                        }
                         ?>
                     </div>
                     <div>
             
 
         </form>
-        
+        </main>      
         <?php 
         
         

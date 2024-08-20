@@ -82,17 +82,10 @@ include "conection.php";
 
         <div id="sidebar2">
             <footer>
-                <!-- <button><a href="ModuleImpo.php">volver</a></button><br><br> -->
                 <p>&copy; 2024 Importaciones - David L</p>
             </footer>
         </div>
 
-        <!-- /* The `</div>` closing tag in the provided code is closing a `<div>` element. In HTML, `<div>` is a
-        block-level element that is used to group and style content together. In this specific code snippet,
-        the `<div>` element with the id "sidebar" contains various elements such as user information,
-        buttons, and links. The `</div>` tag is used to close this particular `<div>` element, indicating
-        the end of the content that should be styled and positioned as a group within the sidebar section of
-        the webpage. */ -->
     </div>
 
             <div id="main" scroll>
@@ -104,7 +97,7 @@ include "conection.php";
 
                 <div class="submodule">
                     <h2><a href="./impo/importador/ModuleImpo.php" class="ModButtons">Importaciones</a></h2>
-                    <!-- <button>Ingresar</button> -->
+                    
                 </div>
 
                 <div class="submodule">

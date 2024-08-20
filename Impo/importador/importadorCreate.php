@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="importador.css">
+    <link rel="stylesheet" href="importador3.css">
     <title>Importador</title>
 </head>
 <body >
 
-<header>
+<header class="headergeneral">
         
     <?php
 
@@ -84,11 +84,11 @@
         </button>
 </header>
 
+<main>
         <form action="importadorCreate.php" method ="post">
                 <fieldset>
-                    <legend style="color:#007bff; font-size: 17px;" >
-                        Creación del importador
-                    </legend>
+                   
+                <strong><p style=" color:#0D0D0D; font-size:20px; font-family:black;">Crear Importador</p></strong>
 
                     <div class="HeaderImportador">
                         <header>
@@ -117,7 +117,7 @@
             
 
         </form>
-        
+        </main>     
 
 </body>
 </html>

@@ -8,8 +8,8 @@
 </head>
 <body >
 
-<header>
-        
+<header class="header2">
+         
     <?php
 
     include 'C:/xampp\htdocs\Proyecto_soft\openCVLProyect/functions.php';
@@ -52,31 +52,31 @@
             <a href="http://localhost/Proyecto_soft/openCVLProyect/cierre_sesion.php">Salida Segura</a>
         </button>
 </header>
+<main>
 
         <form action="importadorQuery.php" method ="post">
                 <fieldset>
-                    <legend>
-                        Consultar / Importador
-                    </legend>
 
+                    <div style="margin-bottom: 10px;">
+                        <strong style="color:#0D0D0D; font-size: 20px; margin-bottom: 10px;">Consultar / Importador</strong>
+                    </div>
                     <div class="HeaderImportador">
-                        <header>
-                            <h1><p>Datos Importador</p></h1>
+                        <header class="header3">
+                            <h1><p>Datos Importador</p ></h1>
                         </header>
                     </div>
-
+ 
         <?php
 
-    $variablefor=$_POST['deletebackgroundbutton'];
-        $variablefor;
-    //     $varPru ="";
+            $variablefor=$_POST['deletebackgroundbutton'];
+                $variablefor;
 
-            $consultarBD ="SELECT * FROM siaimportador WHERE nit = '$variablefor' ";
-            $queryconsultarBD = $conection->query($consultarBD);
-                
-            while($l = $queryconsultarBD->fetch_assoc()){
-                
-                echo "<div class ='ContainerGeneralImportador'>";
+                    $consultarBD ="SELECT * FROM siaimportador WHERE nit = '$variablefor' ";
+                    $queryconsultarBD = $conection->query($consultarBD);
+                        
+                    while($l = $queryconsultarBD->fetch_assoc()){
+                        
+                        echo "<div class ='ContainerGeneralImportador'>";
                                             
                                             echo "<h3>" . "Tipodocumento " . "</h3>" . "<input type='text' name='tipodocumento' class ='datosinputimportador' name='prueba1' value ='{$l['nit']}' disabled>" . "<br>" ;
                                             echo "<h3 class='datosinputimportador1'>" . "Nit " . "</h3>" . "<input type='text' name='nit' class ='datosinputimportador1'  value ='{$l['nit']}' disabled>" . "<br>" ;
@@ -94,10 +94,7 @@
                                             echo "<h3 class='datosinputimportador1'>" . "Actividadeconomicadesc " . "</h3>" . "<input type='text' name='actividadeconomicadesc' class ='datosinputimportador1'   value ='{$l['actividadeconomicadesc']}' disabled>" . "<br>" ;
                                             echo "<h3>" . "Estado " . "</h3>" . "<input type='text' name='estado' class ='datosinputimportador'   value ='{$l['estado']}' disabled>" ;       
                                             echo "</div>";
-
-               
-                }                    
-                                
+                }                                        
         ?>
 
             <div>
@@ -120,7 +117,7 @@
 
                         <?php 
                         if(isset($_POST['ExitBtn'])){
-                            header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/importadores.php");
+                            header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php");
                         }
                         ?>
 
@@ -129,7 +126,7 @@
             
 
         </form>
-
+        </main>
 
 
 

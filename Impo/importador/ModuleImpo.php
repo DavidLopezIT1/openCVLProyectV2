@@ -44,15 +44,19 @@
         ?>
 
     <button class="Salida_Segura">
+
         <a href="http://localhost/Proyecto_soft/openCVLProyect/cierre_sesion.php" class="salida_segura_a">Salida Segura</a>
+
     </button>
+    
 </header>
+
 <main> 
 
     <div>
         <form action="">
-            <fieldset> 
-                <legend>Procesos</legend>
+            <fieldset class="fieldset1"> 
+                <legend>Elaboración de Formularios</legend>
 
                 <div class="Procesos">
                     <div class="Improceso"><i class="fa-regular fa-square-plus"></i><br><br><a href="">Operaciones</a></div>
@@ -65,7 +69,7 @@
 <div>
     <form action=""> 
         <fieldset>
-            <legend>Parámetros</legend>
+            <legend>Parametrización</legend>
             
             <div class="Parametros">
                 <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-user-secret"></i><br><br><a href="http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php">Importador</a></div>
@@ -104,7 +108,7 @@
 <div>
     <form action="">    
         <fieldset>
-            <legend>Reportes</legend>
+            <legend>Reportería</legend>
             
             <div class="Reportes">      
                 <div class="ImReporte" name="ImReporte"><i class="fa-solid fa-circle-info"></i><br><br><a href="">Consulta General</a></div>
