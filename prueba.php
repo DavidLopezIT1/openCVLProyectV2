@@ -9,4 +9,8 @@ $VAR = array(
 foreach($VAR AS $p){
     echo $p . " ";
 }
+
+
+
+
 ?>

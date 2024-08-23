@@ -2,6 +2,7 @@
 
 class importadordator {
 
+
     public $conection;
 
     public function __construct($conection){
@@ -318,60 +319,109 @@ class importadordator {
                     
         }
 
+        class ImportadorEdit {
+
+            public $conection;
+            public $parampostscript;
         
-                class ImportadorEdit{
-
-                        public $conection;
-                        public $parampostscript;
-                    
-                        public function __construct($conection,$parampostscript){
-                            $this->conection =$conection;
-                            $this->parampostscript =$parampostscript;
-                        }
-                    
-                                public function imprimirenpantallaEdit($conection, $parampostscript){
-
-                                    $queryBD = "SELECT * FROM siaimportador WHERE id = '$parampostscript'";
-                                    $ExecutequeryBD = $this->conection->query($queryBD);
-                                    while($varR = $ExecutequeryBD->fetch_assoc()) {
-
-                                        $nit = $varR['nit'];
-                                        $tipodocumento = $varR['tipodocumento'];
-                                        $razonsocial = $varR['razonsocial'];
-                                        $nivelcomercialcod = $varR['nivelcomercialcod'];
-                                        $nivelcomercialdesc = $varR['nivelcomercialdesc'];
-                                        $telefono = $varR['telefono'];
-                                        $direccion = $varR['direccion'];
-                                        $correoelectronico = $varR['correoelectronico'];
-                                        $pais = $varR['pais'];
-                                        $depto = $varR['depto'];
-                                        $administracionmercancia = $varR['administracionmercancia'];
-                                        $CodigoOEA = $varR['CodigoOEA'];
-                                        $actividadeconomicacod = $varR['actividadeconomicacod'];
-                                        $actividadeconomicadesc = $varR['actividadeconomicadesc'];
-                                        
-                                        
-                                    echo "<div class ='ContainerGeneralImportador'>";
-                                        echo "<h3>" . "Tipodocumento " . "</h3>" . "<input type='text' name='tipodocumento' class ='datosinputimportador' name='prueba1'value='$tipodocumento' >" . "<br>" ;
-                                        echo "<h3 class='datosinputimportador1'>" . "Nit " . "</h3>" . "<input type='text' name='nit' class ='datosinputimportador1' value='{$varR['nit']}' disabled>" . "<br>" ;
-                                        echo "<h3>" . "Razonsocial " . "</h3>" . "<input type='text' name='razonsocial' class ='datosinputimportador' value='$razonsocial' >" . "<br>" ;
-                                        echo "<h3 class='datosinputimportador1'>" . "Nivelcomercialcod " . "</h3>" . "<input type='text' name='nivelcomercialcod' class ='datosinputimportador1' value='$nivelcomercialcod' >" . "<br>" ;
-                                        echo "<h3>" . "Nivelcomercialdesc " . "</h3>" . "<input type='text' name='nivelcomercialdesc' class ='datosinputimportador' value='$nivelcomercialdesc' >" . "<br>" ;
-                                        echo "<h3 class='datosinputimportador1'>" . "Telefono " . "</h3>" . "<input type='text' name='telefono' class ='datosinputimportador1' value='$telefono' >" . "<br>" ;
-                                        echo "<h3>" . "Direccion " . "</h3>" . "<input type='text' name='direccion' class ='datosinputimportador' value='$direccion' >" . "<br>" ;
-                                        echo "<h3 class='datosinputimportador1'>" . "Correoelectronico " . "</h3>" . "<input type='text' name='correoelectronico' class ='datosinputimportador1' value='$correoelectronico' >" . "<br>" ;
-                                        echo "<h3>" . "Pais " . "</h3>" . "<input type='text' name='pais' class ='datosinputimportador' value='$pais' >" . "<br>" ;
-                                        echo "<h3 class='datosinputimportador1'>" . "Depto " . "</h3>" . "<input type='text' name='depto' class ='datosinputimportador1' value='$depto' >" . "<br>" ;
-                                        echo "<h3>" . "Administracionmercancia " . "</h3>" . "<input type='text' name='administracionmercancia' class ='datosinputimportador' value='$administracionmercancia' >" . "<br>" ;
-                                        echo "<h3 class='datosinputimportador1'>" . "CodigoOEA " . "</h3>" . "<input type='text' name='CodigoOEA' class ='datosinputimportador1' value='$CodigoOEA' >" . "<br>" ;
-                                        echo "<h3>" . "Actividadeconomicacod " . "</h3>" . "<input type='text' name='actividadeconomicacod' class ='datosinputimportador' value='$actividadeconomicacod' >" . "<br>" ;
-                                        echo "<h3 class='datosinputimportador1'>" . "Actividadeconomicadesc " . "</h3>" . "<input type='text' name='actividadeconomicadesc' class ='datosinputimportador1' value='$actividadeconomicadesc   ' >" . "<br>" ;
-                                        echo "<h3>" . "Estado " . "</h3>" . "<input type='text' name='estado' class ='datosinputimportador' value='{$varR['estado']}' disabled>" ;       
-                                        echo "</div>";
-                                    }
-                }
-            
+            public function __construct($conection, $parampostscript) {
+                $this->conection = $conection;
+                $this->parampostscript = $parampostscript;
             }
+        
+            public function imprimirenpantallaEdit() {
+                // Realiza la consulta para obtener el registro
+                $queryBD = "SELECT * FROM siaimportador WHERE id = '$this->parampostscript'";
+                $ExecutequeryBD = $this->conection->query($queryBD);
+        
+                // Verifica si la consulta fue exitosa
+                if ($ExecutequeryBD) {
+                    while ($varR = $ExecutequeryBD->fetch_assoc()) {
+                        $nit = htmlspecialchars($varR['nit'], ENT_QUOTES);
+                        $tipodocumento = htmlspecialchars($varR['tipodocumento'], ENT_QUOTES);
+                        $razonsocial = htmlspecialchars($varR['razonsocial'], ENT_QUOTES);
+                        $nivelcomercialcod = htmlspecialchars($varR['nivelcomercialcod'], ENT_QUOTES);
+                        $nivelcomercialdesc = htmlspecialchars($varR['nivelcomercialdesc'], ENT_QUOTES);
+                        $telefono = htmlspecialchars($varR['telefono'], ENT_QUOTES);
+                        $direccion = htmlspecialchars($varR['direccion'], ENT_QUOTES);
+                        $correoelectronico = htmlspecialchars($varR['correoelectronico'], ENT_QUOTES);
+                        $pais = htmlspecialchars($varR['pais'], ENT_QUOTES);
+                        $depto = htmlspecialchars($varR['depto'], ENT_QUOTES);
+                        $administracionmercancia = htmlspecialchars($varR['administracionmercancia'], ENT_QUOTES);
+                        $CodigoOEA = htmlspecialchars($varR['CodigoOEA'], ENT_QUOTES);
+                        $actividadeconomicacod = htmlspecialchars($varR['actividadeconomicacod'], ENT_QUOTES);
+                        $actividadeconomicadesc = htmlspecialchars($varR['actividadeconomicadesc'], ENT_QUOTES);
+                        $estado = htmlspecialchars($varR['estado'], ENT_QUOTES);
+        
+                        // Mostrar el formulario con los datos actuales
+                        echo "<div class='ContainerGeneralImportador'>";
+                        echo "<form method='POST' action=''>";
+                        echo "<h3>Tipodocumento</h3><input type='text' name='tipodocumento' class='datosinputimportador' value='$tipodocumento'><br>";
+                        echo "<h3 class='datosinputimportador1'>Nit</h3><input type='text' name='nit' class='datosinputimportador1' value='$nit' disabled><br>";
+                        echo "<h3>Razonsocial</h3><input type='text' name='razonsocial' class='datosinputimportador' value='$razonsocial'><br>";
+                        echo "<h3 class='datosinputimportador1'>Nivelcomercialcod</h3><input type='text' name='nivelcomercialcod' class='datosinputimportador1' value='$nivelcomercialcod'><br>";
+                        echo "<h3>Nivelcomercialdesc</h3><input type='text' name='nivelcomercialdesc' class='datosinputimportador' value='$nivelcomercialdesc'><br>";
+                        echo "<h3 class='datosinputimportador1'>Telefono</h3><input type='text' name='telefono' class='datosinputimportador1' value='$telefono'><br>";
+                        echo "<h3>Direccion</h3><input type='text' name='direccion' class='datosinputimportador' value='$direccion'><br>";
+                        echo "<h3 class='datosinputimportador1'>Correoelectronico</h3><input type='text' name='correoelectronico' class='datosinputimportador1' value='$correoelectronico'><br>";
+                        echo "<h3>Pais</h3><input type='text' name='pais' class='datosinputimportador' value='$pais'><br>";
+                        echo "<h3 class='datosinputimportador1'>Depto</h3><input type='text' name='depto' class='datosinputimportador1' value='$depto'><br>";
+                        echo "<h3>Administracionmercancia</h3><input type='text' name='administracionmercancia' class='datosinputimportador' value='$administracionmercancia'><br>";
+                        echo "<h3 class='datosinputimportador1'>CodigoOEA</h3><input type='text' name='CodigoOEA' class='datosinputimportador1' value='$CodigoOEA'><br>";
+                        echo "<h3>Actividadeconomicacod</h3><input type='text' name='actividadeconomicacod' class='datosinputimportador' value='$actividadeconomicacod'><br>";
+                        echo "<h3 class='datosinputimportador1'>Actividadeconomicadesc</h3><input type='text' name='actividadeconomicadesc' class='datosinputimportador1' value='$actividadeconomicadesc'><br>";
+                        echo "<h3>Estado</h3><input type='text' name='estado' class='datosinputimportador' value='$estado' disabled><br>";
+                        echo "<input type='hidden' name='id' value='$this->parampostscript'>";
+                        echo "<input type='submit' name='update' value='Actualizar' class='Actualizar'>";
+                        echo "</form>";
+                        echo "</div>";
+                    }
+                }
+        
+                // Procesar el formulario cuando se envía
+                if (isset($_POST['update'])) {
+                    $tipodocumento = $this->conection->real_escape_string($_POST['tipodocumento']);
+                    $razonsocial = $this->conection->real_escape_string($_POST['razonsocial']);
+                    $nivelcomercialcod = $this->conection->real_escape_string($_POST['nivelcomercialcod']);
+                    $nivelcomercialdesc = $this->conection->real_escape_string($_POST['nivelcomercialdesc']);
+                    $telefono = $this->conection->real_escape_string($_POST['telefono']);
+                    $direccion = $this->conection->real_escape_string($_POST['direccion']);
+                    $correoelectronico = $this->conection->real_escape_string($_POST['correoelectronico']);
+                    $pais = $this->conection->real_escape_string($_POST['pais']);
+                    $depto = $this->conection->real_escape_string($_POST['depto']);
+                    $administracionmercancia = $this->conection->real_escape_string($_POST['administracionmercancia']);
+                    $CodigoOEA = $this->conection->real_escape_string($_POST['CodigoOEA']);
+                    $actividadeconomicacod = $this->conection->real_escape_string($_POST['actividadeconomicacod']);
+                    $actividadeconomicadesc = $this->conection->real_escape_string($_POST['actividadeconomicadesc']);
+                    $id = $this->conection->real_escape_string($_POST['id']);
+        
+                    $selectqueryUpdate = "UPDATE siaimportador SET 
+                        tipodocumento = '$tipodocumento',
+                        razonsocial = '$razonsocial',
+                        nivelcomercialcod = '$nivelcomercialcod',
+                        nivelcomercialdesc = '$nivelcomercialdesc',
+                        telefono = '$telefono',
+                        direccion = '$direccion',
+                        correoelectronico = '$correoelectronico',
+                        pais = '$pais',
+                        depto = '$depto',
+                        administracionmercancia = '$administracionmercancia',
+                        CodigoOEA = '$CodigoOEA',
+                        actividadeconomicacod = '$actividadeconomicacod',
+                        actividadeconomicadesc = '$actividadeconomicadesc'
+                        WHERE id = '$id'";
+                    
+                    $selectqueryUpdateExecute = $this->conection->query($selectqueryUpdate);
+        
+                    if ($selectqueryUpdateExecute) {
+                        echo "<script>alert('Datos del importador actualizados con éxito');</script>";
+                    } else {
+                        echo "<script>alert('Error al actualizar los datos');</script>";
+                    }
+                }
+            }
+        }
+        
 
 
                     //     class ImportadorQueryGeneral{

@@ -78,7 +78,7 @@ function changedform2(parameter, param3){
 
             <div class="icon_Table_Functions">
                 <button name ="createimport"><i class="fa-solid fa-plus" id="icon_Table_Functions"></i></button>
-                <button name ="editimport" onclick="changedform1('importadorEdit.php', 'get')"><i class="fa-solid fa-pen" id="icon_Table_Functions" ></i></button>
+                <button name ="editimport" onclick="changedform1('importadorEdit.php', 'post')"><i class="fa-solid fa-pen" id="icon_Table_Functions" ></i></button>
                 <button name="deletefrom"><i class="fa-solid fa-trash" id="icon_Table_Functions"></i></button>
                 <button name="statusfrom"><i class="fa-solid fa-rotate" id="icon_Table_Functions"></i></button>
 

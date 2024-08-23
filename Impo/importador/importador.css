@@ -139,12 +139,23 @@ main{
     width: 858px;
     margin-left: 650px;
 }
-.Salida_Segura2{
-    background-color: rgb(255, 255, 255);
-    text-decoration: none;
-    background-color: #fefefe00;
-    color: white;
+a{
+    color: #ffffff;
 }
+#Salida_Segura2{
+    background-color: #033E8C;
+    text-decoration: none;
+    padding : 10px;
+    width: 80px;
+    border:solid 2px #3DBCD9;
+    border-radius:5px;
+    color: white;
+    margin-left: 143px;
+}
+#Salida_Segura2:hover{
+    background-color: #3DBCD9;
+}
+
 footer {
     width: 90%;
     text-align: center;
@@ -163,4 +174,19 @@ footer p {
 legend {
     color:#007bff; 
     font-size: 17px;
+}
+.Actualizar{
+    background-color: #033E8C;
+    text-decoration: none;
+    padding : 10px;
+    width: 80px;
+    height: auto;
+    border:solid 2px #3DBCD9;
+    border-radius:5px;
+    color: white;
+    margin-left: 40px;
+}
+.Actualizar:hover{
+    background-color: #3DBCD9;
+    cursor: pointer;
 }

@@ -52,7 +52,7 @@
         </button>
 </header>
 <main>
-        <form action="importadores.php" method ="post">
+        <form action="" method ="post">
                 <fieldset>
                     
                     <div style="margin-bottom: 20px;">
@@ -66,15 +66,16 @@
                     </div>
 
 <?php
-            $recibirvariable = $_GET['checkboxitemv'];
+            $recibirvariable = $_POST['checkboxitemv'];
             $recibirvariable;
             
             foreach($recibirvariable AS $rowID){
-                $rowID ;
+                $rowID;
             }
-                    
+            
                   $impresionEditImportador = new ImportadorEdit($conection, $rowID);
-                    echo $impresionEditImportador->imprimirenpantallaEdit($conection, $rowID);
+                    echo $impresionEditImportador->imprimirenpantallaEdit($conection, $rowID );
+            
 ?>
             <div>
             <footer>
@@ -92,23 +93,20 @@
                 </script>
 
                     <div class="Buttons_Container_Send"> 
-                        <button name="SendInfo">Enviar Datos</button>
-                        
-                            
-                            
-                        <button name="SalidaImportador" id="SalidaImportadorId">
-                            <a href="importadores.php" class="Salida_Segura2">
+
+                        <button name="SalidaImportador" id="Salida_Segura2">
+                            <a href="importadores.php" class="Salida_Segura23" style ="font-size: 16px;">
                                 Salir
                             </a>
                         </button>
 
-                        <?php 
-                        if(isset($_POST['SalidaImportador'])){
-                            $buttonfef=$_POST['SalidaImportador'];
-                            header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php ");
+                                <?php 
+                                if(isset($_POST['SalidaImportador'])){
+                                    $buttonfef=$_POST['SalidaImportador'];
+                                    header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php ");
+                                }
+                                ?>
 
-                        }
-                        ?>
                     </div>
                     <div>
             

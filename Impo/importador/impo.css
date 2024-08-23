@@ -24,11 +24,10 @@ fieldset{
     display: grid;
     grid-template-columns:  repeat(6, 1fr);
     gap: 10px; 
-    
 }
 .Improceso{
     background-color: #010D26;
-    border: 2px solid #3DBCD9;
+    border: 3px solid #3DBCD9;
     padding: 20px;
     text-align: center; 
     border-radius: 4px;
