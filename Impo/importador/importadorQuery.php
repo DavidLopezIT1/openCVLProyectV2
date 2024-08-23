@@ -78,21 +78,21 @@
                         
                         echo "<div class ='ContainerGeneralImportador'>";
                                             
-                                            echo "<h3>" . "Tipodocumento " . "</h3>" . "<input type='text' name='tipodocumento' class ='datosinputimportador' name='prueba1' value ='{$l['nit']}' disabled>" . "<br>" ;
+                                            echo "<h3>" . "Tipodocumento " . "</h3>" . "<input type='text' name='tipodocumento' class ='datosinputimportador' name='prueba1' value ='". strtoupper($l['tipodocumento'])."' disabled>" . "<br>" ;
                                             echo "<h3 class='datosinputimportador1'>" . "Nit " . "</h3>" . "<input type='text' name='nit' class ='datosinputimportador1'  value ='{$l['nit']}' disabled>" . "<br>" ;
-                                            echo "<h3>" . "Razonsocial " . "</h3>" . "<input type='text' name='razonsocial' class ='datosinputimportador' value ='{$l['razonsocial']}' disabled>" . "<br>" ;
+                                            echo "<h3>" . "Razonsocial " . "</h3>" . "<input type='text' name='razonsocial' class ='datosinputimportador' value ='".strtoupper($l['razonsocial'])."' disabled >" . "<br>" ;
                                             echo "<h3 class='datosinputimportador1'>" . "Nivelcomercialcod " . "</h3>" . "<input type='text' name='nivelcomercialcod' class ='datosinputimportador1' value ='{$l['nivelcomercialcod']}' disabled>" . "<br>" ;
-                                            echo "<h3>" . "Nivelcomercialdesc " . "</h3>" . "<input type='text' name='nivelcomercialdesc' class ='datosinputimportador'   value ='{$l['nivelcomercialdesc']}' disabled>" . "<br>" ;
+                                            echo "<h3>" . "Nivelcomercialdesc " . "</h3>" . "<input type='text' name='nivelcomercialdesc' class ='datosinputimportador'   value ='".strtoupper($l['nivelcomercialdesc'])."' disabled>" . "<br>" ;
                                             echo "<h3 class='datosinputimportador1'>" . "Telefono " . "</h3>" . "<input type='text' name='telefono' class ='datosinputimportador1'   value ='{$l['telefono']}' disabled>" . "<br>" ;
-                                            echo "<h3>" . "Direccion " . "</h3>" . "<input type='text' name='direccion' class ='datosinputimportador'   value ='{$l['direccion']}' disabled>" . "<br>" ;
-                                            echo "<h3 class='datosinputimportador1'>" . "Correoelectronico " . "</h3>" . "<input type='text' name='correoelectronico' class ='datosinputimportador1'   value ='{$l['correoelectronico']}' disabled>" . "<br>" ;
-                                            echo "<h3>" . "Pais " . "</h3>" . "<input type='text' name='pais' class ='datosinputimportador'   value ='{$l['pais']}' disabled>" . "<br>" ;
-                                            echo "<h3 class='datosinputimportador1'>" . "Depto " . "</h3>" . "<input type='text' name='depto' class ='datosinputimportador1'   value ='{$l['depto']}' disabled>" . "<br>" ;
-                                            echo "<h3>" . "Administracionmercancia " . "</h3>" . "<input type='text' name='administracionmercancia' class ='datosinputimportador'   value ='{$l['administracionmercancia']}' disabled>" . "<br>" ;
-                                            echo "<h3 class='datosinputimportador1'>" . "CodigoOEA " . "</h3>" . "<input type='text' name='CodigoOEA' class ='datosinputimportador1'   value ='{$l['CodigoOEA']}' disabled>" . "<br>" ;
+                                            echo "<h3>" . "Direccion " . "</h3>" . "<input type='text' name='direccion' class ='datosinputimportador'   value ='".strtoupper($l['direccion'])."' disabled>" . "<br>" ;
+                                            echo "<h3 class='datosinputimportador1'>" . "Correoelectronico " . "</h3>" . "<input type='text' name='correoelectronico' class ='datosinputimportador1'   value ='".strtoupper($l['correoelectronico'])."' disabled>" . "<br>" ;
+                                            echo "<h3>" . "Pais " . "</h3>" . "<input type='text' name='pais' class ='datosinputimportador'   value ='".strtoupper($l['pais'])."' disabled>" . "<br>" ;
+                                            echo "<h3 class='datosinputimportador1'>" . "Depto " . "</h3>" . "<input type='text' name='depto' class ='datosinputimportador1'   value ='".strtoupper($l['depto'])."' disabled>" . "<br>" ;
+                                            echo "<h3>" . "Administracionmercancia " . "</h3>" . "<input type='text' name='administracionmercancia' class ='datosinputimportador'   value ='".strtoupper($l['administracionmercancia'])."' disabled>" . "<br>" ;
+                                            echo "<h3 class='datosinputimportador1'>" . "CodigoOEA " . "</h3>" . "<input type='text' name='CodigoOEA' class ='datosinputimportador1'   value ='".strtoupper($l['CodigoOEA'])."' disabled>" . "<br>" ;
                                             echo "<h3>" . "Actividadeconomicacod " . "</h3>" . "<input type='text' name='actividadeconomicacod' class ='datosinputimportador'   value ='{$l['actividadeconomicacod']}' disabled>" . "<br>" ;
-                                            echo "<h3 class='datosinputimportador1'>" . "Actividadeconomicadesc " . "</h3>" . "<input type='text' name='actividadeconomicadesc' class ='datosinputimportador1'   value ='{$l['actividadeconomicadesc']}' disabled>" . "<br>" ;
-                                            echo "<h3>" . "Estado " . "</h3>" . "<input type='text' name='estado' class ='datosinputimportador'   value ='{$l['estado']}' disabled>" ;       
+                                            echo "<h3 class='datosinputimportador1'>" . "Actividadeconomicadesc " . "</h3>" . "<input type='text' name='actividadeconomicadesc' class ='datosinputimportador1'   value ='".strtoupper($l['actividadeconomicadesc'])."' disabled>" . "<br>" ;
+                                            echo "<h3>" . "Estado " . "</h3>" . "<input type='text' name='estado' class ='datosinputimportador'   value ='".strtoupper($l['estado'])."' disabled>" ;       
                                             echo "</div>";
                 }                                        
         ?>

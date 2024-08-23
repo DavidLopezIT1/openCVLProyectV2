@@ -40,7 +40,7 @@ class importadordator {
                 
 
                         if(isset($_POST['tipodocumento'])){
-                            $tipodocumento = $_POST['tipodocumento'];
+                            $tipodocumento = strtoupper($_POST['tipodocumento']);
                         }else{
                             $tipodocumento = "";
                         }
@@ -51,7 +51,7 @@ class importadordator {
                             $nit = "";
                         }
                         if(isset($_POST['razonsocial'])){
-                            $razonsocial = $_POST['razonsocial'];
+                            $razonsocial = strtoupper($_POST['razonsocial']);
                         }else{
                             $razonsocial = "";
                         }
@@ -61,7 +61,7 @@ class importadordator {
                             $nivelcomercialcod = "";
                         }
                         if(isset($_POST['nivelcomercialdesc'])){
-                            $nivelcomercialdesc = $_POST['nivelcomercialdesc'];
+                            $nivelcomercialdesc = strtoupper($_POST['nivelcomercialdesc']);
                         }else{
                             $nivelcomercialdesc = "";
                         }
@@ -71,32 +71,32 @@ class importadordator {
                             $telefono = "";
                         }
                         if(isset($_POST['direccion'])){
-                            $direccion = $_POST['direccion'];
+                            $direccion = strtoupper($_POST['direccion']);
                         }else{
                             $direccion = "";
                         }
                         if(isset($_POST['correoelectronico'])){
-                            $correoelectronico = $_POST['correoelectronico'];
+                            $correoelectronico = strtoupper($_POST['correoelectronico']);
                         }else{
                             $correoelectronico = "";
                         }
                         if(isset($_POST['pais'])){
-                            $pais = $_POST['pais'];
+                            $pais = strtoupper($_POST['pais']);
                         }else{
                             $pais = "";
                         }
                         if(isset($_POST['depto'])){
-                            $depto = $_POST['depto'];
+                            $depto = strtoupper($_POST['depto']);
                         }else{
                             $depto = "";
                         }
                         if(isset($_POST['administracionmercancia'])){
-                            $administracionmercancia = $_POST['administracionmercancia'];
+                            $administracionmercancia = strtoupper($_POST['administracionmercancia']);
                         }else{
                             $administracionmercancia = "";
                         }
                         if(isset($_POST['CodigoOEA'])){
-                            $CodigoOEA = $_POST['CodigoOEA'];
+                            $CodigoOEA = strtoupper($_POST['CodigoOEA']);
                         }else{
                             $CodigoOEA = "";
                         }
@@ -106,17 +106,17 @@ class importadordator {
                             $actividadeconomicacod = "";
                         }
                         if(isset($_POST['actividadeconomicadesc'])){
-                            $actividadeconomicadesc = $_POST['actividadeconomicadesc'];
+                            $actividadeconomicadesc = strtoupper($_POST['actividadeconomicadesc']);
                         }else{
                             $actividadeconomicadesc = "";
                         }
                         if(isset($_POST['actividadeconomicadesc'])){
-                            $actividadeconomicadesc = $_POST['actividadeconomicadesc'];
+                            $actividadeconomicadesc = strtoupper($_POST['actividadeconomicadesc']);
                         }else{
                             $actividadeconomicadesc = "";
                         }
                         if(isset($_POST['estado'])){
-                            $estado = $_POST['estado'];
+                            $estado = strtoupper($_POST['estado']);
                         }else{
                             $estado = "";
                         }
@@ -280,7 +280,7 @@ class importadordator {
     
                                     $Insertquery = $conection->query($insertImportador);
 
-                                    $estadoDelImportador = "Activo";
+                                    $estadoDelImportador = "ACTIVO";
                                     $SelectEstadoDelImportador = "UPDATE siaimportador SET estado ='$estadoDelImportador' WHERE nit = $nit";
 
                                     if($Insertquery){
@@ -338,20 +338,20 @@ class importadordator {
                 if ($ExecutequeryBD) {
                     while ($varR = $ExecutequeryBD->fetch_assoc()) {
                         $nit = htmlspecialchars($varR['nit'], ENT_QUOTES);
-                        $tipodocumento = htmlspecialchars($varR['tipodocumento'], ENT_QUOTES);
-                        $razonsocial = htmlspecialchars($varR['razonsocial'], ENT_QUOTES);
+                        $tipodocumento = htmlspecialchars(strtoupper($varR['tipodocumento']), ENT_QUOTES);
+                        $razonsocial = htmlspecialchars(strtoupper($varR['razonsocial']), ENT_QUOTES);
                         $nivelcomercialcod = htmlspecialchars($varR['nivelcomercialcod'], ENT_QUOTES);
-                        $nivelcomercialdesc = htmlspecialchars($varR['nivelcomercialdesc'], ENT_QUOTES);
+                        $nivelcomercialdesc = htmlspecialchars(strtoupper($varR['nivelcomercialdesc']), ENT_QUOTES);
                         $telefono = htmlspecialchars($varR['telefono'], ENT_QUOTES);
-                        $direccion = htmlspecialchars($varR['direccion'], ENT_QUOTES);
-                        $correoelectronico = htmlspecialchars($varR['correoelectronico'], ENT_QUOTES);
-                        $pais = htmlspecialchars($varR['pais'], ENT_QUOTES);
-                        $depto = htmlspecialchars($varR['depto'], ENT_QUOTES);
-                        $administracionmercancia = htmlspecialchars($varR['administracionmercancia'], ENT_QUOTES);
-                        $CodigoOEA = htmlspecialchars($varR['CodigoOEA'], ENT_QUOTES);
+                        $direccion = htmlspecialchars(strtoupper($varR['direccion']), ENT_QUOTES);
+                        $correoelectronico = htmlspecialchars(strtoupper($varR['correoelectronico']), ENT_QUOTES);
+                        $pais = htmlspecialchars(strtoupper($varR['pais']), ENT_QUOTES);
+                        $depto = htmlspecialchars(strtoupper($varR['depto']), ENT_QUOTES);
+                        $administracionmercancia = htmlspecialchars(strtoupper($varR['administracionmercancia']), ENT_QUOTES);
+                        $CodigoOEA = htmlspecialchars(strtoupper($varR['CodigoOEA']), ENT_QUOTES);
                         $actividadeconomicacod = htmlspecialchars($varR['actividadeconomicacod'], ENT_QUOTES);
-                        $actividadeconomicadesc = htmlspecialchars($varR['actividadeconomicadesc'], ENT_QUOTES);
-                        $estado = htmlspecialchars($varR['estado'], ENT_QUOTES);
+                        $actividadeconomicadesc = htmlspecialchars(strtoupper($varR['actividadeconomicadesc']), ENT_QUOTES);
+                        $estado = htmlspecialchars(strtoupper($varR['estado']), ENT_QUOTES);
         
                         // Mostrar el formulario con los datos actuales
                         echo "<div class='ContainerGeneralImportador'>";
@@ -415,6 +415,9 @@ class importadordator {
         
                     if ($selectqueryUpdateExecute) {
                         echo "<script>alert('Datos del importador actualizados con éxito');</script>";
+                        if($selectqueryUpdateExecute){
+                            header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php");
+                        }
                     } else {
                         echo "<script>alert('Error al actualizar los datos');</script>";
                     }
@@ -423,46 +426,5 @@ class importadordator {
         }
         
 
-
-                    //     class ImportadorQueryGeneral{
-
-                    //         public $conection;
-                    //         public $paramid;
-                        
-                    //         public function __construct($conection, $paramid){
-                    //             $this->conection =$conection;
-                    //             $this->paramid =$paramid;
-                    //         }
-                        
-                        
-                    //                 public function imprimirenpantallaqueryimport($conection, $paramid){
-
-                    //                     $queryBD = "SELECT * FROM siaimportador WHERE id ='$paramid'";
-                    //                     $ExecutequeryBD = $this->conection->query($queryBD);
-
-                    //                     while($varR = $ExecutequeryBD->fetch_assoc()) {
-                                            
-                    //                     echo "<div class ='ContainerGeneralImportador'>";
-                                            
-                    //                         echo "<h3>" . "Tipodocumento " . "</h3>" . "<input type='text' name='tipodocumento' class ='datosinputimportador' name='prueba1' value ='{$varR['tipodocumento']}'>" . "<br>" ;
-                    //                         echo "<h3 class='datosinputimportador1'>" . "Nit " . "</h3>" . "<input type='text' name='nit' class ='datosinputimportador1'  value ='{$varR['nit']}'>" . "<br>" ;
-                    //                         echo "<h3>" . "Razonsocial " . "</h3>" . "<input type='text' name='razonsocial' class ='datosinputimportador' >" . "<br>" ;
-                    //                         echo "<h3 class='datosinputimportador1'>" . "Nivelcomercialcod " . "</h3>" . "<input type='text' name='nivelcomercialcod' class ='datosinputimportador1' >" . "<br>" ;
-                    //                         echo "<h3>" . "Nivelcomercialdesc " . "</h3>" . "<input type='text' name='nivelcomercialdesc' class ='datosinputimportador' >" . "<br>" ;
-                    //                         echo "<h3 class='datosinputimportador1'>" . "Telefono " . "</h3>" . "<input type='text' name='telefono' class ='datosinputimportador1' >" . "<br>" ;
-                    //                         echo "<h3>" . "Direccion " . "</h3>" . "<input type='text' name='direccion' class ='datosinputimportador' >" . "<br>" ;
-                    //                         echo "<h3 class='datosinputimportador1'>" . "Correoelectronico " . "</h3>" . "<input type='text' name='correoelectronico' class ='datosinputimportador1' >" . "<br>" ;
-                    //                         echo "<h3>" . "Pais " . "</h3>" . "<input type='text' name='pais' class ='datosinputimportador' >" . "<br>" ;
-                    //                         echo "<h3 class='datosinputimportador1'>" . "Depto " . "</h3>" . "<input type='text' name='depto' class ='datosinputimportador1' >" . "<br>" ;
-                    //                         echo "<h3>" . "Administracionmercancia " . "</h3>" . "<input type='text' name='administracionmercancia' class ='datosinputimportador' >" . "<br>" ;
-                    //                         echo "<h3 class='datosinputimportador1'>" . "CodigoOEA " . "</h3>" . "<input type='text' name='CodigoOEA' class ='datosinputimportador1' >" . "<br>" ;
-                    //                         echo "<h3>" . "Actividadeconomicacod " . "</h3>" . "<input type='text' name='actividadeconomicacod' class ='datosinputimportador' >" . "<br>" ;
-                    //                         echo "<h3 class='datosinputimportador1'>" . "Actividadeconomicadesc " . "</h3>" . "<input type='text' name='actividadeconomicadesc' class ='datosinputimportador1' >" . "<br>" ;
-                    //                         echo "<h3>" . "Estado " . "</h3>" . "<input type='text' name='estado' class ='datosinputimportador' >" ;       
-                    //                         echo "</div>";
-                    //                     }
-                    // }
-
-                    // }
 
 

@@ -127,10 +127,10 @@ function changedform2(parameter, param3){
                                 while($a = $resultquery->fetch_assoc()) {
                                     echo "<tr>" .
                                     "<td><button class='deletebackground' name='deletebackgroundbutton' value='" . htmlspecialchars($a['nit']) . "' onclick=\"changedform2('importadorquery.php', 'get')\">" . htmlspecialchars($a['nit']) . "</button></td>" . 
-                                         "<td>" . htmlspecialchars($a['razonsocial']) . "</td>" .
+                                         "<td>" . htmlspecialchars(strtoupper($a['razonsocial'])) . "</td>" .
                                          "<td>" . htmlspecialchars($a['telefono']) . "</td>" .
-                                         "<td>" . htmlspecialchars($a['direccion']) . "</td>" .
-                                         "<td>" . htmlspecialchars($a['estado']) . "</td>" .
+                                         "<td>" . htmlspecialchars(strtoupper($a['direccion'])) . "</td>" .
+                                         "<td>" . htmlspecialchars(strtoupper($a['estado'])) . "</td>" .
                                          "<td><input type='checkbox' style='accent-color: yellow' class='checkboxitem' name='checkboxitemv[]' value='" . htmlspecialchars($a['id']) . "'></td>" .
                                          "</tr>";
                                 }
@@ -141,10 +141,10 @@ function changedform2(parameter, param3){
                                 while($a = $resultquery2->fetch_assoc()) {
                                     echo "<tr>" .
                                     "<td><button class='deletebackground' name='deletebackgroundbutton' value='" . htmlspecialchars($a['nit']) . "' onclick=\"changedform2('importadorquery.php', 'get')\">" . htmlspecialchars($a['nit']) . "</button></td>" . 
-                                         "<td>" . htmlspecialchars($a['razonsocial']) . "</td>" .
+                                         "<td>" . htmlspecialchars(strtoupper($a['razonsocial'])) . "</td>" .
                                          "<td>" . htmlspecialchars($a['telefono']) . "</td>" .
-                                         "<td>" . htmlspecialchars($a['direccion']) . "</td>" .
-                                         "<td>" . "<span name = 'statusUpdate[]' value='" . htmlspecialchars($a['estado']) . "'>" . htmlspecialchars($a['estado']) . "</span>" . "</td>" .
+                                         "<td>" . htmlspecialchars(strtoupper($a['direccion'])) . "</td>" .
+                                         "<td>" . "<span name = 'statusUpdate[]' value='" . htmlspecialchars(strtoupper($a['estado'])) . "'>" . htmlspecialchars(strtoupper($a['estado'])) . "</span>" . "</td>" .
                                          "<td><input type='checkbox' style='accent-color: yellow' class='checkboxitem' name='checkboxitemv[]' value='" . htmlspecialchars($a['id']) . "'></td>" .
                                          "</tr>";
                                 }
@@ -169,26 +169,26 @@ function changedform2(parameter, param3){
                                         foreach($_POST['checkboxitemv'] AS $keystatus1){
                                             $querystatussql ="SELECT * FROM siaimportador";
                                             $resultquerystatussql = $conection->query($querystatussql);
-                                            $statusInact = "Inactivo";
-                                            $statusAct = "Activo";
+                                            $statusInact = "INACTIVO";
+                                            $statusAct = "ACTIVO";
 
                                                 while($keystatus2 = $resultquerystatussql->fetch_assoc()){ 
                                                     
-                                                    if($keystatus2['estado'] =="Activo" && $keystatus1 == $keystatus2['id']){
+                                                    if($keystatus2['estado'] =="ACTIVO" && $keystatus1 == $keystatus2['id']){
 
                                                         foreach($_POST['checkboxitemv'] AS $selectedIdstatus){
                                                             $selectedIdstatus = mysqli_real_escape_string($conection, $selectedIdstatus);
-                                                            $querystatus = "UPDATE siaimportador SET estado = 'Inactivo' WHERE id = '$selectedIdstatus'";
+                                                            $querystatus = "UPDATE siaimportador SET estado = 'INACTIVO' WHERE id = '$selectedIdstatus'";
                                                             $resulrQuerystatus = $conection->query($querystatus);
                                                             echo"<script>alert('Importador Inactivado exitosamente')</script>";
                                                             break;
                                                         }
 
-                                                    }elseif($keystatus2['estado'] =="Inactivo" && $keystatus1 == $keystatus2['id']){
+                                                    }elseif($keystatus2['estado'] =="INACTIVO" && $keystatus1 == $keystatus2['id']){
 
                                                             foreach($_POST['checkboxitemv'] AS $selectedIdstatus){
                                                             $selectedIdstatus = mysqli_real_escape_string($conection, $selectedIdstatus);
-                                                            $querystatus2 = "UPDATE siaimportador SET estado = 'Activo' WHERE id = '$selectedIdstatus'";
+                                                            $querystatus2 = "UPDATE siaimportador SET estado = 'ACTIVO' WHERE id = '$selectedIdstatus'";
                                                             $resulrQuerystatus = $conection->query($querystatus2);
                                                             echo"<script>alert('Importador Activado exitosamente')</script>";
                                                             break;
