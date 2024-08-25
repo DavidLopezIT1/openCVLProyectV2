@@ -96,7 +96,7 @@ include "conection.php";
                 </header>
 
                 <div class="submodule">
-                    <h2><a href="./impo/importador/ModuleImpo.php" class="ModButtons">Importaciones</a></h2>
+                    <h2><a href="./impo//ModuleImpo.php" class="ModButtons">Importaciones</a></h2>
                     
                 </div>
 

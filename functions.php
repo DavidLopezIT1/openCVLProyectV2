@@ -300,24 +300,24 @@ class importadordator {
            
 }
 
-         function ShowImportador($conection ){
-            $selectquerysearchimport = "SELECT * FROM siaimportador";
-            $resultselectquerysearchimport = $conection->query($selectquerysearchimport);
+        //  function ShowImportador($conection ){
+        //     $selectquerysearchimport = "SELECT * FROM siaimportador";
+        //     $resultselectquerysearchimport = $conection->query($selectquerysearchimport);
 
-                    if($resultselectquerysearchimport->num_rows > 0){
+        //             if($resultselectquerysearchimport->num_rows > 0){
 
-                        while($a = $resultselectquerysearchimport->fetch_assoc()){
+        //                 while($a = $resultselectquerysearchimport->fetch_assoc()){
                             
-                            echo "<tr>" . "<td>" . $a['nit'] . "</td>" . 
-                                "<td>" . $a['razonsocial'] . "</td>" .
-                                "<td>" . $a['telefono'] . "</td>" .
-                                "<td>" . $a['direccion'] . "</td>" .
-                                "<td>" . $a['estado'] . "</td>" . "<tr>";
-                        }
+        //                     echo "<tr>" . "<td>" . $a['nit'] . "</td>" . 
+        //                         "<td>" . $a['razonsocial'] . "</td>" .
+        //                         "<td>" . $a['telefono'] . "</td>" .
+        //                         "<td>" . $a['direccion'] . "</td>" .
+        //                         "<td>" . $a['estado'] . "</td>" . "<tr>";
+        //                 }
                         
-                    }
+        //             }
                     
-        }
+        // }
 
         class ImportadorEdit {
 

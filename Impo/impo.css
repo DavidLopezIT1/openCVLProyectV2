@@ -1,7 +1,8 @@
 html{
     box-sizing: border-box;
     font-size: 12px;
-    background: #0D0D0D;
+ 
+    background-color: #010D26;
 }
 header{
     width: 98.67%;
@@ -16,6 +17,7 @@ fieldset{
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.207);
     margin-bottom: 15px;
     border-color:  #3DBCD9;
+    border: solid 2px #3DBCD9;
 }
 .Bienvenida{
     margin-left: 18px;
@@ -24,10 +26,14 @@ fieldset{
     display: grid;
     grid-template-columns:  repeat(6, 1fr);
     gap: 10px; 
+    padding: 10px;
+    background-color: azure;
+    background-color: #010D26;
 }
 .Improceso{
     background-color: #010D26;
-    border: 3px solid #3DBCD9;
+    background-color: azure;
+    border: 4px solid #3DBCD9;
     padding: 20px;
     text-align: center; 
     border-radius: 4px;
@@ -36,11 +42,13 @@ fieldset{
 .Parametros{
     display: grid;
     grid-template-columns:  repeat(6    , 1fr);
+    background-color: azure;
+    background-color: #010D26;
+    padding: 10px;
     gap: 10px;
 }
 .Imparametrica {
     display: block;
-    background-color: #ffffff;
     border: 1px solid #ffffff;
     padding: 20px;
     text-align: center;
@@ -48,19 +56,24 @@ fieldset{
     border-radius: 4px; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.306);
     background-color: #010D26;
+    background-color: azure;
     border: 2px solid #3DBCD9;
 }
 .Imparametrica:hover, .Improceso:hover, .ImReporte:hover {
     background-color: #033E8C;
+    background-color: #3DBCD9;
 }
+
 
 .Reportes{
     display: grid;
     grid-template-columns:  repeat(6, 1fr);
+    background-color: azure;
+    background-color: #010D26;
+    padding: 10px;
     gap: 10px;
 }
 .ImReporte{
-    background-color: #ffffff;
     border: 1px solid #ffffff;
     padding: 20px;
     text-align: center;
@@ -68,6 +81,7 @@ fieldset{
     border-radius: 4px; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.306);
     background-color: #010D26;
+    background-color: azure;
     border: 2px solid #3DBCD9;
 }
 .RutaGeneral{
@@ -83,6 +97,7 @@ fieldset{
 a{
     text-decoration: none;
     color: rgb(255, 255, 255);
+    color: #010D26;
     font-family:  'Arial Narrow Bold', sans-serif;
     margin-top: 10px;
 }
@@ -105,7 +120,7 @@ a{
 i{
     font-size: 20px;
     margin-bottom: 14px;
-    color: #ffffff;
+    color: #010D26;
 }
 strong{
     color: azure;
@@ -130,4 +145,3 @@ footer p {
 legend{ 
     color: #ffffff;
 }
- 

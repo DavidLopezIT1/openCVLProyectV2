@@ -6,7 +6,7 @@
     <title>Interfaz de Consulta de Datos</title>
     <script src="../general_scripts.js"></script>
     <script src="https://kit.fontawesome.com/5bcdd05e64.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="importadores.css">
+    <link rel="stylesheet" href="proveedores.css">
 </head>
 <body >
 
@@ -57,17 +57,17 @@ function changedform2(parameter, param3){
 
 </script>
 
-    <form action="importadores.php" method="post" id="miFormulario">
+    <form action="proveedores.php" method="post" id="miFormulario">
     <div class="container">
         <header class="header2">
-            <h1>Importadores</h1>
+            <h1>Proveedores</h1>
         </header>
         
         <main>
             <div class="search-container">
                 <div class="search-form">
                     <input type="text" id="querybd" name="querbd" placeholder="Consulta Inducida" class="querybd">
-                    <button type="submit" name ="botonconsultaImportadores" >
+                    <button type="submit" name ="botonconsultaproveedores" >
                     <i class="fa-solid fa-eye"></i>
                     </button>
                 </div>
@@ -85,7 +85,7 @@ function changedform2(parameter, param3){
             <?php 
 
                     if(isset($_POST['createimport'])){
-                        header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadorCreate.php");
+                        header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/proveedor/proveedorCreate.php");
                     }
                     if(isset($_POST['editimport'])){
                         $editimport = $_POST['editimport'];
@@ -101,10 +101,10 @@ function changedform2(parameter, param3){
         <table>
         <br>
             <thead>
-                <th>Nit</th>
-                <th>Importador</th>
-                <th>Teléfono</th>
-                <th>Dirección</th>
+                <th>Codigo</th>
+                <th>Proveedor</th>
+                <th>Email</th>
+                <th>Pais</th>
                 <th>Estado</th>
                 <th><input type="checkbox" style=" accent-color: yellow;" id="generalCheckbox" onclick="selectorChecked ()"></th>
             </thead>
@@ -121,31 +121,31 @@ function changedform2(parameter, param3){
                                 $variabledecontrol = true;
                             }
                             if($variabledecontrol && $querbd != "") {
-                                $query1 = "SELECT * FROM siaimportador WHERE nit = '" . mysqli_real_escape_string($conection, $querbd) . "'";
+                                $query1 = "SELECT * FROM siaproveedor  WHERE codigoproveedor = '" . mysqli_real_escape_string($conection, $querbd) . "'";
                                 $resultquery = $conection->query($query1);
                             
                                 while($a = $resultquery->fetch_assoc()) {
                                     echo "<tr>" .
-                                    "<td><button class='deletebackground' name='deletebackgroundbutton' value='" . htmlspecialchars($a['nit']) . "' onclick=\"changedform2('importadorquery.php', 'get')\">" . htmlspecialchars($a['nit']) . "</button></td>" . 
-                                         "<td>" . htmlspecialchars(strtoupper($a['razonsocial'])) . "</td>" .
-                                         "<td>" . htmlspecialchars($a['telefono']) . "</td>" .
-                                         "<td>" . htmlspecialchars(strtoupper($a['direccion'])) . "</td>" .
+                                    "<td><button class='deletebackground' name='deletebackgroundbutton' value='" . htmlspecialchars(strtoupper($a['codigoproveedor'])) . "' onclick=\"changedform2('proveedorquery.php', 'get')\">" . htmlspecialchars(strtoupper($a['codigoproveedor'])) . "</button></td>" . 
+                                         "<td>" . htmlspecialchars(strtoupper($a['nombreproveedor'])) . "</td>" .
+                                         "<td>" . htmlspecialchars($a['email']) . "</td>" .
+                                         "<td>" . htmlspecialchars(strtoupper($a['pais'])) . "</td>" .
                                          "<td>" . htmlspecialchars(strtoupper($a['estado'])) . "</td>" .
-                                         "<td><input type='checkbox' style='accent-color: yellow' class='checkboxitem' name='checkboxitemv[]' value='" . htmlspecialchars($a['id']) . "'></td>" .
+                                         "<td><input type='checkbox' style='accent-color: yellow' class='checkboxitem' name='checkboxitemv[]' value='" . htmlspecialchars($a['codigoproveedor']) . "'></td>" .
                                          "</tr>";
                                 }
                             } else{
-                                $query2 = "SELECT * FROM siaimportador";
+                                $query2 = "SELECT * FROM siaproveedor";
                                 $resultquery2 = $conection->query($query2);
                             
                                 while($a = $resultquery2->fetch_assoc()) {
                                     echo "<tr>" .
-                                    "<td><button class='deletebackground' name='deletebackgroundbutton' value='" . htmlspecialchars($a['nit']) . "' onclick=\"changedform2('importadorquery.php', 'get')\">" . htmlspecialchars($a['nit']) . "</button></td>" . 
-                                         "<td>" . htmlspecialchars(strtoupper($a['razonsocial'])) . "</td>" .
-                                         "<td>" . htmlspecialchars($a['telefono']) . "</td>" .
-                                         "<td>" . htmlspecialchars(strtoupper($a['direccion'])) . "</td>" .
+                                    "<td><button class='deletebackground' name='deletebackgroundbutton' value='" . htmlspecialchars(strtoupper($a['codigoproveedor'])) . "' onclick=\"changedform2('proveedorquery.php', 'get')\">" . htmlspecialchars(strtoupper($a['codigoproveedor'])) . "</button></td>" . 
+                                         "<td>" . htmlspecialchars(strtoupper($a['nombreproveedor'])) . "</td>" .
+                                         "<td>" . htmlspecialchars(strtoupper($a['email'])) . "</td>" .
+                                         "<td>" . htmlspecialchars(strtoupper($a['pais'])) . "</td>" .
                                          "<td>" . "<span name = 'statusUpdate[]' value='" . htmlspecialchars(strtoupper($a['estado'])) . "'>" . htmlspecialchars(strtoupper($a['estado'])) . "</span>" . "</td>" .
-                                         "<td><input type='checkbox' style='accent-color: yellow' class='checkboxitem' name='checkboxitemv[]' value='" . htmlspecialchars($a['id']) . "'></td>" .
+                                         "<td><input type='checkbox' style='accent-color: yellow' class='checkboxitem' name='checkboxitemv[]' value='" . htmlspecialchars($a['codigoproveedor']) . "'></td>" .
                                          "</tr>";
                                 }
                             }
@@ -154,43 +154,43 @@ function changedform2(parameter, param3){
                                 foreach($_POST['checkboxitemv'] AS $selectedId) {
 
                                     $selectedId = mysqli_real_escape_string($conection, $selectedId);
-                                    $querydelete = "DELETE FROM siaimportador WHERE id = '$selectedId'";
+                                    $querydelete = "DELETE FROM siaproveedor WHERE codigoproveedor = '$selectedId'";
                                     $querydeleteresult = $conection->query($querydelete);
                                     
                                     if ($querydeleteresult) {
-                                        echo "<script>alert('Eliminado con éxito')</script>";
+                                        echo "<script>alert('Proveedor Eliminado con éxito')</script>";
                                     } else {
-                                        echo "<script>alert('No se eliminó el registro')</script>";
+                                        echo "<script>alert('No se eliminó el Proveedor, Verifique')</script>";
                                     }
                                 }
                             }
                                 if(isset($_POST['checkboxitemv']) && isset($_POST['statusfrom'])){
 
                                         foreach($_POST['checkboxitemv'] AS $keystatus1){
-                                            $querystatussql ="SELECT * FROM siaimportador";
+                                            $querystatussql ="SELECT * FROM siaproveedor";
                                             $resultquerystatussql = $conection->query($querystatussql);
                                             $statusInact = "INACTIVO";
                                             $statusAct = "ACTIVO";
 
                                                 while($keystatus2 = $resultquerystatussql->fetch_assoc()){ 
                                                     
-                                                    if($keystatus2['estado'] =="ACTIVO" && $keystatus1 == $keystatus2['id']){
+                                                    if($keystatus2['estado'] =="ACTIVO" && $keystatus1 == $keystatus2['codigoproveedor']){
 
                                                         foreach($_POST['checkboxitemv'] AS $selectedIdstatus){
                                                             $selectedIdstatus = mysqli_real_escape_string($conection, $selectedIdstatus);
-                                                            $querystatus = "UPDATE siaimportador SET estado = 'INACTIVO' WHERE id = '$selectedIdstatus'";
+                                                            $querystatus = "UPDATE siaproveedor SET estado = 'INACTIVO' WHERE codigoproveedor = '$selectedIdstatus'";
                                                             $resulrQuerystatus = $conection->query($querystatus);
-                                                            echo"<script>alert('Importador Inactivado exitosamente')</script>";
+                                                            echo"<script>alert('Proveedor Inactivado exitosamente')</script>";
                                                             break;
                                                         }
 
-                                                    }elseif($keystatus2['estado'] =="INACTIVO" && $keystatus1 == $keystatus2['id']){
+                                                    }elseif($keystatus2['estado'] =="INACTIVO" && $keystatus1 == $keystatus2['codigoproveedor']){
 
                                                             foreach($_POST['checkboxitemv'] AS $selectedIdstatus){
                                                             $selectedIdstatus = mysqli_real_escape_string($conection, $selectedIdstatus);
-                                                            $querystatus2 = "UPDATE siaimportador SET estado = 'ACTIVO' WHERE id = '$selectedIdstatus'";
+                                                            $querystatus2 = "UPDATE siaproveedor SET estado = 'ACTIVO' WHERE codigoproveedor = '$selectedIdstatus'";
                                                             $resulrQuerystatus = $conection->query($querystatus2);
-                                                            echo"<script>alert('Importador Activado exitosamente')</script>";
+                                                            echo"<script>alert('Proveedor Activado exitosamente')</script>";
                                                             break;
                                                             }
                                                         }
@@ -227,16 +227,25 @@ function changedform2(parameter, param3){
 </footer>
     </div>
 
-    </form>
-
-            <script>
-                
-            </script>
+                        <?php
 
 
+                            $selectforproveedor= "SELECT * FROM siaproveedor";
+                            $resultselectforproveedor = $conection->query($selectforproveedor);
 
+                            while($Row = $resultselectforproveedor->fetch_assoc()){
+                                
+                                echo "<tr>" . "<td>" . htmlspecialchars(strtoupper($Row['codigoproveedor'])) . "</td>" . 
+                                "<td>" . htmlspecialchars(strtoupper($Row['nombreproveedor'])) . "</td>" . 
+                                "<td>" . htmlspecialchars(strtoupper($Row['email'])) . "</td>" . 
+                                "<td>" . htmlspecialchars(strtoupper($Row['pais'])) . "</td>" . 
+                                "<td>" . htmlspecialchars(strtoupper($Row['estado'])) . "</td>" . "</tr>";
 
-
+                            }
+                            ?>
+             
+        
+</div>
 </body>
 </html>
 

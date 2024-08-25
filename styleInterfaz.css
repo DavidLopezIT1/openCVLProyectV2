@@ -67,7 +67,7 @@ img{
 #main {
     flex: 1;
     padding: 20px;
-    background:#022859;
+    background:azure;
     /* box-sizing: border-box; */
     transition: margin-left 0.3s;
     overflow-y:scroll;
