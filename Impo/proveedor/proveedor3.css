@@ -1,0 +1,164 @@
+html{
+    background: #0D0D0D;
+}
+fieldset{
+    margin-left: 20%;
+    padding: 20px 0px 30px 50px;
+    /* padding-left: 50px; */
+    width:840px;
+    box-shadow: 2px 2px 6px rgba(11, 10, 10, 0.516);
+    background-color: #ffffff;
+    border-radius:10px;
+    
+}
+.ContainerGeneralImportador {
+    display: grid;
+    grid-template-columns: repeat(6,2fr);
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-left:0px;    
+    width: 80%;
+    max-width: 1240px;
+    align-items: center;
+}
+input{
+    height: 20px;
+    align-items: center;
+    border: solid 2px white;
+    box-shadow: 2px 2px 5px #434242 ;
+    margin-left: 12px;
+}
+.datosinputimportador1{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+form button {
+    /* padding: 10px 20px; */
+    background-color: #033E8C;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+    box-shadow: 2px 2px 6px rgba(11, 10, 10, 0.516);
+    width: 120px;
+}
+form button:hover {
+    background-color: #3DBCD9;
+}
+html{
+    box-sizing: border-box;
+    font-size: 12px;
+}
+.headergeneral{
+    border:solid 2px #3DBCD9;
+    height: 50px;
+    background-color: #010D26;
+    margin-bottom: 2%;
+    font-family:  'Arial Narrow Bold', sans-serif system-ui, -apple-system, BlinkMacSystemFont;
+    font-weight: 2.7em;
+    width: 98.67%;
+    position: fixed;
+}
+.HeaderImportador2{
+    border:none;
+}
+.HeaderImportador{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    height: 50px;
+    width: 93%;
+    background-color: #010D26;
+    margin-bottom: 2%;
+    padding-bottom: 10px;
+    border: solid 1px black;
+    border-radius: 3px;
+}
+.HeaderImportador > header > h1 > p{
+    font-size: 25px;
+    text-align: center;
+    margin-top: 0px;
+    color: aliceblue;
+}
+.Bienvenida{
+    margin-left: 18px;
+}
+
+.RutaGeneral{
+    display: flex;
+   margin-top: 10px;
+}
+.rutas{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    margin-left: 75%;
+    margin-top: 10px;
+}
+a{
+    text-decoration: none;
+    font-family:  'Arial Narrow Bold', sans-serif;
+    margin-top: 10px;
+}
+.Salida_Segura > a{
+    color: rgb(255, 255, 255);
+}
+.Salida_Segura{
+    margin-left: 25px;
+    margin-top: 10px;
+    width: 100px;
+    height: 30px;
+    font-size: 10px;
+    background: #033E8C;
+    padding: 10px ;
+    color: rgb(255, 255, 255);  
+    border:solid 2px #3DBCD9;
+}
+.Salida_Segura:hover{
+    background-color: #3DBCD9;
+}
+i{
+    font-size: 20px;
+    margin-bottom: 14px;
+}
+strong{
+    color: azure; 
+}
+main{
+    margin-bottom: 30px;
+    padding-top: 6em;
+}
+.Buttons_Container_Send{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    justify-content: end;
+    min-width: 55px;
+    min-height: 35px;
+    margin-right: 65px;
+}
+.Salida_Segura2{
+    background-color: rgb(255, 255, 255);
+    text-decoration: none;
+    background-color: #fefefe00;
+    color: white;
+}
+footer {
+    width: 90%;
+    text-align: center;
+    padding: 15px;
+    margin-top: 10px;
+    border-top: 2px solid #ddd;
+    border-radius: 3px;
+    background-color:#010D26;
+    box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.311);
+}
+footer p {
+    margin: 0;
+    border-radius: 3px;
+    color: #ffffff;
+}
+.SendInfo{
+    width: 120px;
+}

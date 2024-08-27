@@ -78,14 +78,14 @@ function changedform2(parameter, param3){
 
             <div class="icon_Table_Functions">
                 <button name ="createimport"><i class="fa-solid fa-plus" id="icon_Table_Functions"></i></button>
-                <button name ="editimport" onclick="changedform1('importadorEdit.php', 'post')"><i class="fa-solid fa-pen" id="icon_Table_Functions" ></i></button>
+                <button name ="editimport" onclick="changedform1('proveedorEdit.php', 'post')"><i class="fa-solid fa-pen" id="icon_Table_Functions" ></i></button>
                 <button name="deletefrom"><i class="fa-solid fa-trash" id="icon_Table_Functions"></i></button>
                 <button name="statusfrom"><i class="fa-solid fa-rotate" id="icon_Table_Functions"></i></button>
 
             <?php 
 
                     if(isset($_POST['createimport'])){
-                        header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/proveedor/proveedorCreate.php");
+                        header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/proveedor/CreateProveedor.php");
                     }
                     if(isset($_POST['editimport'])){
                         $editimport = $_POST['editimport'];
@@ -211,15 +211,13 @@ function changedform2(parameter, param3){
                             if(isset($_POST['deletebackgroundbutton'])){
                                 $variablefor= urlencode($_POST['deletebackgroundbutton']);
                             }
-                                    
-
-                ?>
-                                
+                ?>   
         </tbody>
 
     </table>
 
 </section>
+
 </main>
         
 <footer>
@@ -230,18 +228,18 @@ function changedform2(parameter, param3){
                         <?php
 
 
-                            $selectforproveedor= "SELECT * FROM siaproveedor";
-                            $resultselectforproveedor = $conection->query($selectforproveedor);
+                            // $selectforproveedor= "SELECT * FROM siaproveedor";
+                            // $resultselectforproveedor = $conection->query($selectforproveedor);
 
-                            while($Row = $resultselectforproveedor->fetch_assoc()){
+                            // while($Row = $resultselectforproveedor->fetch_assoc()){
                                 
-                                echo "<tr>" . "<td>" . htmlspecialchars(strtoupper($Row['codigoproveedor'])) . "</td>" . 
-                                "<td>" . htmlspecialchars(strtoupper($Row['nombreproveedor'])) . "</td>" . 
-                                "<td>" . htmlspecialchars(strtoupper($Row['email'])) . "</td>" . 
-                                "<td>" . htmlspecialchars(strtoupper($Row['pais'])) . "</td>" . 
-                                "<td>" . htmlspecialchars(strtoupper($Row['estado'])) . "</td>" . "</tr>";
+                            //     echo "<tr>" . "<td>" . htmlspecialchars(strtoupper($Row['codigoproveedor'])) . "</td>" . 
+                            //     "<td>" . htmlspecialchars(strtoupper($Row['nombreproveedor'])) . "</td>" . 
+                            //     "<td>" . htmlspecialchars(strtoupper($Row['email'])) . "</td>" . 
+                            //     "<td>" . htmlspecialchars(strtoupper($Row['pais'])) . "</td>" . 
+                            //     "<td>" . htmlspecialchars(strtoupper($Row['estado'])) . "</td>" . "</tr>";
 
-                            }
+                            // }
                             ?>
              
         

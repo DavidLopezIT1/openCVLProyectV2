@@ -428,3 +428,287 @@ class importadordator {
 
 
 
+        function imprimirenpantallaProveedor($conection){
+            echo "<div class ='ContainerGeneralImportador'>";
+                echo "<h3>" . "Código Proveedor " . "</h3>" . "<input type='text' name='codigoproveedor' class ='datosinputimportador' name='prueba1'>" . "<br>" ;
+                echo "<h3 class='datosinputimportador1'>" . "Nombre Proveedor " . "</h3>" . "<input type='text' name='nombreproveedor' class ='datosinputimportador1' >" . "<br>" ;
+                echo "<h3>" . "Pais " . "</h3>" . "<input type='text' name='pais' class ='datosinputimportador' >" . "<br>" ;
+                echo "<h3 class='datosinputimportador1'>" . "Ciudad " . "</h3>" . "<input type='text' name='cuidad' class ='datosinputimportador1' >" . "<br>" ;
+                echo "<h3>" . "Teléfono " . "</h3>" . "<input type='text' name='Telefono' class ='datosinputimportador' >" . "<br>" ;
+                echo "<h3 class='datosinputimportador1'>" . "E-mail " . "</h3>" . "<input type='text' name='email' class ='datosinputimportador1' >" . "<br>" ;
+                echo "<h3>" . "Condicion Proveedor " . "</h3>" . "<input type='text' name='condicionproveedor' class ='datosinputimportador' >" . "<br>" ;
+                echo "<h3 class='datosinputimportador1'>" . "Especifique " . "</h3>" . "<input type='text' name='especifique' class ='datosinputimportador1' >" . "<br>" ;
+                echo "<h3>" . "Estado " . "</h3>" . "<input type='text' name='estado' class ='datosinputimportador' >" . "<br>" ;
+                       
+                echo "</div>";
+                echo "<div class='Buttons_Container_Send'> 
+                                        <button name='SendInfo' class='SendInfo'>Crear Imp</button>
+                                        <button name='SalidaImportador'>
+                                            <a href='proveedores.php' class='Salida_Segura2'>
+                                                Salir
+                                            </a>
+                                        </button>
+                                    </div>  ";  
+                
+            
+        
+                    if(isset($_POST['codigoproveedor'])){
+                        $codigoproveedor = strtoupper($_POST['codigoproveedor']);
+                    }else{
+                        $codigoproveedor = "";
+                    }
+                    
+                    if(isset($_POST['nombreproveedor'])){
+                        $nombreproveedor = $_POST['nombreproveedor'];
+                    }else{
+                        $nombreproveedor = "";
+                    }
+                    if(isset($_POST['pais'])){
+                        $pais = strtoupper($_POST['pais']);
+                    }else{
+                        $pais = "";
+                    }
+                    if(isset($_POST['cuidad'])){
+                        $ciudad = $_POST['cuidad'];
+                    }else{
+                        $ciudad = "";
+                    }
+                    if(isset($_POST['Telefono'])){
+                        $Telefono = strtoupper($_POST['Telefono']);
+                    }else{
+                        $Telefono = "";
+                    }
+                    if(isset($_POST['email'])){
+                        $email = $_POST['email'];
+                    }else{
+                        $email = "";
+                    }
+                    if(isset($_POST['condicionproveedor'])){
+                        $condicionproveedor = strtoupper($_POST['condicionproveedor']);
+                    }else{
+                        $condicionproveedor = "";
+                    }
+                    if(isset($_POST['especifique'])){
+                        $especifique = strtoupper($_POST['especifique']);
+                    }else{
+                        $especifique = "";
+                    }
+                    if(isset($_POST['estado'])){
+                        $estado2 = $_POST['estado'];
+                    }else{
+                        $estado2 = "";
+                    }
+        
+                    
+                    if(isset($_POST['SendInfo'])){ 
+        
+                    $selectImportador ="SELECT * FROM siaproveedor";
+                    $Selectquery = $conection->query($selectImportador);
+        
+                    $datosIguales=false;
+                    $datosVacios = false;
+        
+                    while($e = $Selectquery->fetch_assoc()){
+                        
+                       if ($e['codigoproveedor'] === $codigoproveedor) {
+                                $datosIguales = true;
+        
+                                if($datosIguales){ 
+                                $ResultadoError = "<script>alert('Datos del proveedor existen en la base de datos, verifique.')</script>";
+                                echo $ResultadoError;
+                                die();
+                                }
+                            }if($codigoproveedor ==""){
+                                $datosVacios = true;
+        
+                                if ($datosVacios) {
+                                    $ResultadoError2 = "<script>alert('Debe completar todos los datos del proveedor, verifique.')</script>";
+                                echo $ResultadoError2;
+                                die();
+                                }
+                            }
+        
+                        if ($e['nombreproveedor'] === $nombreproveedor) {
+                                $datosIguales = true;
+        
+                                if($datosIguales){ 
+                                $ResultadoError = "<script>alert('Datos del proveedor existen en la base de datos, verifique.')</script>";
+                                echo $ResultadoError;
+                                die();
+                                }
+                            }if($nombreproveedor ==""){
+                                $datosVacios = true;
+        
+                                if ($datosVacios) {
+                                    $ResultadoError2 = "<script>alert('Debe completar todos los datos del proveedor, verifique.')</script>";
+                                echo $ResultadoError2;
+                                die();
+                                }
+                            }
+
+                    
+                        if ($e['Telefono'] === $Telefono) {
+                            $datosIguales = true;
+        
+                                if($datosIguales){ 
+                                $ResultadoError = "<script>alert('Datos del proveedor existen en la base de datos, verifique.')</script>";
+                                echo $ResultadoError;
+                                die();
+                                }
+                            }if($Telefono ==""){
+                            $datosVacios = true;
+        
+                                if ($datosVacios) {
+                                    $ResultadoError2 = "<script>alert('Debe completar todos los datos del proveedor, verifique.')</script>";
+                                echo $ResultadoError2;
+                                die();
+                                }
+                            }
+        
+        
+                        if ($e['email'] === $email) {
+                            $datosIguales = true;
+        
+                                if($datosIguales){ 
+                                $ResultadoError = "<script>alert('Datos del proveedor existen en la base de datos, verifique.')</script>";
+                                echo $ResultadoError;
+                                die();
+                                }
+                            }if($email ==""){
+                            $datosVacios = true;
+        
+                                if ($datosVacios) {
+                                    $ResultadoError2 = "<script>alert('Debe completar todos los datos del proveedor, verifique.')</script>";
+                                echo $ResultadoError2;
+                                die();
+                                }
+                            }
+                       
+        
+                            elseif(!$datosIguales){
+                            
+                                $insertproveedor = "INSERT INTO siaproveedor (codigoproveedor, 
+                                nombreproveedor,  
+                                pais, 
+                                cuidad, 
+                                Telefono, 
+                                email,
+                                condicionproveedor, 
+                                especifique,
+                                estado
+                                ) VALUES ('$codigoproveedor',
+                                            '$nombreproveedor',
+                                            '$pais',
+                                            '$ciudad',
+                                            '$Telefono',
+                                            '$email',
+                                            '$condicionproveedor',
+                                            '$especifique',
+                                            '$estado2'
+                                            )";
+        
+                                $Insertquery = $conection->query($insertproveedor);
+        
+                                $estadoDelProveedor = "ACTIVO";
+                                $SelectEstadoDelProveedor = "UPDATE siaproveedor SET estado ='$estadoDelProveedor' WHERE codigoproveedor = '$codigoproveedor'";
+        
+                                if($Insertquery){
+                                    echo "<script>alert('Datos del proveedor insertados con exito.')</script>";
+
+                                    $constestatusImport = $conection->query($SelectEstadoDelProveedor);
+                                    if($constestatusImport){
+                                        header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/proveedor/proveedores.php");
+                                    }
+                                }
+                                break;
+                                } 
+                }
+            }
+        }
+
+
+        class ProveedorEdit {
+
+            public $conection;
+            public $parampostscript;
+        
+            public function __construct($conection, $parampostscript) {
+                $this->conection = $conection;
+                $this->parampostscript = $parampostscript;
+            }
+        
+            public function imprimirenpantallaProveedorEdit() {
+                // Realiza la consulta para obtener el registro
+                $queryBD = "SELECT * FROM siaproveedor WHERE codigoproveedor = '$this->parampostscript'";
+                $ExecutequeryBD = $this->conection->query($queryBD);
+        
+                // Verifica si la consulta fue exitosa
+                if ($ExecutequeryBD) {
+                    while ($varR = $ExecutequeryBD->fetch_assoc()) {
+                        $codigoproveedor = htmlspecialchars(strtoupper($varR['codigoproveedor']), ENT_QUOTES);
+                        $nombreproveedor = htmlspecialchars(strtoupper($varR['nombreproveedor']), ENT_QUOTES);
+                        $pais = htmlspecialchars(strtoupper($varR['pais']), ENT_QUOTES);
+                        $cuidad = htmlspecialchars(strtoupper($varR['cuidad']), ENT_QUOTES);
+                        $Telefono = htmlspecialchars(strtoupper($varR['Telefono']), ENT_QUOTES);
+                        $email = htmlspecialchars(strtoupper($varR['email']), ENT_QUOTES);
+                        $condicionproveedor = htmlspecialchars(strtoupper($varR['condicionproveedor']), ENT_QUOTES);
+                        $especifique = htmlspecialchars(strtoupper($varR['especifique']), ENT_QUOTES);
+                        $estado = htmlspecialchars(strtoupper($varR['estado']), ENT_QUOTES);
+        
+                        // Mostrar el formulario con los datos actuales
+                        echo "<div class='ContainerGeneralImportador'>";
+                        echo "<form method='POST' action=''>";
+                        echo "<h3>Código Proveedor</h3><input type='text' name='codigoproveedor' class='datosinputimportador' value='$codigoproveedor' disabled><br>";
+                        echo "<h3 class='datosinputimportador1'>Nombre Proveedor</h3><input type='text' name='nombreproveedor' class='datosinputimportador1' value='$nombreproveedor' ><br>";
+                        echo "<h3>Pais</h3><input type='text' name='pais' class='datosinputimportador' value='$pais'><br>";
+                        echo "<h3 class='datosinputimportador1'>Ciudad</h3><input type='text' name='cuidad' class='datosinputimportador1' value='$cuidad'><br>";
+                        echo "<h3>Telefono</h3><input type='text' name='Telefono' class='datosinputimportador' value='$Telefono'><br>";
+                        echo "<h3 class='datosinputimportador1'>E-Mail</h3><input type='text' name='email' class='datosinputimportador1' value='$email'><br>";
+                        echo "<h3>Condición Proveedor</h3><input type='text' name='condicionproveedor' class='datosinputimportador' value='$condicionproveedor'><br>";
+                        echo "<h3 class='datosinputimportador1'>Especifique</h3><input type='text' name='especifique' class='datosinputimportador1' value='$especifique'><br>";
+                        echo "<h3>Estado</h3><input type='text' name='estado' class='datosinputimportador' value='$estado' disabled><br>";
+                        echo "<input type='hidden' name='id' value='$this->parampostscript'>";
+                        echo "<input type='submit' name='update' value='Actualizar' class='Actualizar'>";
+                        echo "</form>";
+                        echo "</div>";
+                    }
+                }
+        
+                // Procesar el formulario cuando se envía
+                if (isset($_POST['update'])) {
+
+                    $codigoproveedor =  $this->conection->real_escape_string($_POST['codigoproveedor']);
+                    $nombreproveedor =  $this->conection->real_escape_string($_POST['nombreproveedor']);
+                    $pais =  $this->conection->real_escape_string($_POST['pais']);
+                    $cuidad =  $this->conection->real_escape_string($_POST['cuidad']);
+                    $Telefono =  $this->conection->real_escape_string($_POST['Telefono']);
+                    $email =  $this->conection->real_escape_string($_POST['email']);
+                    $condicionproveedor =  $this->conection->real_escape_string($_POST['condicionproveedor']);
+                    $especifique =  $this->conection->real_escape_string($_POST['especifique']);
+                    $estado =  $this->conection->real_escape_string($_POST['estado']);
+        
+                    $selectqueryUpdate2 = "UPDATE siaproveedor SET 
+                        codigoproveedor = '$codigoproveedor',
+                        nombreproveedor = '$nombreproveedor',
+                        pais = '$pais',
+                        cuidad = '$cuidad',
+                        Telefono = '$Telefono',
+                        email = '$email',
+                        condicionproveedor = '$condicionproveedor',
+                        especifique = '$especifique',
+                        estado = '$estado'
+                        WHERE codigoproveedor = '$codigoproveedor'";
+                    
+                    $selectqueryUpdate2Execute = $this->conection->query($selectqueryUpdate2);
+        
+                    if ($selectqueryUpdate2Execute) {
+                        echo "<script>alert('Datos del proveedor actualizados con éxito');</script>";
+                        if($selectqueryUpdate2Execute){
+                            header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/proveedor/proveedores.php");
+                        }
+                    } else {
+                        echo "<script>alert('Error al actualizar los datos');</script>";
+                    }
+                }
+            }
+        }
