@@ -430,6 +430,7 @@ class importadordator {
 
         function imprimirenpantallaProveedor($conection){
             echo "<div class ='ContainerGeneralImportador'>";
+                // echo"<form action='' method='POST'>";
                 echo "<h3>" . "Código Proveedor " . "</h3>" . "<input type='text' name='codigoproveedor' class ='datosinputimportador' name='prueba1'>" . "<br>" ;
                 echo "<h3 class='datosinputimportador1'>" . "Nombre Proveedor " . "</h3>" . "<input type='text' name='nombreproveedor' class ='datosinputimportador1' >" . "<br>" ;
                 echo "<h3>" . "Pais " . "</h3>" . "<input type='text' name='pais' class ='datosinputimportador' >" . "<br>" ;
@@ -439,7 +440,7 @@ class importadordator {
                 echo "<h3>" . "Condicion Proveedor " . "</h3>" . "<input type='text' name='condicionproveedor' class ='datosinputimportador' >" . "<br>" ;
                 echo "<h3 class='datosinputimportador1'>" . "Especifique " . "</h3>" . "<input type='text' name='especifique' class ='datosinputimportador1' >" . "<br>" ;
                 echo "<h3>" . "Estado " . "</h3>" . "<input type='text' name='estado' class ='datosinputimportador' >" . "<br>" ;
-                       
+                // echo "</form>";       
                 echo "</div>";
                 echo "<div class='Buttons_Container_Send'> 
                                         <button name='SendInfo' class='SendInfo'>Crear Imp</button>
@@ -614,7 +615,6 @@ class importadordator {
         
                                 if($Insertquery){
                                     echo "<script>alert('Datos del proveedor insertados con exito.')</script>";
-
                                     $constestatusImport = $conection->query($SelectEstadoDelProveedor);
                                     if($constestatusImport){
                                         header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/proveedor/proveedores.php");
@@ -625,7 +625,6 @@ class importadordator {
                 }
             }
         }
-
 
         class ProveedorEdit {
 
@@ -638,11 +637,11 @@ class importadordator {
             }
         
             public function imprimirenpantallaProveedorEdit() {
-                // Realiza la consulta para obtener el registro
+                
                 $queryBD = "SELECT * FROM siaproveedor WHERE codigoproveedor = '$this->parampostscript'";
                 $ExecutequeryBD = $this->conection->query($queryBD);
         
-                // Verifica si la consulta fue exitosa
+                
                 if ($ExecutequeryBD) {
                     while ($varR = $ExecutequeryBD->fetch_assoc()) {
                         $codigoproveedor = htmlspecialchars(strtoupper($varR['codigoproveedor']), ENT_QUOTES);
@@ -676,8 +675,7 @@ class importadordator {
         
                 // Procesar el formulario cuando se envía
                 if (isset($_POST['update'])) {
-
-                    $codigoproveedor =  $this->conection->real_escape_string($_POST['codigoproveedor']);
+                    $id = $this->conection->real_escape_string($_POST['id']);
                     $nombreproveedor =  $this->conection->real_escape_string($_POST['nombreproveedor']);
                     $pais =  $this->conection->real_escape_string($_POST['pais']);
                     $cuidad =  $this->conection->real_escape_string($_POST['cuidad']);
@@ -687,17 +685,15 @@ class importadordator {
                     $especifique =  $this->conection->real_escape_string($_POST['especifique']);
                     $estado =  $this->conection->real_escape_string($_POST['estado']);
         
-                    $selectqueryUpdate2 = "UPDATE siaproveedor SET 
-                        codigoproveedor = '$codigoproveedor',
-                        nombreproveedor = '$nombreproveedor',
-                        pais = '$pais',
-                        cuidad = '$cuidad',
-                        Telefono = '$Telefono',
-                        email = '$email',
-                        condicionproveedor = '$condicionproveedor',
-                        especifique = '$especifique',
-                        estado = '$estado'
-                        WHERE codigoproveedor = '$codigoproveedor'";
+                    $selectqueryUpdate2 = "UPDATE siaproveedor SET
+                                                                    nombreproveedor = '$nombreproveedor',
+                                                                    pais = '$pais',
+                                                                    cuidad = '$cuidad',
+                                                                    Telefono = '$Telefono',
+                                                                    email = '$email',
+                                                                    condicionproveedor = '$condicionproveedor',
+                                                                    especifique = '$especifique'
+                                                                    WHERE codigoproveedor = '$id'";
                     
                     $selectqueryUpdate2Execute = $this->conection->query($selectqueryUpdate2);
         

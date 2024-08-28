@@ -95,7 +95,7 @@
                     <div class="Buttons_Container_Send"> 
 
                         <button name="SalidaImportador" id="Salida_Segura2">
-                            <a href="importadores.php" class="Salida_Segura23" style ="font-size: 16px;">
+                            <a href="proveedores.php" class="Salida_Segura23" style ="font-size: 16px;">
                                 Salir
                             </a>
                         </button>
@@ -103,7 +103,7 @@
                                 <?php 
                                 if(isset($_POST['SalidaImportador'])){
                                     $buttonfef=$_POST['SalidaImportador'];
-                                    header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php ");
+                                    header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/proveedor/proveedores.php ");
                                 }
                                 ?>
 
