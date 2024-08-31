@@ -9,7 +9,7 @@ html {
     box-sizing: border-box;
     -moz-box-flex: inherit;
     margin-left: 20%;
-    max-width: 900px;
+    max-width: 950px;
     padding: 20px;
     padding-right: 20px;
     background-color: #ffffff;
@@ -175,7 +175,7 @@ th, td {
 thead {
     background-color: #010D26;
     color: white;
-    position: sticky;
+    
     top: 0;
     z-index: 1;
     
@@ -195,4 +195,10 @@ thead {
 }
 form{
     padding-top: 6em;
+}
+.emailrow{
+    max-width: 230px;
+}
+.nombrerow{
+    max-width: 160px;
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="importador2.css">
+    <link rel="stylesheet" href="incoterm2.css">
     <title>Importador</title>
 </head>
 <body >
@@ -28,7 +28,7 @@
                 $sesionValue= "<strong class='Bienvenida'>Bienvenido : </strong>" . "<strong>$sesion</strong>";
                 echo $sesionValue;
 
-                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php' class='rutas'>Nivel anterior</a>";
+                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incoterms.php' class='rutas'>Nivel anterior</a>";
                             
                 $SpecificRouteVar = __FILE__;
 
@@ -71,14 +71,14 @@
             $variablefor=$_POST['deletebackgroundbutton'];
                 $variablefor;
 
-                    $consultarBD ="SELECT * FROM siaimportador WHERE nit = '$variablefor' ";
+                    $consultarBD ="SELECT * FROM siaicoterm WHERE codincoterm = '$variablefor' ";
                     $queryconsultarBD = $conection->query($consultarBD);
                         
                     while($l = $queryconsultarBD->fetch_assoc()){
                         
                         echo "<div class ='ContainerGeneralImportador'>";
                                             
-                                            echo "<h3>" . "Tipodocumento " . "</h3>" . "<input type='text' name='tipodocumento' class ='datosinputimportador' name='prueba1' value ='". strtoupper($l['tipodocumento'])."' disabled>" . "<br>" ;
+                                            echo "<h3>" . "Código Incoterm " . "</h3>" . "<input type='text' name='codincoterm' class ='datosinputimportador' name='prueba1' value ='". strtoupper($l['codincoterm'])."' disabled>" . "<br>" ;
                                             echo "<h3 class='datosinputimportador1'>" . "Nit " . "</h3>" . "<input type='text' name='nit' class ='datosinputimportador1'  value ='{$l['nit']}' disabled>" . "<br>" ;
                                             echo "<h3>" . "Razonsocial " . "</h3>" . "<input type='text' name='razonsocial' class ='datosinputimportador' value ='".strtoupper($l['razonsocial'])."' disabled >" . "<br>" ;
                                             echo "<h3 class='datosinputimportador1'>" . "Nivelcomercialcod " . "</h3>" . "<input type='text' name='nivelcomercialcod' class ='datosinputimportador1' value ='{$l['nivelcomercialcod']}' disabled>" . "<br>" ;

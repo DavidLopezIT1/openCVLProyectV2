@@ -132,22 +132,22 @@ function changedform2(parameter, param3){
                                     
                                     echo "<tr>" .
                                     "<td><button class='deletebackground' name='deletebackgroundbutton' value='" . htmlspecialchars(strtoupper($a['codigoproveedor'])) . "' onclick=\"changedform2('proveedorquery.php', 'get')\">" . htmlspecialchars(strtoupper($a['codigoproveedor'])) . "</button></td>" . 
-                                         "<td>" . htmlspecialchars(strtoupper($a['nombreproveedor'])) . "</td>" .
-                                         "<td>" . htmlspecialchars($a['email']) . "</td>" .
+                                         "<td class='nombrerow'>" . htmlspecialchars(strtoupper($a['nombreproveedor'])) . "</td>" .
+                                         "<td class='emailrow'>" . htmlspecialchars($a['email']) . "</td>" .
                                          "<td>" . htmlspecialchars(strtoupper($a['pais'])) . "</td>" .
                                          "<td>" . htmlspecialchars(strtoupper($a['estado'])) . "</td>" .
                                          "<td><input type='checkbox' style='accent-color: yellow' class='checkboxitem' name='checkboxitemv[]' value='" . htmlspecialchars($a['codigoproveedor']) . "'></td>" .
                                          "</tr>";
                                 }
-                            } else{
+                            } else{ 
                                 $query2 = "SELECT * FROM siaproveedor";
                                 $resultquery2 = $conection->query($query2);
                             
                                 while($a = $resultquery2->fetch_assoc()) {
                                     echo "<tr>" .
                                     "<td><button class='deletebackground' name='deletebackgroundbutton' value='" . htmlspecialchars(strtoupper($a['codigoproveedor'])) . "' onclick=\"changedform2('proveedorquery.php', 'get')\">" . htmlspecialchars(strtoupper($a['codigoproveedor'])) . "</button></td>" . 
-                                         "<td>" . htmlspecialchars(strtoupper($a['nombreproveedor'])) . "</td>" .
-                                         "<td>" . htmlspecialchars(strtoupper($a['email'])) . "</td>" .
+                                         "<td class='nombrerow'>" . htmlspecialchars(strtoupper($a['nombreproveedor'])) . "</td>" .
+                                         "<td class='emailrow'>" . htmlspecialchars(strtoupper($a['email'])) . "</td>" .
                                          "<td>" . htmlspecialchars(strtoupper($a['pais'])) . "</td>" .
                                          "<td>" . "<span name = 'statusUpdate[]' value='" . htmlspecialchars(strtoupper($a['estado'])) . "'>" . htmlspecialchars(strtoupper($a['estado'])) . "</span>" . "</td>" .
                                          "<td><input type='checkbox' style='accent-color: yellow' class='checkboxitem' name='checkboxitemv[]' value='" . htmlspecialchars($a['codigoproveedor']) . "'></td>" .
