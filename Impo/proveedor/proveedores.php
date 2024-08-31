@@ -125,6 +125,11 @@ function changedform2(parameter, param3){
                                 $resultquery = $conection->query($query1);
                             
                                 while($a = $resultquery->fetch_assoc()) {
+                                    // $tvariable =$a['codigoproveedor'];
+                                    // if(strlen($tvariable)>13){
+                                    //     $tvariable = substr($tvariable,0,13);
+                                    // }
+                                    
                                     echo "<tr>" .
                                     "<td><button class='deletebackground' name='deletebackgroundbutton' value='" . htmlspecialchars(strtoupper($a['codigoproveedor'])) . "' onclick=\"changedform2('proveedorquery.php', 'get')\">" . htmlspecialchars(strtoupper($a['codigoproveedor'])) . "</button></td>" . 
                                          "<td>" . htmlspecialchars(strtoupper($a['nombreproveedor'])) . "</td>" .
@@ -246,4 +251,3 @@ function changedform2(parameter, param3){
 </div>
 </body>
 </html>
-

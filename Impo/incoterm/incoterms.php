@@ -6,7 +6,7 @@
     <title>Interfaz de Consulta de Datos</title>
     <script src="../general_scripts.js"></script>
     <script src="https://kit.fontawesome.com/5bcdd05e64.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="importadores.css">
+    <link rel="stylesheet" href="incoterms.css">
 </head>
 <body >
 
@@ -97,19 +97,19 @@ function changedform2(parameter, param3){
                         $stausbutton2 = true;
                     }
             ?>  
-            </div>
-            <table>
-            <br>
-                <thead>
-                    <th>Nit</th>
-                    <th>Importador</th>
-                    <th>Teléfono</th>
-                    <th>Dirección</th>
-                    <th>Estado</th>
-                    <th><input type="checkbox" style=" accent-color: yellow;" id="generalCheckbox" onclick="selectorChecked ()"></th>
-                </thead>
-                
-                <tbody>
+    </div>
+        <table>
+        <br>
+            <thead>
+                <th>Nit</th>
+                <th>Importador</th>
+                <th>Teléfono</th>
+                <th>Dirección</th>
+                <th>Estado</th>
+                <th><input type="checkbox" style=" accent-color: yellow;" id="generalCheckbox" onclick="selectorChecked ()"></th>
+            </thead>
+            
+            <tbody>
 
                 <?php 
                             
@@ -211,8 +211,6 @@ function changedform2(parameter, param3){
                             if(isset($_POST['deletebackgroundbutton'])){
                                 $variablefor= urlencode($_POST['deletebackgroundbutton']);
                             }
-                                    
-
                 ?>
                                 
         </tbody>
@@ -228,5 +226,15 @@ function changedform2(parameter, param3){
     </div>
 
     </form>
+
+            <script>
+                
+            </script>
+
+
+
+
+
 </body>
 </html>
+

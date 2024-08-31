@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="importador.css">
-    <title>Importador</title>
+    <link rel="stylesheet" href="incoterm.css">
+    <title>Incoterm</title>
 </head>
 <body >
 
@@ -91,7 +91,7 @@
                     <div class="Buttons_Container_Send"> 
 
                         <button name="ExitForm" id="Salida_Segura2">
-                            <a href="importadores.php" class="Salida_Segura23" style ="font-size: 16px;">
+                            <a href="incoterms.php" class="Salida_Segura23" style ="font-size: 16px;">
                                 Salir
                             </a>
                         </button>

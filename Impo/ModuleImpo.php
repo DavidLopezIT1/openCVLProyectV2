@@ -75,7 +75,7 @@
                 <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-user-secret"></i><br><br><a href="http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php">Importador</a></div>
                 <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-sitemap"></i><br><br><a href="http://localhost/Proyecto_soft/openCVLProyect/impo/proveedor/proveedores.php">Proveedor</a></div>
                 <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-bullseye"></i><br><br><a href="">Productos</a></div>
-                <div class="Imparametrica" name="parametrica"><i class="fa-regular fa-registered"></i><br><br><a href="">Inconterm</a></div>
+                <div class="Imparametrica" name="parametrica"><i class="fa-regular fa-registered"></i><br><br><a href="http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incoterms.php">Inconterm</a></div>
                 <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-id-card-clip"></i><br><br><a href="">Transportador</a></div>
                 <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-copy"></i><br><br><a href="">Tipo Declaración</a></div>
                 <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-city"></i><br><br><a href="">Oficina Incomex</a></div>

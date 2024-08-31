@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="importador.css">
+    <link rel="stylesheet" href="incoterm3.css">
     <title>Importador</title>
 </head>
 <body >
@@ -28,8 +28,8 @@
                 $sesionValue= "<strong class='Bienvenida'>Bienvenido : </strong>" . "<strong>$sesion</strong>";
                 echo $sesionValue;
 
-                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php' class='rutas'>Nivel anterior</a>";
-                            
+                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incoterms.php' class='rutas'>Nivel anterior</a>";
+
                 $SpecificRouteVar = __FILE__;
 
                 $palabraEspecifica = "htdocs";
@@ -43,7 +43,6 @@
                     
                     $RutaAbsoluta = "http://localhost" . $resultado;
                 } 
-
                     $ruta5 ="<a href='$RutaAbsoluta' class='rutas'>Nivel Anterior</a>";
         ?>
 
@@ -51,70 +50,41 @@
             <a href="http://localhost/Proyecto_soft/openCVLProyect/cierre_sesion.php">Salida Segura</a>
         </button>
 </header>
-<main>
-        <form action="" method ="post">
-                <fieldset>
-                    
-                    <div style="margin-bottom: 20px;">
-                        <strong style="color:#0D0D0D; font-size: 20px; margin-bottom: 10px;">Editar / Importador</strong>
-                    </div>
 
-                    <div class="headergeneral2">
-                        <header  class="headergeneral3">
-                            <h1><p  style=" margin-bottom: 20px;">Editar Datos Importador</p></h1>
+<main>
+        <form action="incotermCreate.php" method ="post">
+                <fieldset>
+                   
+                <strong><p style=" color:#0D0D0D; font-size:20px; font-family:black;">Crear Incoterm</p></strong>
+
+                    <div class="HeaderGeneral2">
+                        <header>
+                            <h1><p>Datos creación Incoterm</p></h1>
                         </header>
                     </div>
 
-<?php
-            $recibirvariable = $_POST['checkboxitemv'];
-            $recibirvariable;
-            
-            foreach($recibirvariable AS $rowID){
-                $rowID;
-            }
-            
-                  $impresionEditImportador = new ImportadorEdit($conection, $rowID);
-                    echo $impresionEditImportador->imprimirenpantallaEdit($conection, $rowID );
-            
-?>
-            <div>
+        <?php
+
+                $Generalobject = new importadordator($conection);                              
+                        echo $Generalobject->imprimirenpantalla($conection);     
+      
+        ?>            
             <footer>
+                <!-- <button><a href="ModuleImpo.php">volver</a></button><br><br> -->
                 <p>&copy; 2024 Importaciones - David L</p>
             </footer>
-            </div>
+            
 
             </fieldset>
 
                 <br><br>
 
-
-                    <div class="Buttons_Container_Send"> 
-
-                        <button name="ExitForm" id="Salida_Segura2">
-                            <a href="importadores.php" class="Salida_Segura23" style ="font-size: 16px;">
-                                Salir
-                            </a>
-                        </button>
-
-                                <?php 
-                                if(isset($_POST['ExitForm'])){
-                                    $buttonfef=$_POST['ExitForm'];
-                                    header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php ");
-                                }
-                                ?>
-
-                    </div>
-                    <div>
+                    
+                    
             
 
         </form>
-        </main>      
-        <?php 
-        
-        
-        ?>
+        </main>     
 
-
-</div>
 </body>
 </html>
