@@ -65,8 +65,7 @@
 
         <?php
 
-                $Generalobject = new importadordator($conection);                              
-                        echo $Generalobject->imprimirenpantalla($conection);     
+            echo imprimirenpantallaIncoterm($conection) ;
       
         ?>            
             <footer>

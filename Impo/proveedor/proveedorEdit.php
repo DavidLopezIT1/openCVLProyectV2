@@ -73,8 +73,8 @@
                 $rowID;
             }
             
-                  $impresionEditImportador = new ProveedorEdit($conection, $rowID);
-                    echo $impresionEditImportador->imprimirenpantallaProveedorEdit( );
+            $impresionEditProveedor = new ProveedorEdit($conection, $rowID);
+            echo $impresionEditProveedor->imprimirenpantallaProveedorEdit(  );
             
 ?>
             <div>

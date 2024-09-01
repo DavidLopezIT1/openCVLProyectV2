@@ -18,7 +18,7 @@ fieldset{
     grid-template-columns: repeat(6,2fr);
     background-color: #ffffff;
     border-radius: 8px;
-    margin-left:0px;    
+    margin-left:10px;    
     width: 80%;
     max-width: 1240px;
     align-items: center;
@@ -175,6 +175,9 @@ legend {
     color:#007bff; 
     font-size: 17px;
 }
+.ActualizarB{
+    margin-left:80px;    
+}
 .Actualizar{
     background-color: #033E8C;
     text-decoration: none;
@@ -184,7 +187,8 @@ legend {
     border:solid 2px #3DBCD9;
     border-radius:5px;
     color: white;
-    margin-left: 40px;
+    margin-left: 0px;
+    margin-top: 20px;
 }
 .Actualizar:hover{
     background-color: #3DBCD9;

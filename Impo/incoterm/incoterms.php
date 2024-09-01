@@ -142,7 +142,6 @@ function changedform2(parameter, param3){
                                     "<td><button class='deletebackground' name='deletebackgroundbutton' value='" . htmlspecialchars($a['codincoterm']) . "' onclick=\"changedform2('incotermquery.php', 'post')\">" . htmlspecialchars($a['codincoterm']) . "</button></td>" . 
                                          "<td>" . htmlspecialchars(strtoupper($a['incotermdesc'])) . "</td>" .
                                          "<td>" . htmlspecialchars($a['lugarentrega']) . "</td>" .
-                                         
                                          "<td>" . "<span name = 'statusUpdate[]' value='" . htmlspecialchars(strtoupper($a['estado'])) . "'>" . htmlspecialchars(strtoupper($a['estado'])) . "</span>" . "</td>" .
                                          "<td><input type='checkbox' style='accent-color: yellow' class='checkboxitem' name='checkboxitemv[]' value='" . htmlspecialchars($a['codincoterm']) . "'></td>" .
                                          "</tr>";

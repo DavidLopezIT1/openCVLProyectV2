@@ -443,7 +443,7 @@ class importadordator {
                 // echo "</form>";       
                 echo "</div>";
                 echo "<div class='Buttons_Container_Send'> 
-                                        <button name='SendInfo' class='SendInfo'>Crear Imp</button>
+                                        <button name='SendInfo' class='SendInfo'>Crear Prov</button>
                                         <button name='SalidaImportador'>
                                             <a href='proveedores.php' class='Salida_Segura2'>
                                                 Salir
@@ -499,8 +499,7 @@ class importadordator {
                     }else{
                         $estado2 = "";
                     }
-        
-                    
+            
                     if(isset($_POST['SendInfo'])){ 
         
                     $selectImportador ="SELECT * FROM siaproveedor";
@@ -701,6 +700,211 @@ class importadordator {
                         echo "<script>alert('Datos del proveedor actualizados con éxito');</script>";
                         if($selectqueryUpdate2Execute){
                             header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/proveedor/proveedores.php");
+                        }
+                    } else {
+                        echo "<script>alert('Error al actualizar los datos');</script>";
+                    }
+                }
+            }
+        }
+
+
+
+        function imprimirenpantallaIncoterm($conection){
+            echo "<div class ='ContainerGeneralImportador'>";
+                echo "<h3>" . "Código Incoterm " . "</h3>" . "<input type='text' name='codincoterm' class ='datosinputimportador'>" . "<br>" ;
+                echo "<h3 class='datosinputimportador1'>" . "Nombre Incotetm " . "</h3>" . "<input type='text' name='incotermdesc' class ='datosinputimportador1' >" . "<br>" ;
+                echo "<h3>" . "Lugar de Entrega " . "</h3>" . "<input type='text' name='lugarentrega' class ='datosinputimportador' >" . "<br>" ;
+                echo "<h3 style ='margin-left: 40px ;'>" . "Estado " . "</h3>" . "<input type='text' name='estado' class ='datosinputimportador1' >" . "<br>" ;
+                echo "</div>";
+                echo "<div class='Buttons_Container_Send'> 
+                                        <button name='SendInfo' class='SendInfo'>Crear Incoterm</button>
+                                        <button name='SalidaImportador'>
+                                            <a href='proveedores.php' class='Salida_Segura2'>
+                                                Salir
+                                            </a>
+                                        </button>
+                                    </div>  ";  
+                
+            
+        
+                    if(isset($_POST['codincoterm'])){
+                        $codincoterm = strtoupper($_POST['codincoterm']);
+                    }else{
+                        $codincoterm = "";
+                    }
+                    
+                    if(isset($_POST['incotermdesc'])){
+                        $incotermdesc = $_POST['incotermdesc'];
+                    }else{
+                        $incotermdesc = "";
+                    }
+                    if(isset($_POST['lugarentrega'])){
+                        $lugarentrega = strtoupper($_POST['lugarentrega']);
+                    }else{
+                        $lugarentrega = "";
+                    }
+                    if(isset($_POST['estado'])){
+                        $estado2 = $_POST['estado'];
+                    }else{
+                        $estado2 = "";
+                    }
+            
+                    if(isset($_POST['SendInfo'])){ 
+        
+                            $selectImportador ="SELECT * FROM siaincoterm";
+                            $Selectquery = $conection->query($selectImportador);
+                
+                            $datosIguales=false;
+                            $datosVacios = false;
+                
+                            while($e = $Selectquery->fetch_assoc()){
+                                
+                            if ($e['codincoterm'] === $codincoterm) {
+                                        $datosIguales = true;
+                
+                                        if($datosIguales){ 
+                                        $ResultadoError = "<script>alert('Datos del Incoterm existen en la base de datos, verifique.')</script>";
+                                        echo $ResultadoError;
+                                        die();
+                                        }
+                                    }if($codincoterm ==""){
+                                        $datosVacios = true;
+                
+                                        if ($datosVacios) {
+                                            $ResultadoError2 = "<script>alert('Debe completar todos los datos del Incoterm, verifique.')</script>";
+                                        echo $ResultadoError2;
+                                        die();
+                                        }
+                                    }
+                
+                                if ($e['incotermdesc'] === $incotermdesc) {
+                                        $datosIguales = true;
+                
+                                        if($datosIguales){ 
+                                        $ResultadoError = "<script>alert('Datos del Incoterm existen en la base de datos, verifique.')</script>";
+                                        echo $ResultadoError;
+                                        die();
+                                        }
+                                    }if($incotermdesc ==""){
+                                        $datosVacios = true;
+                
+                                        if ($datosVacios) {
+                                            $ResultadoError2 = "<script>alert('Debe completar todos los datos del Incoterm, verifique.')</script>";
+                                        echo $ResultadoError2;
+                                        die();
+                                        }
+                                    }
+
+                            
+                                if ($e['lugarentrega'] === $lugarentrega) {
+                                    $datosIguales = true;
+                
+                                        if($datosIguales){ 
+                                        $ResultadoError = "<script>alert('Datos del Incoterm existen en la base de datos, verifique.')</script>";
+                                        echo $ResultadoError;
+                                        die();
+                                        }
+                                    }if($lugarentrega ==""){
+                                    $datosVacios = true;
+                
+                                        if ($datosVacios) {
+                                            $ResultadoError2 = "<script>alert('Debe completar todos los datos del Incoterm, verifique.')</script>";
+                                        echo $ResultadoError2;
+                                        die();
+                                        }
+                                    }
+        
+                        elseif(!$datosIguales){
+                            
+                                $insertincoterm = "INSERT INTO siaincoterm (codincoterm, 
+                                incotermdesc,  
+                                lugarentrega,
+                                estado
+                                ) VALUES ('$codincoterm',
+                                            '$incotermdesc',
+                                            '$lugarentrega',
+                                            '$estado2'
+                                            )";
+        
+                                $Insertquery = $conection->query($insertincoterm);
+        
+                                $estadoDelIncoterm = "ACTIVO";
+                                $SelectEstadoDelIncoterm = "UPDATE siaincoterm SET estado ='$estadoDelIncoterm' WHERE codincoterm = '$codincoterm'";
+        
+                                if($Insertquery){
+                                    echo "<script>alert('Datos del Incoterm insertados con exito.')</script>";
+                                    $constestatusImport = $conection->query($SelectEstadoDelIncoterm);
+                                    if($constestatusImport){
+                                        header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incoterms.php");
+                                    }
+                                }
+                                break;
+                                } 
+                }
+            }
+        }
+
+
+        class IncotermEdit {
+
+            public $conection;
+            public $parampostscript;
+        
+            public function __construct($conection, $parampostscript) {
+                $this->conection = $conection;
+                $this->parampostscript = $parampostscript;
+            }
+        
+            public function imprimirenpantallaIncotermEdit() {
+                
+                $queryBD = "SELECT * FROM siaincoterm WHERE codincoterm = '$this->parampostscript'";
+                $ExecutequeryBD = $this->conection->query($queryBD);
+        
+                
+                if ($ExecutequeryBD) {
+                    while ($varR = $ExecutequeryBD->fetch_assoc()) {
+
+                        $codincoterm = htmlspecialchars(strtoupper($varR['codincoterm']), ENT_QUOTES);
+                        $incotermdesc = htmlspecialchars(strtoupper($varR['incotermdesc']), ENT_QUOTES);
+                        $lugarentrega = htmlspecialchars(strtoupper($varR['lugarentrega']), ENT_QUOTES);
+                        $estado = htmlspecialchars(strtoupper($varR['estado']), ENT_QUOTES);
+        
+                        // Mostrar el formulario con los datos actuales
+                        echo "<div class='ContainerGeneralImportador'>";
+                        echo "<form method='POST' action=''>";
+                        echo "<h3>Código Incoterm</h3><input type='text' name='codigoproveedor' class='datosinputimportador' value='$codincoterm' disabled><br>";
+                        echo "<h3 class='datosinputimportador1'>Descripción Incoterm</h3><input type='text' name='nombreproveedor' class='datosinputimportador1' value='$incotermdesc' ><br>";
+                        echo "<h3>Lugar Entrega</h3><input type='text' name='pais' class='datosinputimportador' value='$lugarentrega'><br>";
+                        echo "<h3 class='datosinputimportador1'>Estado</h3><input type='text' name='estado' class='datosinputimportador1' value='$estado' disabled><br>";
+                        echo "<input type='hidden' name='id' value='$this->parampostscript'>";
+                        echo "<input type='submit' name='update' value='Actualizar' class='Actualizar'>";
+                        echo "</form>";
+                        echo "</div>";
+                    }
+                }
+        
+                // Procesar el formulario cuando se envía
+                if (isset($_POST['update'])) {
+                    $id = $this->conection->real_escape_string($_POST['id']);
+                    $codincoterm =  $this->conection->real_escape_string($_POST['codincoterm']);
+                    $incotermdesc =  $this->conection->real_escape_string($_POST['incotermdesc']);
+                    $lugarentrega =  $this->conection->real_escape_string($_POST['lugarentrega']);
+                    $estado =  $this->conection->real_escape_string($_POST['estado']);
+                   
+        
+                    $selectqueryUpdate2 = "UPDATE siaincoterm SET
+                                                                    codincoterm = '$codincoterm',
+                                                                    incotermdesc = '$incotermdesc',
+                                                                    lugarentrega = '$lugarentrega'
+                                                                    WHERE codincoterm = '$id'";
+                    
+                    $selectqueryUpdate2Execute = $this->conection->query($selectqueryUpdate2);
+        
+                    if ($selectqueryUpdate2Execute) {
+                        echo "<script>alert('Datos del Incoterm actualizados con éxito');</script>";
+                        if($selectqueryUpdate2Execute){
+                            header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incoterms.php");
                         }
                     } else {
                         echo "<script>alert('Error al actualizar los datos');</script>";
