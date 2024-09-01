@@ -85,7 +85,7 @@ function changedform2(parameter, param3){
             <?php 
 
                     if(isset($_POST['createReg'])){
-                        header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/importador/incotermCreate.php");
+                        header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incotermCreate.php");
                     }
                     if(isset($_POST['editReg'])){
                         $editReg = $_POST['editReg'];
@@ -125,7 +125,7 @@ function changedform2(parameter, param3){
                             
                                 while($a = $resultquery->fetch_assoc()) {
                                     echo "<tr>" .
-                                    "<td><button class='deletebackground' name='deletebackgroundbutton' value='" . htmlspecialchars($a['codincoterm']) . "' onclick=\"changedform2('incotermquery.php', 'get')\">" . htmlspecialchars($a['codincoterm']) . "</button></td>" . 
+                                    "<td><button class='deletebackground' name='deletebackgroundbutton' value='" . htmlspecialchars($a['codincoterm']) . "' onclick=\"changedform2('incotermquery.php', 'post')\">" . htmlspecialchars($a['codincoterm']) . "</button></td>" . 
                                          "<td>" . htmlspecialchars(strtoupper($a['incotermdesc'])) . "</td>" .
                                          "<td>" . htmlspecialchars($a['lugarentrega']) . "</td>" .
                                          
@@ -139,7 +139,7 @@ function changedform2(parameter, param3){
                             
                                 while($a = $resultquery2->fetch_assoc()) {
                                     echo "<tr>" .
-                                    "<td><button class='deletebackground' name='deletebackgroundbutton' value='" . htmlspecialchars($a['codincoterm']) . "' onclick=\"changedform2('incotermquery.php', 'get')\">" . htmlspecialchars($a['codincoterm']) . "</button></td>" . 
+                                    "<td><button class='deletebackground' name='deletebackgroundbutton' value='" . htmlspecialchars($a['codincoterm']) . "' onclick=\"changedform2('incotermquery.php', 'post')\">" . htmlspecialchars($a['codincoterm']) . "</button></td>" . 
                                          "<td>" . htmlspecialchars(strtoupper($a['incotermdesc'])) . "</td>" .
                                          "<td>" . htmlspecialchars($a['lugarentrega']) . "</td>" .
                                          
@@ -203,7 +203,6 @@ function changedform2(parameter, param3){
                                 foreach($_POST['checkboxitemv'] AS $queryEditV1){
                                      $queryEditV1 = urlencode($queryEditV1);
                                     echo $queryEditV1;
-
                                 }
                             }
 

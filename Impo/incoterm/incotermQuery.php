@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="incoterm2.css">
-    <title>Importador</title>
+    <title>Incoterm</title>
 </head>
 <body >
 
@@ -54,15 +54,15 @@
 </header>
 <main>
 
-        <form action="importadorQuery.php" method ="post">
+        <form action="incotermQuery.php" method ="post">
                 <fieldset>
 
                     <div style="margin-bottom: 10px;">
-                        <strong style="color:#0D0D0D; font-size: 20px; margin-bottom: 10px;">Consultar / Importador</strong>
+                        <strong style="color:#0D0D0D; font-size: 20px; margin-bottom: 10px;">Consultar / Incoterm</strong>
                     </div>
                     <div class="HeaderImportador">
                         <header class="header3">
-                            <h1><p>Datos Importador</p ></h1>
+                            <h1><p>Datos Incoterm</p ></h1>
                         </header>
                     </div>
  
@@ -71,29 +71,18 @@
             $variablefor=$_POST['deletebackgroundbutton'];
                 $variablefor;
 
-                    $consultarBD ="SELECT * FROM siaicoterm WHERE codincoterm = '$variablefor' ";
+                    $consultarBD ="SELECT * FROM siaincoterm WHERE codincoterm = '$variablefor' ";
                     $queryconsultarBD = $conection->query($consultarBD);
                         
                     while($l = $queryconsultarBD->fetch_assoc()){
                         
                         echo "<div class ='ContainerGeneralImportador'>";
                                             
-                                            echo "<h3>" . "Código Incoterm " . "</h3>" . "<input type='text' name='codincoterm' class ='datosinputimportador' name='prueba1' value ='". strtoupper($l['codincoterm'])."' disabled>" . "<br>" ;
-                                            echo "<h3 class='datosinputimportador1'>" . "Nit " . "</h3>" . "<input type='text' name='nit' class ='datosinputimportador1'  value ='{$l['nit']}' disabled>" . "<br>" ;
-                                            echo "<h3>" . "Razonsocial " . "</h3>" . "<input type='text' name='razonsocial' class ='datosinputimportador' value ='".strtoupper($l['razonsocial'])."' disabled >" . "<br>" ;
-                                            echo "<h3 class='datosinputimportador1'>" . "Nivelcomercialcod " . "</h3>" . "<input type='text' name='nivelcomercialcod' class ='datosinputimportador1' value ='{$l['nivelcomercialcod']}' disabled>" . "<br>" ;
-                                            echo "<h3>" . "Nivelcomercialdesc " . "</h3>" . "<input type='text' name='nivelcomercialdesc' class ='datosinputimportador'   value ='".strtoupper($l['nivelcomercialdesc'])."' disabled>" . "<br>" ;
-                                            echo "<h3 class='datosinputimportador1'>" . "Telefono " . "</h3>" . "<input type='text' name='telefono' class ='datosinputimportador1'   value ='{$l['telefono']}' disabled>" . "<br>" ;
-                                            echo "<h3>" . "Direccion " . "</h3>" . "<input type='text' name='direccion' class ='datosinputimportador'   value ='".strtoupper($l['direccion'])."' disabled>" . "<br>" ;
-                                            echo "<h3 class='datosinputimportador1'>" . "Correoelectronico " . "</h3>" . "<input type='text' name='correoelectronico' class ='datosinputimportador1'   value ='".strtoupper($l['correoelectronico'])."' disabled>" . "<br>" ;
-                                            echo "<h3>" . "Pais " . "</h3>" . "<input type='text' name='pais' class ='datosinputimportador'   value ='".strtoupper($l['pais'])."' disabled>" . "<br>" ;
-                                            echo "<h3 class='datosinputimportador1'>" . "Depto " . "</h3>" . "<input type='text' name='depto' class ='datosinputimportador1'   value ='".strtoupper($l['depto'])."' disabled>" . "<br>" ;
-                                            echo "<h3>" . "Administracionmercancia " . "</h3>" . "<input type='text' name='administracionmercancia' class ='datosinputimportador'   value ='".strtoupper($l['administracionmercancia'])."' disabled>" . "<br>" ;
-                                            echo "<h3 class='datosinputimportador1'>" . "CodigoOEA " . "</h3>" . "<input type='text' name='CodigoOEA' class ='datosinputimportador1'   value ='".strtoupper($l['CodigoOEA'])."' disabled>" . "<br>" ;
-                                            echo "<h3>" . "Actividadeconomicacod " . "</h3>" . "<input type='text' name='actividadeconomicacod' class ='datosinputimportador'   value ='{$l['actividadeconomicacod']}' disabled>" . "<br>" ;
-                                            echo "<h3 class='datosinputimportador1'>" . "Actividadeconomicadesc " . "</h3>" . "<input type='text' name='actividadeconomicadesc' class ='datosinputimportador1'   value ='".strtoupper($l['actividadeconomicadesc'])."' disabled>" . "<br>" ;
-                                            echo "<h3>" . "Estado " . "</h3>" . "<input type='text' name='estado' class ='datosinputimportador'   value ='".strtoupper($l['estado'])."' disabled>" ;       
-                                            echo "</div>";
+                                            echo "<h3>" . "Código Incoterm " . "</h3>" . "<input type='text' name='codincoterm' class ='datosinputimportador' value ='". strtoupper($l['codincoterm'])."' disabled>" . "<br>" ;
+                                            echo "<h3 class='datosinputimportador1'>" . "Descripción Incoterm" . "</h3>" . "<input type='text' name='incotermdesc' class ='datosinputimportador1'  value ='{$l['incotermdesc']}' disabled>" . "<br>" ;
+                                            echo "<h3>" . "Lugar Entrega " . "</h3>" . "<input type='text' name='lugarentrega' class ='datosinputimportador' value ='".strtoupper($l['lugarentrega'])."' disabled >" . "<br>" ;
+                                            echo "<h3 style='margin-left:40px'>" . "Estado" . "</h3>" . "<input type='text' name='estado' class ='datosinputimportador1'   value ='".strtoupper($l['estado'])."' disabled>" ;       
+                        echo "</div>";
                 }                                        
         ?>
 
@@ -110,14 +99,14 @@
                     <div class="Buttons_Container_Send"> 
 
                         <button name="ExitBtn">
-                            <a href="importadores.php" class="Salida_Segura2">
+                            <a href="incoterms.php" class="Salida_Segura2">
                                 Salir
                             </a>
                         </button>
 
                         <?php 
                         if(isset($_POST['ExitBtn'])){
-                            header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php");
+                            header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incoterms.php");
                         }
                         ?>
 
