@@ -287,7 +287,7 @@ class importadordator {
                                         echo "<script>alert('Datos de importador insertados con exito.')</script>";
                                         $constestatusImport=$conection->query($SelectEstadoDelImportador);
                                         if($constestatusImport){
-                                            header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php");
+                                            echo "<script>window.location.href = 'http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php';</script>";
                                         }
                                     }
                                     break;
@@ -416,7 +416,8 @@ class importadordator {
                     if ($selectqueryUpdateExecute) {
                         echo "<script>alert('Datos del importador actualizados con éxito');</script>";
                         if($selectqueryUpdateExecute){
-                            header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php");
+                            echo "<script>window.location.href = 'http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php';</script>";
+
                         }
                     } else {
                         echo "<script>alert('Error al actualizar los datos');</script>";
@@ -616,7 +617,7 @@ class importadordator {
                                     echo "<script>alert('Datos del proveedor insertados con exito.')</script>";
                                     $constestatusImport = $conection->query($SelectEstadoDelProveedor);
                                     if($constestatusImport){
-                                        header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/proveedor/proveedores.php");
+                                        echo "<script>window.location.href = 'http://localhost/Proyecto_soft/openCVLProyect/impo/proveedor/proveedores.php';</script>";
                                     }
                                 }
                                 break;
@@ -698,9 +699,8 @@ class importadordator {
         
                     if ($selectqueryUpdate2Execute) {
                         echo "<script>alert('Datos del proveedor actualizados con éxito');</script>";
-                        if($selectqueryUpdate2Execute){
-                            header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/proveedor/proveedores.php");
-                        }
+                        echo "<script>window.location.href = 'http://localhost/Proyecto_soft/openCVLProyect/impo/proveedor/proveedores.php';</script>";
+
                     } else {
                         echo "<script>alert('Error al actualizar los datos');</script>";
                     }
@@ -855,12 +855,10 @@ class importadordator {
                 $this->conection = $conection;
                 $this->parampostscript = $parampostscript;
             }
-        
             public function imprimirenpantallaIncotermEdit() {
                 
                 $queryBD = "SELECT * FROM siaincoterm WHERE codincoterm = '$this->parampostscript'";
                 $ExecutequeryBD = $this->conection->query($queryBD);
-        
                 
                 if ($ExecutequeryBD) {
                     while ($varR = $ExecutequeryBD->fetch_assoc()) {
@@ -869,13 +867,13 @@ class importadordator {
                         $incotermdesc = htmlspecialchars(strtoupper($varR['incotermdesc']), ENT_QUOTES);
                         $lugarentrega = htmlspecialchars(strtoupper($varR['lugarentrega']), ENT_QUOTES);
                         $estado = htmlspecialchars(strtoupper($varR['estado']), ENT_QUOTES);
-        
+
                         // Mostrar el formulario con los datos actuales
                         echo "<div class='ContainerGeneralImportador'>";
-                        echo "<form method='POST' action=''>";
-                        echo "<h3>Código Incoterm</h3><input type='text' name='codigoproveedor' class='datosinputimportador' value='$codincoterm' disabled><br>";
-                        echo "<h3 class='datosinputimportador1'>Descripción Incoterm</h3><input type='text' name='nombreproveedor' class='datosinputimportador1' value='$incotermdesc' ><br>";
-                        echo "<h3>Lugar Entrega</h3><input type='text' name='pais' class='datosinputimportador' value='$lugarentrega'><br>";
+                        echo "<form action='' method='POST'>";
+                        echo "<h3>Código Incoterm</h3><input type='text' name='codincoterm' class='datosinputimportador' value='$codincoterm' disabled><br>";
+                        echo "<h3 class='datosinputimportador1'>Descripción Incoterm</h3><input type='text' name='incotermdesc' class='datosinputimportador1' value='$incotermdesc' ><br>";
+                        echo "<h3>Lugar Entrega</h3><input type='text' name='lugarentrega' class='datosinputimportador' value='$lugarentrega'><br>";
                         echo "<h3 class='datosinputimportador1'>Estado</h3><input type='text' name='estado' class='datosinputimportador1' value='$estado' disabled><br>";
                         echo "<input type='hidden' name='id' value='$this->parampostscript'>";
                         echo "<input type='submit' name='update' value='Actualizar' class='Actualizar'>";
@@ -883,32 +881,55 @@ class importadordator {
                         echo "</div>";
                     }
                 }
-        
                 // Procesar el formulario cuando se envía
-                if (isset($_POST['update'])) {
-                    $id = $this->conection->real_escape_string($_POST['id']);
-                    $codincoterm =  $this->conection->real_escape_string($_POST['codincoterm']);
-                    $incotermdesc =  $this->conection->real_escape_string($_POST['incotermdesc']);
-                    $lugarentrega =  $this->conection->real_escape_string($_POST['lugarentrega']);
-                    $estado =  $this->conection->real_escape_string($_POST['estado']);
+                // if (isset($_POST['update'])) {
+                //     $id = $this->conection->real_escape_string($_POST['id']);
+                //     $codincoterm =  $this->conection->real_escape_string($_POST['codincoterm']);
+                //     $incotermdesc =  $this->conection->real_escape_string($_POST['incotermdesc']);
+                //     $lugarentrega =  $this->conection->real_escape_string($_POST['lugarentrega']);
+                //     $estado =  $this->conection->real_escape_string($_POST['estado']);
                    
         
-                    $selectqueryUpdate2 = "UPDATE siaincoterm SET
-                                                                    codincoterm = '$codincoterm',
-                                                                    incotermdesc = '$incotermdesc',
-                                                                    lugarentrega = '$lugarentrega'
-                                                                    WHERE codincoterm = '$id'";
+                //     $selectqueryUpdate2 = "UPDATE siaincoterm SET codincoterm = '$codincoterm',
+                //                                                   incotermdesc = '$incotermdesc',
+                //                                                   lugarentrega = '$lugarentrega'
+                //                                                   WHERE codincoterm = '$this->parampostscript'";
                     
-                    $selectqueryUpdate2Execute = $this->conection->query($selectqueryUpdate2);
+                //     $selectqueryUpdate2Execute = $this->conection->query($selectqueryUpdate2);
         
+                //     if ($selectqueryUpdate2Execute) {
+                //         echo "<script>alert('Datos del Incoterm actualizados con éxito');</script>";
+                //         if($selectqueryUpdate2Execute){
+                //             header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incoterms.php");
+                //         }
+                //     } else {
+                //         echo "<script>alert('Error al actualizar los datos');</script>";
+                //     }
+                // }
+
+                if (isset($_POST['update'])) {
+                    $id = $this->conection->real_escape_string($_POST['id']);
+                    $codincoterm = $this->conection->real_escape_string($_POST['codincoterm']);
+                    $incotermdesc = $this->conection->real_escape_string($_POST['incotermdesc']);
+                    $lugarentrega = $this->conection->real_escape_string($_POST['lugarentrega']);
+                    $estado = $this->conection->real_escape_string($_POST['estado']);
+                    
+                    // Actualizar datos en la base de datos
+                    $selectqueryUpdate2 = "UPDATE siaincoterm 
+                                           SET incotermdesc = '$incotermdesc',
+                                               lugarentrega = '$lugarentrega'
+                                           WHERE codincoterm = '$id'";
+                
+                    $selectqueryUpdate2Execute = $this->conection->query($selectqueryUpdate2);
+                
                     if ($selectqueryUpdate2Execute) {
                         echo "<script>alert('Datos del Incoterm actualizados con éxito');</script>";
-                        if($selectqueryUpdate2Execute){
-                            header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incoterms.php");
-                        }
+                        // Redirigir después de mostrar el mensaje
+                        echo "<script>window.location.href = 'http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incoterms.php';</script>";
                     } else {
                         echo "<script>alert('Error al actualizar los datos');</script>";
                     }
                 }
+                
             }
         }

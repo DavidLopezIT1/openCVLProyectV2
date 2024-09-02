@@ -74,7 +74,7 @@
             }
             
             $impresionEditProveedor = new ProveedorEdit($conection, $rowID);
-            echo $impresionEditProveedor->imprimirenpantallaProveedorEdit(  );
+            echo $impresionEditProveedor->imprimirenpantallaProveedorEdit();
             
 ?>
             <div>
@@ -86,11 +86,7 @@
             </fieldset>
 
                 <br><br>
-                <script>
-                    function
-                    let varpru = document.getElementById('SalidaImportadorId');
 
-                </script>
 
                     <div class="Buttons_Container_Send"> 
 

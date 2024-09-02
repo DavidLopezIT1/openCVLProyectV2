@@ -98,23 +98,16 @@
                         </button>
 
                                 <?php 
-                                if(isset($_POST['ExitForm'])){
-                                    $buttonfef=$_POST['ExitForm'];
-                                    header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incoterms.php ");
-                                }
+                                    if(isset($_POST['ExitForm'])){
+                                        $buttonfef=$_POST['ExitForm'];
+                                        header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incoterms.php ");
+                                    }
                                 ?>
 
                     </div>
                     <div>
-            
-
         </form>
         </main>      
-        <?php 
-        
-        
-        ?>
-
 
 </div>
 </body>
