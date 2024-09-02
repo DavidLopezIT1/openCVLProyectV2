@@ -881,31 +881,6 @@ class importadordator {
                         echo "</div>";
                     }
                 }
-                // Procesar el formulario cuando se envía
-                // if (isset($_POST['update'])) {
-                //     $id = $this->conection->real_escape_string($_POST['id']);
-                //     $codincoterm =  $this->conection->real_escape_string($_POST['codincoterm']);
-                //     $incotermdesc =  $this->conection->real_escape_string($_POST['incotermdesc']);
-                //     $lugarentrega =  $this->conection->real_escape_string($_POST['lugarentrega']);
-                //     $estado =  $this->conection->real_escape_string($_POST['estado']);
-                   
-        
-                //     $selectqueryUpdate2 = "UPDATE siaincoterm SET codincoterm = '$codincoterm',
-                //                                                   incotermdesc = '$incotermdesc',
-                //                                                   lugarentrega = '$lugarentrega'
-                //                                                   WHERE codincoterm = '$this->parampostscript'";
-                    
-                //     $selectqueryUpdate2Execute = $this->conection->query($selectqueryUpdate2);
-        
-                //     if ($selectqueryUpdate2Execute) {
-                //         echo "<script>alert('Datos del Incoterm actualizados con éxito');</script>";
-                //         if($selectqueryUpdate2Execute){
-                //             header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incoterms.php");
-                //         }
-                //     } else {
-                //         echo "<script>alert('Error al actualizar los datos');</script>";
-                //     }
-                // }
 
                 if (isset($_POST['update'])) {
                     $id = $this->conection->real_escape_string($_POST['id']);
