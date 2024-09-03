@@ -893,7 +893,7 @@ class importadordator {
                     $selectqueryUpdate2 = "UPDATE siaincoterm 
                                            SET incotermdesc = '$incotermdesc',
                                                lugarentrega = '$lugarentrega'
-                                           WHERE codincoterm = '$id'";
+                                           WHERE codincoterm = '$id'"; 
                 
                     $selectqueryUpdate2Execute = $this->conection->query($selectqueryUpdate2);
                 
