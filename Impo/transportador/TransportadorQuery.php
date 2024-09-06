@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="incoterm2.css">
+    <link rel="stylesheet" href="Transportador2.css">
     <title>Incoterm</title>
 </head>
 <body >
@@ -28,7 +28,7 @@
                 $sesionValue= "<strong class='Bienvenida'>Bienvenido : </strong>" . "<strong>$sesion</strong>";
                 echo $sesionValue;
 
-                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incoterms.php' class='rutas'>Nivel anterior</a>";
+                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/impo/transportador/Transportadores.php' class='rutas'>Nivel anterior</a>";
                             
                 $SpecificRouteVar = __FILE__;
 
@@ -54,7 +54,7 @@
 </header>
 <main>
 
-        <form action="incotermQuery.php" method ="post">
+        <form action="TransportadorQuery.php" method ="post">
                 <fieldset>
 
                     <div style="margin-bottom: 10px;">
@@ -71,17 +71,18 @@
             $variablefor=$_POST['deletebackgroundbutton'];
                 $variablefor;
 
-                    $consultarBD ="SELECT * FROM siaincoterm WHERE codincoterm = '$variablefor' ";
+                    $consultarBD ="SELECT * FROM siatransportador WHERE codigotransportador = '$variablefor' ";
                     $queryconsultarBD = $conection->query($consultarBD);
                         
                     while($l = $queryconsultarBD->fetch_assoc()){
                         
                         echo "<div class ='ContainerGeneralImportador'>";
                                             
-                                            echo "<h3>" . "Código Incoterm " . "</h3>" . "<input type='text' name='codincoterm' class ='datosinputimportador' value ='". strtoupper($l['codincoterm'])."' disabled>" . "<br>" ;
-                                            echo "<h3 class='datosinputimportador1'>" . "Descripción Incoterm" . "</h3>" . "<input type='text' name='incotermdesc' class ='datosinputimportador1'  value ='{$l['incotermdesc']}' disabled>" . "<br>" ;
-                                            echo "<h3>" . "Lugar Entrega " . "</h3>" . "<input type='text' name='lugarentrega' class ='datosinputimportador' value ='".strtoupper($l['lugarentrega'])."' disabled >" . "<br>" ;
-                                            echo "<h3 style='margin-left:40px'>" . "Estado" . "</h3>" . "<input type='text' name='estado' class ='datosinputimportador1'   value ='".strtoupper($l['estado'])."' disabled>" ;       
+                                            echo "<h3>" . "Código Trasportadora " . "</h3>" . "<input type='text' name='codigotransportador' class ='datosinputimportador' value ='". strtoupper($l['codigotransportador'])."' disabled>" . "<br>" ;
+                                            echo "<h3 class='datosinputimportador1'>" . "Trasportadora" . "</h3>" . "<input type='text' name='desctransportador' class ='datosinputimportador1'  value ='{$l['desctransportador']}' disabled>" . "<br>" ;
+                                            echo "<h3>" . "Pais Procedencia " . "</h3>" . "<input type='text' name='paisprocedenciadescripcion' class ='datosinputimportador' value ='".strtoupper($l['paisprocedenciadescripcion'])."' disabled >" . "<br>" ;
+                                            echo "<h3 class='datosinputimportador1'>" . "Sucursal" . "</h3>" . "<input type='text' name='descsucursal' class ='datosinputimportador1' value ='".strtoupper($l['descsucursal'])."' disabled >" . "<br>" ;
+                                            echo "<h3>" . "Estado" . "</h3>" . "<input type='text' name='estado' class ='datosinputimportador'   value ='".strtoupper($l['estado'])."' disabled>" ;       
                         echo "</div>";
                 }                                        
         ?>
@@ -99,14 +100,14 @@
                     <div class="Buttons_Container_Send"> 
 
                         <button name="ExitBtn">
-                            <a href="incoterms.php" class="Salida_Segura2">
+                            <a href="Transportadores.php" class="Salida_Segura2">
                                 Salir
                             </a>
                         </button>
 
                         <?php 
                         if(isset($_POST['ExitBtn'])){
-                            header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incoterms.php");
+                            header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/transportador/Transportadores.php");
                         }
                         ?>
 

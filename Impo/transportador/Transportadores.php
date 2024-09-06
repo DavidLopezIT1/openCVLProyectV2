@@ -57,10 +57,10 @@ function changedform2(parameter, param3){
 
 </script>
 
-    <form action="incoterms.php" method="post" id="miFormulario">
+    <form action="Transportadores.php" method="post" id="miFormulario">
     <div class="container">
         <header class="header2">
-            <h1>transportadores</h1>
+            <h1>Transportadores</h1>
         </header>
         
         <main>
@@ -158,9 +158,9 @@ function changedform2(parameter, param3){
                                     $querydeleteresult = $conection->query($querydelete);
                                     
                                     if ($querydeleteresult) {
-                                        echo "<script>alert('Incoterm eliminado con éxito')</script>";
+                                        echo "<script>alert('Transportador eliminado con éxito')</script>";
                                     } else {
-                                        echo "<script>alert('No se eliminó el Incoterm')</script>";
+                                        echo "<script>alert('No se eliminó el Transportador')</script>";
                                     }
                                 }
                             }
@@ -174,23 +174,23 @@ function changedform2(parameter, param3){
 
                                                 while($keystatus2 = $resultquerystatussql->fetch_assoc()){ 
                                                     
-                                                    if($keystatus2['estado'] =="ACTIVO" && $keystatus1 == $keystatus2['codincoterm']){
+                                                    if($keystatus2['estado'] =="ACTIVO" && $keystatus1 == $keystatus2['codigotransportador']){
 
                                                         foreach($_POST['checkboxitemv'] AS $selectedIdstatus){
                                                             $selectedIdstatus = mysqli_real_escape_string($conection, $selectedIdstatus);
-                                                            $querystatus = "UPDATE siatransportador SET estado = 'INACTIVO' WHERE codincoterm = '$selectedIdstatus'";
+                                                            $querystatus = "UPDATE siatransportador SET estado = 'INACTIVO' WHERE codigotransportador = '$selectedIdstatus'";
                                                             $resulrQuerystatus = $conection->query($querystatus);
-                                                            echo"<script>alert('Incoterm Inactivado exitosamente')</script>";
+                                                            echo"<script>alert('Transportador Inactivado exitosamente')</script>";
                                                             break;
                                                         }
 
-                                                    }elseif($keystatus2['estado'] =="INACTIVO" && $keystatus1 == $keystatus2['codincoterm']){
+                                                    }elseif($keystatus2['estado'] =="INACTIVO" && $keystatus1 == $keystatus2['codigotransportador']){
 
                                                             foreach($_POST['checkboxitemv'] AS $selectedIdstatus){
                                                             $selectedIdstatus = mysqli_real_escape_string($conection, $selectedIdstatus);
-                                                            $querystatus2 = "UPDATE siatransportador SET estado = 'ACTIVO' WHERE codincoterm = '$selectedIdstatus'";
+                                                            $querystatus2 = "UPDATE siatransportador SET estado = 'ACTIVO' WHERE codigotransportador = '$selectedIdstatus'";
                                                             $resulrQuerystatus = $conection->query($querystatus2);
-                                                            echo"<script>alert('Incoterm Activado exitosamente')</script>";
+                                                            echo"<script>alert('Transportador Activado exitosamente')</script>";
                                                             break;
                                                             }
                                                         }
