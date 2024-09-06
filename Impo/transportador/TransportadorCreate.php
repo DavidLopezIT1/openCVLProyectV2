@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="incoterm3.css">
-    <title>Importador</title>
+    <link rel="stylesheet" href="Transportador3.css">
+    <title>Transportador</title>
 </head>
 <body >
 
@@ -52,24 +52,23 @@
 </header>
 
 <main>
-        <form action="incotermCreate.php" method ="post">
+        <form action="TransportadorCreate.php" method ="post">
                 <fieldset>
                    
-                <strong><p style=" color:#0D0D0D; font-size:20px; font-family:black;">Crear Incoterm</p></strong>
+                <strong><p style=" color:#0D0D0D; font-size:20px; font-family:black;">Crear Transportador</p></strong>
 
                     <div class="HeaderGeneral2">
                         <header>
-                            <h1><p>Datos creación Incoterm</p></h1>
+                            <h1><p>Datos creación Transportador</p></h1>
                         </header>
                     </div>
 
         <?php
 
-            echo imprimirenpantallaIncoterm($conection) ;
+            echo imprimirenpantallaTransportadora($conection) ;
       
         ?>            
             <footer>
-                <!-- <button><a href="ModuleImpo.php">volver</a></button><br><br> -->
                 <p>&copy; 2024 Importaciones - David L</p>
             </footer>
             

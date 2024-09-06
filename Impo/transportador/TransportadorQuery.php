@@ -58,11 +58,11 @@
                 <fieldset>
 
                     <div style="margin-bottom: 10px;">
-                        <strong style="color:#0D0D0D; font-size: 20px; margin-bottom: 10px;">Consultar / Incoterm</strong>
+                        <strong style="color:#0D0D0D; font-size: 20px; margin-bottom: 10px;">Consultar / Transportador</strong>
                     </div>
                     <div class="HeaderImportador">
                         <header class="header3">
-                            <h1><p>Datos Incoterm</p ></h1>
+                            <h1><p>Datos Transportador</p ></h1>
                         </header>
                     </div>
  

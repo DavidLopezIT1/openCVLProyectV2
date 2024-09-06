@@ -818,14 +818,15 @@ class importadordator {
                         elseif(!$datosIguales){
                             
                                 $insertincoterm = "INSERT INTO siaincoterm (codincoterm, 
-                                incotermdesc,  
-                                lugarentrega,
-                                estado
-                                ) VALUES ('$codincoterm',
-                                            '$incotermdesc',
-                                            '$lugarentrega',
-                                            '$estado2'
-                                            )";
+                                                                            incotermdesc,  
+                                                                            lugarentrega,
+                                                                            estado
+                                                                            ) 
+                                                                    VALUES ('$codincoterm',
+                                                                            '$incotermdesc',
+                                                                            '$lugarentrega',
+                                                                            '$estado2'
+                                                                            )";
         
                                 $Insertquery = $conection->query($insertincoterm);
         
@@ -910,6 +911,173 @@ class importadordator {
         }
 
 
+        function imprimirenpantallaTransportadora($conection){
+
+            echo "<div class ='ContainerGeneralImportador'>";
+            
+            echo "<h3>" . "Código Transportador " . "</h3>" . "<input type='text' name='codigotransportador' class ='datosinputimportador'>" . "<br>" ;
+            echo "<h3 class='datosinputimportador1'>" . "Nombre Transportador " . "</h3>" . "<input type='text' name='desctransportador' class ='datosinputimportador1' >" . "<br>" ;
+            echo "<h3>" . "Cod Pais Procedencia " . "</h3>" . "<input type='text' name='paisprocedencia' class ='datosinputimportador'>" . "<br>" ;
+            echo "<h3 class='datosinputimportador1'>" . "Pais Procedencia " . "</h3>" . "<input type='text' name='paisprocedenciadescripcion' class ='datosinputimportador1' >" . "<br>" ;
+            echo "<h3>" . "Código Sucursal " . "</h3>" . "<input type='text' name='idsucursal' class ='datosinputimportador'>" . "<br>" ;
+            echo "<h3 class='datosinputimportador1'>" . "Sucursal" . "</h3>" . "<input type='text' name='descsucursal' class ='datosinputimportador1' >" . "<br>" ;
+            echo "<h3 style ='margin-left: 0px ;'>" . "Estado " . "</h3>" . "<input type='text' name='estado' class ='datosinputimportador' >" . "<br>" ;
+            echo "</div>";
+            echo "<div class='Buttons_Container_Send'> 
+                        <button name='SendInfo' class='SendInfo'>Crear Transp</button>
+                        <button name='SalidaImportador'>
+                            <a href='Transportadores.php' class='Salida_Segura2'>
+                                Salir
+                            </a>
+                        </button>
+                  </div>  ";  
+
+            if(isset($_POST['codigotransportador'])){
+                $codigotransportador = $_POST['codigotransportador'];
+            }
+
+            if(isset($_POST['desctransportador'])){
+                $desctransportador = $_POST['desctransportador'];
+            }
+            
+            if(isset($_POST['paisprocedencia'])){
+                $paisprocedencia = $_POST['paisprocedencia'];
+            }
+            
+            if(isset($_POST['paisprocedenciadescripcion'])){
+                $paisprocedenciadescripcion = $_POST['paisprocedenciadescripcion'];
+            }
+            
+            if(isset($_POST['idsucursal'])){
+                $idsucursal = $_POST['idsucursal'];
+            }
+
+            if(isset($_POST['descsucursal'])){
+                $descsucursal = $_POST['descsucursal'];
+            }
+
+            if(isset($_POST['estado'])){
+                $estado = $_POST['estado'];
+            }
+
+            if(isset($_POST['SendInfo'])){
+
+                $queryGeneral = "SELECT * FROM siatransportador";
+                $queryGeneralExecute = $conection->query($queryGeneral);
+                $datosIguales = false;
+                $datosVacios = false;
+                while($r = $queryGeneralExecute->fetch_assoc()){ 
+
+                    if($codigotransportador === $r['codigotransportador']){
+                        $datosIguales = true;
+                        if($datosIguales){
+                            echo "<script>alert('Datos del Transportador existen en la base de datos. Verifique')</script>";
+                            die();
+                        }if($codigotransportador ==""){
+                            $datosVacios=true;
+                            if($datosVacios){
+                                $ResultadoError ="<script>alert('Debe completar todos los datos del Transportador, verifique.')</script>";
+                            echo $ResultadoError;
+                            die();
+                        }
+                        }
+                    }
+
+                    if($desctransportador === $r['desctransportador']){
+                        $datosIguales = true;
+                        if($datosIguales){
+                            echo "<script>alert('Datos del Transportador existen en la base de datos. Verifique')</script>";
+                            die();
+                        }if($desctransportador ==""){
+                            $datosVacios=true;
+                            if($datosVacios){ 
+                                $ResultadoError ="<script>alert('Debe completar todos los datos del Transportador, verifique.')</script>";
+                            echo $ResultadoError;                            
+                            die();
+                        }
+                        }
+                    }
+                        
+                        if($paisprocedencia ==""){
+                            $datosVacios=true;
+                            if($datosVacios){
+                                $ResultadoError ="<script>alert('Debe completar todos los datos del Transportador, verifique.')</script>";
+                            echo $ResultadoError;
+                            die();
+                        }
+                        }
+                    
+                        if($paisprocedenciadescripcion ==""){
+                            $datosVacios=true;
+                            if($datosVacios){
+                                $ResultadoError ="<script>alert('Debe completar todos los datos del Transportador, verifique.')</script>";
+                            echo $ResultadoError;
+                            die();
+                        }
+                        }
+                    
+                        if($idsucursal ==""){
+                            $datosVacios=true;
+                            if($datosVacios){
+                                $ResultadoError ="<script>alert('Debe completar todos los datos del Transportador, verifique.')</script>";
+                            echo $ResultadoError;
+                            die();
+                        }
+                        }
+
+                        if($descsucursal ==""){
+                            $datosVacios=true;
+                            if($datosVacios){
+                                $ResultadoError ="<script>alert('Debe completar todos los datos del Transportador, verifique.')</script>";
+                            echo $ResultadoError;
+                            die();
+                        }
+                        }
+
+                        elseif(!$datosIguales){
+                            $insertqueryG= "INSERT INTO siatransportador(codigotransportador,
+                                                                            desctransportador,
+                                                                            paisprocedencia,
+                                                                            paisprocedenciadescripcion,
+                                                                            idsucursal,
+                                                                            descsucursal,
+                                                                            estado)
+                                                                    VALUES('$codigotransportador',
+                                                                            '$desctransportador',
+                                                                            '$paisprocedencia',
+                                                                            '$paisprocedenciadescripcion',
+                                                                            '$idsucursal',
+                                                                            '$descsucursal',
+                                                                            '$estado')
+                                                                            )";
+                            $insertqueryGExecute= $conection->query($insertqueryG);
+
+                            $estadotrasportadorAct = "ACTIVO";
+                            $alterstatusTrnaport = "UPDATE siatransportador SET estado = '$estadotrasportadorAct' WHERE codigotransportador = '$codigotransportador'";
+                            
+                            if($insertqueryGExecute){
+                                echo "<script>alert('Datos del Incoterm insertados con exito.')</script>";
+                                $alterstatusTrnaportExecute = $conection->query($alterstatusTrnaport);
+                                if($alterstatusTrnaportExecute){
+                                    header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incoterms.php");
+                                }
+                            }
+                            break;
+                            } 
+                        }
+                    }
+
+                
+                
+            }
+
+
+
+
+
+
+
+        
 
 
         
