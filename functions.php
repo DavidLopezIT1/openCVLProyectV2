@@ -8,7 +8,6 @@ class importadordator {
     public function __construct($conection){
         $this->conection =$conection;
     }
-   
 
             public function imprimirenpantalla($conection){
                 echo "<div class ='ContainerGeneralImportador'>";
@@ -36,8 +35,6 @@ class importadordator {
                                                 </a>
                                             </button>
                                         </div>  ";  
-                    
-                
 
                         if(isset($_POST['tipodocumento'])){
                             $tipodocumento = strtoupper($_POST['tipodocumento']);
@@ -120,8 +117,6 @@ class importadordator {
                         }else{
                             $estado = "";
                         }
-
-                        
 
                         if(isset($_POST['SendInfo'])){ 
 
@@ -241,8 +236,7 @@ class importadordator {
                                     echo $ResultadoError2;
                                     die();
                                     }
-                                }
-                           
+                                }                           
 
                                 elseif(!$datosIguales){
                                 
@@ -293,13 +287,9 @@ class importadordator {
                                     break;
                                     } 
                     }
-
                 }
-
-            }
-           
+            }           
 }
-
         //  function ShowImportador($conection ){
         //     $selectquerysearchimport = "SELECT * FROM siaimportador";
         //     $resultselectquerysearchimport = $conection->query($selectquerysearchimport);
@@ -426,9 +416,6 @@ class importadordator {
             }
         }
         
-
-
-
         function imprimirenpantallaProveedor($conection){
             echo "<div class ='ContainerGeneralImportador'>";
                 // echo"<form action='' method='POST'>";
@@ -451,9 +438,7 @@ class importadordator {
                                             </a>
                                         </button>
                                     </div>  ";  
-                
-            
-        
+
                     if(isset($_POST['codigoproveedor'])){
                         $codigoproveedor = strtoupper($_POST['codigoproveedor']);
                     }else{
@@ -566,7 +551,6 @@ class importadordator {
                                 }
                             }
         
-        
                         if ($e['email'] === $email) {
                             $datosIguales = true;
         
@@ -585,7 +569,6 @@ class importadordator {
                                 }
                             }
                        
-        
                             elseif(!$datosIguales){
                             
                                 $insertproveedor = "INSERT INTO siaproveedor (codigoproveedor, 
@@ -707,8 +690,6 @@ class importadordator {
                 }
             }
         }
-
-
 
         function imprimirenpantallaIncoterm($conection){
             echo "<div class ='ContainerGeneralImportador'>";
@@ -846,7 +827,6 @@ class importadordator {
             }
         }
 
-
         class IncotermEdit {
 
             public $conection;
@@ -914,7 +894,6 @@ class importadordator {
         function imprimirenpantallaTransportadora($conection){
 
             echo "<div class ='ContainerGeneralImportador'>";
-            
             echo "<h3>" . "Código Transportador " . "</h3>" . "<input type='text' name='codigotransportador' class ='datosinputimportador'>" . "<br>" ;
             echo "<h3 class='datosinputimportador1'>" . "Nombre Transportador " . "</h3>" . "<input type='text' name='desctransportador' class ='datosinputimportador1' >" . "<br>" ;
             echo "<h3>" . "Cod Pais Procedencia " . "</h3>" . "<input type='text' name='paisprocedencia' class ='datosinputimportador'>" . "<br>" ;
@@ -966,6 +945,7 @@ class importadordator {
                 $queryGeneralExecute = $conection->query($queryGeneral);
                 $datosIguales = false;
                 $datosVacios = false;
+
                 while($r = $queryGeneralExecute->fetch_assoc()){ 
 
                     if($codigotransportador === $r['codigotransportador']){
@@ -1069,7 +1049,7 @@ class importadordator {
 
                 
                 
-            }
+                }
 
 
 
