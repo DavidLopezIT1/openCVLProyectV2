@@ -52,7 +52,7 @@ include "conection.php";
 
             <?php 
             $consultadatosUsuario = "SELECT * FROM users2";
-            $resultconsultadatosUsuario = $conection->query($consultadatosUsuario); 
+            $resultconsultadatosUsuario = $conection->query(query: $consultadatosUsuario); 
             ?>
 
             <p>Nombre del Usuario : 
@@ -96,37 +96,36 @@ include "conection.php";
                 </header>
 
                 <div class="submodule">
-                    <h2><a href="./impo//ModuleImpo.php" class="ModButtons">Importaciones</a></h2>
+                    <h2><a href="./impo//ModuleImpo.php" class="ModButtons"> -> Importaciones</a></h2>
                     
                 </div>
 
                 <div class="submodule">
-                <h2><a href="" class="ModButtons">Exportaciones</a></h2>
+                <h2><a href="" class="ModButtons"> -> Exportaciones</a></h2>
                 </div>
 
                 <div class="submodule">
-                <h2><a href="" class="ModButtons">Vuce</a></h2>
+                <h2><a href="" class="ModButtons"> -> Vuce</a></h2>
                 </div>
 
                 <div class="submodule">
-                <h2><a href="" class="ModButtons">Temporales</a></h2>
+                <h2><a href="" class="ModButtons"> -> Temporales</a></h2>
                 </div>
 
                 <div class="submodule">
-                <h2><a href="" class="ModButtons">Alertas</a></h2>               
+                <h2><a href="" class="ModButtons"> -> Alertas</a></h2>               
                 </div>
 
                 <div class="submodule">
-                <h2><a href="" class="ModButtons">Indicadores</a></h2>
+                <h2><a href="" class="ModButtons"> -> Indicadores</a></h2>
                 </div>
 
                 <div class="submodule">
-                <h2><a href="" class="ModButtons">Modulos internos del sistema</a></h2>
+                <h2><a href="" class="ModButtons"> -> Modulos internos del sistema</a></h2>
                 </div>
         
             </div>
-    
-    
+ 
 
     <script>
         function toggleSidebar() {

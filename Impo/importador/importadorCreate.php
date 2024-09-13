@@ -65,7 +65,7 @@
 
         <?php
 
-                $Generalobject = new importadordator($conection);                              
+                $Generalobject = new importadordator($conection);                               
                         echo $Generalobject->imprimirenpantalla($conection);     
       
         ?>            

@@ -1,8 +1,9 @@
 html{
     box-sizing: border-box;
     font-size: 12px;
- 
-    background-color: #010D26;
+    /* background-color: #010D26; */
+    background-color: #010d2610;
+    background-color: rgb(252, 252, 252);
 }
 header{
     width: 98.67%;
@@ -14,10 +15,10 @@ header{
 }
 
 fieldset{
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.207);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.049);
     margin-bottom: 15px;
     border-color:  #3DBCD9;
-    border: solid 2px #3DBCD9;
+    border: solid 2px #010D26;
 }
 .Bienvenida{
     margin-left: 18px;
@@ -27,62 +28,54 @@ fieldset{
     grid-template-columns:  repeat(6, 1fr);
     gap: 10px; 
     padding: 10px;
-    background-color: azure;
-    background-color: #010D26;
+    background-color: rgba(240, 255, 255, 0.266);
 }
 .Improceso{
-    background-color: #010D26;
-    background-color: azure;
-    border: 4px solid #3DBCD9;
+    background-color: rgb(252, 252, 252);
+    border: solid 2px #010D26;
     padding: 20px;
     text-align: center; 
-    border-radius: 4px;
+    border-radius: 3px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.306);
 }
 .Parametros{
     display: grid;
     grid-template-columns:  repeat(6    , 1fr);
-    background-color: azure;
-    background-color: #010D26;
+    background-color: rgba(240, 255, 255, 0.266);
     padding: 10px;
     gap: 10px;
 }
 .Imparametrica {
     display: block;
-    border: 1px solid #ffffff;
+    border: solid 2px #010D26;
     padding: 20px;
     text-align: center;
-    border: solid 1px black;
     border-radius: 4px; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.306);
-    background-color: #010D26;
-    background-color: azure;
-    border: 2px solid #3DBCD9;
+    background-color: rgb(252, 252, 252);
 }
 .Imparametrica:hover, .Improceso:hover, .ImReporte:hover {
-    background-color: #033E8C;
-    background-color: #3DBCD9;
+    /* background-color: #033E8C;
+    background-color: #3DBCD9; */
+    background: #010d2616;
+    color: white;
 }
-
 
 .Reportes{
     display: grid;
     grid-template-columns:  repeat(6, 1fr);
-    background-color: azure;
-    background-color: #010D26;
+    background-color: rgba(240, 255, 255, 0.266);
     padding: 10px;
     gap: 10px;
-}
+} 
 .ImReporte{
-    border: 1px solid #ffffff;
     padding: 20px;
     text-align: center;
-    border: solid 1px black;
+    border: solid 2px #010D26;
     border-radius: 4px; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.306);
-    background-color: #010D26;
-    background-color: azure;
-    border: 2px solid #3DBCD9;
+    background-color: rgb(252, 252, 252);
+    /* border: 2px solid #3DBCD9; */
 }
 .RutaGeneral{
     display: flex;
@@ -142,6 +135,7 @@ footer p {
     margin: 0;
     color: #ffffff;
 }
-legend{ 
+legend >strong{ 
     color: #ffffff;
+    color: #010D26;
 }

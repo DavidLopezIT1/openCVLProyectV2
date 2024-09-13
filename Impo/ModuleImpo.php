@@ -11,7 +11,6 @@
 <header>
         
     <?php
-
             session_start();
 
             $sesion = $_SESSION['nombre'];
@@ -56,7 +55,7 @@
     <div>
         <form action="">
             <fieldset class="fieldset1"> 
-                <legend>Elaboración de Formularios</legend>
+            <legend><strong>Elaboración de Formularios</strong></legend>
 
                 <div class="Procesos">
                     <div class="Improceso"><i class="fa-regular fa-square-plus"></i><br><br><a href="">Operaciones</a></div>
@@ -69,7 +68,7 @@
 <div>
     <form action=""> 
         <fieldset>
-            <legend>Parametrización</legend>
+            <legend><strong>Parametrización</strong></legend>
             
             <div class="Parametros">
                 <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-user-secret"></i><br><br><a href="http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php">Importador</a></div>
@@ -108,8 +107,7 @@
 <div>
     <form action="">    
         <fieldset>
-            <legend>Reportería</legend>
-            
+            <legend><strong>Reportería</strong></legend>
             <div class="Reportes">      
                 <div class="ImReporte" name="ImReporte"><i class="fa-solid fa-circle-info"></i><br><br><a href="">Consulta General</a></div>
                 <div class="ImReporte" name="ImReporte"><i class="fa-solid fa-qrcode"></i><br><br><a href="">Consulta Productos</a></div>
@@ -129,9 +127,7 @@
                 <div class="ImReporte" name="ImReporte"><i class="fa-solid fa-circle-info"></i><br><br><a href="">Consulta Subpartidas</a></div>
                 <div class="ImReporte" name="ImReporte"><i class="fa-solid fa-circle-info"></i><br><br><a href="">Consulta Subpartidas</a></div>
             </div>
-            
         </fieldset>
-        
     </form>
     
 </div>

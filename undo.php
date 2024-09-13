@@ -39,6 +39,7 @@ include "conection.php";
                     $passworduser =$_POST['password'];
                     htmlspecialchars($passworduser);
                 }
+                
                 if(isset($_POST['send_Button'])){
                     // Consulta uno para validar el login
                     $consulta = "SELECT * FROM users2";
@@ -74,8 +75,7 @@ include "conection.php";
                                             break;
                                         }
                                     }
-                                }
-                            
+                                }         
                         // Ingresar al sistema una vez validado el usuario y contraseña por medio de un inicio de sesión.
                             
                                         switch ($ExisteP && $Existe) {
