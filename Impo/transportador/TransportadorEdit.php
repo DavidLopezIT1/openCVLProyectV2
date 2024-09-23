@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="incoterm.css">
+    <link rel="stylesheet" href="transportador.css">
     <title>Incoterm</title>
 </head>
 <body >
@@ -28,7 +28,7 @@
                 $sesionValue= "<strong class='Bienvenida'>Bienvenido : </strong>" . "<strong>$sesion</strong>";
                 echo $sesionValue;
 
-                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incoterms.php' class='rutas'>Nivel anterior</a>";
+                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/impo/transportador/transportadores.php' class='rutas'>Nivel anterior</a>";
                             
                 $SpecificRouteVar = __FILE__;
 
@@ -66,7 +66,7 @@
                     </div>
 
 <?php
-            $recibirvariable = $_POST['checkboxitemv'];
+            $recibirvariable = $_POST['checkboxitemv']; 
             $recibirvariable;
             
             foreach($recibirvariable AS $rowID){
@@ -74,8 +74,8 @@
             }
             
                   
-                    $impresionEditIncoterm = new IncotermEdit($conection, $rowID);
-                    echo $impresionEditIncoterm->imprimirenpantallaIncotermEdit();
+                    $impresionEditTransport = new TransportadorEdit($conection, $rowID);
+                    echo $impresionEditTransport->imprimirenpantallaTransportadorEdit();
             
 ?>
             <div>
@@ -100,7 +100,7 @@
                                 <?php 
                                     if(isset($_POST['ExitForm'])){
                                         $buttonfef=$_POST['ExitForm'];
-                                        header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incoterms.php ");
+                                        header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/transportador/transportadores.php ");
                                     }
                                 ?>
 

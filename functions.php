@@ -823,7 +823,9 @@
                                         echo "<script>alert('Datos del Incoterm insertados con exito.')</script>";
                                         $constestatusImport = $conection->query($SelectEstadoDelIncoterm);
                                         if($constestatusImport){
-                                            header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incoterms.php");
+                                            
+                            echo "<script>window.location.href = 'http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incoterms.php';</script>";
+                                            
                                         }
                                     }
                                     break;
@@ -1044,7 +1046,9 @@
                                     echo "<script>alert('Datos del Incoterm insertados con exito.')</script>";
                                     $alterstatusTrnaportExecute = $conection->query($alterstatusTrnaport);
                                     if($alterstatusTrnaportExecute){
-                                        header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incoterms.php");
+
+                                        echo "<script>window.location.href = 'http://localhost/Proyecto_soft/openCVLProyect/impo/transportador/transportadores.php';</script>";
+
                                     }
                                 }
                                 break;
@@ -1057,12 +1061,226 @@
                     }
 
 
+                    class TransportadorEdit {
 
-
-
+                        public $conection;
+                        public $parampostscript;
                     
+                        public function __construct($conection, $parampostscript) {
+                            $this->conection = $conection;
+                            $this->parampostscript = $parampostscript;
+                        }
+                        public function imprimirenpantallaTransportadorEdit() {
+                            
+                            $queryBD = "SELECT * FROM siatransportador WHERE codigotransportador = '$this->parampostscript'";
+                            $ExecutequeryBD = $this->conection->query($queryBD);
+                            
+                            if ($ExecutequeryBD) {
+                                while ($varR = $ExecutequeryBD->fetch_assoc()) {
+        
+                                    $codigotransportador = htmlspecialchars(strtoupper($varR['codigotransportador']), ENT_QUOTES);
+                                    $desctransportador = htmlspecialchars(strtoupper($varR['desctransportador']), ENT_QUOTES);
+                                    $paisprocedencia = htmlspecialchars(strtoupper($varR['paisprocedencia']), ENT_QUOTES);
+                                    $paisprocedenciadescripcion = htmlspecialchars(strtoupper($varR['paisprocedenciadescripcion']), ENT_QUOTES);
+                                    $dsucursal = htmlspecialchars(strtoupper($varR['idsucursal']), ENT_QUOTES);
+                                    $descsucursal = htmlspecialchars(strtoupper($varR['descsucursal']), ENT_QUOTES);
+                                    $estado = htmlspecialchars(strtoupper($varR['estado']), ENT_QUOTES);
+        
+                                    // Mostrar el formulario con los datos actuales
+                                    echo "<div class='ContainerGeneralImportador'>";
+                                    echo "<form action='' method='POST'>";
+                                    echo "<h3>Código Transportador</h3><input type='text' name='codigotransportador' class='datosinputimportador' value='$codigotransportador' disabled><br>";
+                                    echo "<h3 class='datosinputimportador1'>Descripción Transportador</h3><input type='text' name='desctransportador' class='datosinputimportador1' value='$desctransportador' ><br>";
+                                    echo "<h3>Cod. Pais Transportador</h3><input type='text' name='paisprocedencia' class='datosinputimportador' value='$paisprocedencia' disabled><br>";
+                                    echo "<h3 class='datosinputimportador1'>Pais Transportador</h3><input type='text' name='paisprocedenciadescripcion' class='datosinputimportador1' value='$paisprocedenciadescripcion' ><br>";
+                                    echo "<h3>Id Sucursal</h3><input type='text' name='dsucursal' class='datosinputimportador' value='$dsucursal'><br>";
+                                    echo "<h3 class='datosinputimportador1'>Desc. Sucursal</h3><input type='text' name='descsucursal' class='datosinputimportador1' value='$descsucursal'><br>";
+                                    echo "<h3>Estado</h3><input type='text' name='estado' class='datosinputimportador' value='$estado' disabled><br>";
+                                    echo "<input type='hidden' name='id' value='$this->parampostscript'>";
+                                    echo "<input type='submit' name='update' value='Actualizar' class='Actualizar'>";
+                                    
+                                    echo "</form>";
+                                    echo "</div>";
+                                }
+                            }
+        
+                            if (isset($_POST['update'])) {
+                                $id = $this->conection->real_escape_string($_POST['id']);
+                                $codigotransportador = $this->conection->real_escape_string($_POST['codigotransportador']);
+                                $desctransportador = $this->conection->real_escape_string($_POST['desctransportador']);
+                                $paisprocedencia = $this->conection->real_escape_string($_POST['paisprocedencia']);
+                                $paisprocedenciadescripcion = $this->conection->real_escape_string($_POST['paisprocedenciadescripcion']);
+                                $dsucursal = $this->conection->real_escape_string($_POST['dsucursal']);
+                                $descsucursal = $this->conection->real_escape_string($_POST['descsucursal']);
+                                $estado = $this->conection->real_escape_string($_POST['estado']);
+                                
+                                // Actualizar datos en la base de datos
+                                $selectqueryUpdate2 = "UPDATE siatransportador
+                                                    SET codigotransportador = '$codigotransportador';
+                                                        desctransportador = '$desctransportador';
+                                                        paisprocedencia = '$paisprocedencia';
+                                                        paisprocedenciadescripcion = '$paisprocedenciadescripcion';
+                                                        dsucursal = '$dsucursal';
+                                                        descsucursal = '$descsucursal';
+                                                        estado = '$estado';
+                                                    WHERE codigotransportador = '$id'"; 
+                            
+                                $selectqueryUpdate2Execute = $this->conection->query($selectqueryUpdate2);
+                            
+                                if ($selectqueryUpdate2Execute) {
+                                    echo "<script>alert('Datos del Transportador actualizados con éxito');</script>";
+                                    // Redirigir después de mostrar el mensaje
+                                    echo "<script>window.location.href = 'http://localhost/Proyecto_soft/openCVLProyect/impo/transportador/transportadores.php';</script>";
+                                } else {
+                                    echo "<script>alert('Error al actualizar los datos');</script>";
+                                    
+                                }
+                            }
+                            
+                        }
+                    }
+        
 
+
+
+
+
+            function imprimirenpantallaPais($conection){
+                echo "<div class ='ContainerGeneralImportador'>";
+                    echo "<h3>" . "Código Pais " . "</h3>" . "<input type='text' name='codigopais' class ='datosinputimportador'>" . "<br>" ;
+                    echo "<h3 class='datosinputimportador1'>" . "Num. Pais " . "</h3>" . "<input type='text' name='numeropais' class ='datosinputimportador1' >" . "<br>" ;
+                    echo "<h3>" . "Descri Pais " . "</h3>" . "<input type='text' name='descpais' class ='datosinputimportador' >" . "<br>" ;
+                    echo "<h3 style ='margin-left: 40px ;'>" . "Estado " . "</h3>" . "<input type='text' name='estado' class ='datosinputimportador1' >" . "<br>" ;
+                    echo "</div>";
+                    echo "<div class='Buttons_Container_Send'> 
+                                            <button name='SendInfo' class='SendInfo'>Crear Pais</button>
+                                            <button name='SalidaImportador'>
+                                                <a href='paises.php' class='Salida_Segura2'>
+                                                    Salir
+                                                </a>
+                                            </button>
+                                        </div>  ";  
+                    
+                
             
+                        if(isset($_POST['codigopais'])){
+                            $codigopais = strtoupper($_POST['codigopais']);
+                        }else{
+                            $codigopais = "";
+                        }
+                        
+                        if(isset($_POST['numeropais'])){
+                            $numeropais = $_POST['numeropais'];
+                        }else{
+                            $numeropais = "";
+                        }
+                        if(isset($_POST['descpais'])){
+                            $descpais = strtoupper($_POST['descpais']);
+                        }else{
+                            $descpais = "";
+                        }
+                        if(isset($_POST['estado'])){
+                            $estado2 = $_POST['estado'];
+                        }else{
+                            $estado2 = "";
+                        }
+                
+                        if(isset($_POST['SendInfo'])){ 
+            
+                                $selectPais ="SELECT * FROM siapais";
+                                $Selectquery = $conection->query($selectPais);
+                    
+                                $datosIguales=false;
+                                $datosVacios = false;
+                    
+                                while($e = $Selectquery->fetch_assoc()){
+                                    
+                                if ($e['codigopais'] === $codigopais) {
+                                            $datosIguales = true;
+                    
+                                            if($datosIguales){ 
+                                            $ResultadoError = "<script>alert('Datos del Pais existen en la base de datos, verifique.')</script>";
+                                            echo $ResultadoError;
+                                            die();
+                                            }
+                                        }if($codigopais ==""){
+                                            $datosVacios = true;
+                    
+                                            if ($datosVacios) {
+                                                $ResultadoError2 = "<script>alert('Debe completar todos los datos del Pais, verifique.')</script>";
+                                            echo $ResultadoError2;
+                                            die();
+                                            }
+                                        }
+                    
+                                    if ($e['numeropais'] === $numeropais) {
+                                            $datosIguales = true;
+                    
+                                            if($datosIguales){ 
+                                            $ResultadoError = "<script>alert('Datos del Pais existen en la base de datos, verifique.')</script>";
+                                            echo $ResultadoError;
+                                            die();
+                                            }
+                                        }if($numeropais ==""){
+                                            $datosVacios = true;
+                    
+                                            if ($datosVacios) {
+                                                $ResultadoError2 = "<script>alert('Debe completar todos los datos del Pais, verifique.')</script>";
+                                            echo $ResultadoError2;
+                                            die();
+                                            }
+                                        }
+
+                                
+                                    if ($e['descpais'] === $descpais) {
+                                        $datosIguales = true;
+                    
+                                            if($datosIguales){ 
+                                            $ResultadoError = "<script>alert('Datos del Pais existen en la base de datos, verifique.')</script>";
+                                            echo $ResultadoError;
+                                            die();
+                                            }
+                                        }if($descpais ==""){
+                                        $datosVacios = true;
+                    
+                                            if ($datosVacios) {
+                                                $ResultadoError2 = "<script>alert('Debe completar todos los datos del Pais, verifique.')</script>";
+                                            echo $ResultadoError2;
+                                            die();
+                                            }
+                                        }
+            
+                            elseif(!$datosIguales){
+                                
+                                    $insertPais = "INSERT INTO siapais (codigopais, 
+                                                                                numeropais,  
+                                                                                descpais,
+                                                                                estado
+                                                                                ) 
+                                                                        VALUES ('$codigopais',
+                                                                                '$numeropais',
+                                                                                '$descpais',
+                                                                                '$estado2'
+                                                                                )";
+            
+                                    $Insertquery = $conection->query($insertPais);
+            
+                                    $estadoDelPais = "ACTIVO";
+                                    $SelectEstadoDelPais = "UPDATE siapais SET estado ='$estadoDelPais' WHERE codigopais = '$codigopais'";
+            
+                                    if($Insertquery){
+                                        echo "<script>alert('Datos del Pais insertados con exito.')</script>";
+                                        $constestatuspais = $conection->query($SelectEstadoDelPais);
+                                        if($constestatuspais){
+
+                                            echo "<script>window.location.href = 'http://localhost/Proyecto_soft/openCVLProyect/impo/Pais/Paises.php';</script>";
+                                        }
+                                    }
+                                    break;
+                                    } 
+                    }
+                }
+            }
 
 
             

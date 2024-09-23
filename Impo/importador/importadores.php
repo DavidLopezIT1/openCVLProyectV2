@@ -194,7 +194,6 @@ function changedform1(parameter, param2){
                                                             break;
                                                             }
                                                         }
-                                                
                                                 }
                                             }
                                     }  
@@ -206,11 +205,9 @@ function changedform1(parameter, param2){
                                     echo $queryEditV1;
                                 }
                             }
-
                             if(isset($_POST['deletebackgroundbutton'])){
                                 $variablefor= urlencode($_POST['deletebackgroundbutton']);
                             }       
-
                 ?>
                                 
         </tbody>

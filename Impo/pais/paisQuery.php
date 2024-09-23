@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="incoterm2.css">
-    <title>Incoterm</title>
+    <link rel="stylesheet" href="pais2.css">
+    <title>Pais</title>
 </head>
 <body >
 
@@ -28,7 +28,7 @@
                 $sesionValue= "<strong class='Bienvenida'>Bienvenido : </strong>" . "<strong>$sesion</strong>";
                 echo $sesionValue;
 
-                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incoterms.php' class='rutas'>Nivel anterior</a>";
+                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/impo/pais/paises.php' class='rutas'>Nivel anterior</a>";
                             
                 $SpecificRouteVar = __FILE__;
 
@@ -54,15 +54,15 @@
 </header>
 <main>
 
-        <form action="incotermQuery.php" method ="post">
+        <form action="paisQuery.php" method ="post">
                 <fieldset>
 
                     <div style="margin-bottom: 10px;">
-                        <strong style="color:#0D0D0D; font-size: 20px; margin-bottom: 10px;">Consultar / Incoterm</strong>
+                        <strong style="color:#0D0D0D; font-size: 20px; margin-bottom: 10px;">Consultar / Pais</strong>
                     </div>
                     <div class="HeaderImportador">
                         <header class="header3">
-                            <h1><p>Datos Incoterm</p ></h1>
+                            <h1><p>Datos Pais</p ></h1>
                         </header>
                     </div>
  
@@ -71,16 +71,16 @@
             $variablefor=$_POST['deletebackgroundbutton'];
                 $variablefor;
 
-                    $consultarBD ="SELECT * FROM siaincoterm WHERE codincoterm = '$variablefor' ";
+                    $consultarBD ="SELECT * FROM siapais WHERE codigopais = '$variablefor' ";
                     $queryconsultarBD = $conection->query($consultarBD);
                         
                     while($l = $queryconsultarBD->fetch_assoc()){
                         
                         echo "<div class ='ContainerGeneralImportador'>";
                                             
-                                            echo "<h3>" . "Código Incoterm " . "</h3>" . "<input type='text' name='codincoterm' class ='datosinputimportador' value ='". strtoupper($l['codincoterm'])."' disabled>" . "<br>" ;
-                                            echo "<h3 class='datosinputimportador1'>" . "Descripción Incoterm" . "</h3>" . "<input type='text' name='incotermdesc' class ='datosinputimportador1'  value ='{$l['incotermdesc']}' disabled>" . "<br>" ;
-                                            echo "<h3>" . "Lugar Entrega " . "</h3>" . "<input type='text' name='lugarentrega' class ='datosinputimportador' value ='".strtoupper($l['lugarentrega'])."' disabled >" . "<br>" ;
+                                            echo "<h3>" . "Código Pais " . "</h3>" . "<input type='text' name='codigopais' class ='datosinputimportador' value ='". strtoupper($l['codigopais'])."' disabled>" . "<br>" ;
+                                            echo "<h3 class='datosinputimportador1'>" . "Num. Pais" . "</h3>" . "<input type='text' name='numeropais' class ='datosinputimportador1'  value ='{$l['numeropais']}' disabled>" . "<br>" ;
+                                            echo "<h3>" . "Descripción Pais " . "</h3>" . "<input type='text' name='descpais' class ='datosinputimportador' value ='".strtoupper($l['descpais'])."' disabled >" . "<br>" ;
                                             echo "<h3 style='margin-left:40px'>" . "Estado" . "</h3>" . "<input type='text' name='estado' class ='datosinputimportador1'   value ='".strtoupper($l['estado'])."' disabled>" ;       
                         echo "</div>";
                 }                                        
@@ -98,14 +98,14 @@
                     <div class="Buttons_Container_Send"> 
 
                         <button name="ExitBtn">
-                            <a href="incoterms.php" class="Salida_Segura2">
+                            <a href="paises.php" class="Salida_Segura2">
                                 Salir
                             </a>
                         </button>
 
                         <?php 
                         if(isset($_POST['ExitBtn'])){
-                            header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incoterms.php");
+                            header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/pais/paises.php");
                         }
                         ?>
 

@@ -64,7 +64,7 @@
             </fieldset>
         </form>
     </div>
-    
+     
 <div>
     <form action=""> 
         <fieldset>
@@ -86,7 +86,7 @@
                 <div class="Imparametrica" name="parametrica"><i class="fa-regular fa-building"></i><br><br><a href="">Depósito</a></div>
                 <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-user-group"></i><br><br><a href="">Condiciones de transacción</a></div>
                 <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-magnifying-glass-chart"></i><br><br><a href="">Naturaleza de la transacción</a></div>
-                <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-globe"></i><br><br><a href="">Pais</a></div>
+                <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-globe"></i><br><br><a href="http://localhost/Proyecto_soft/openCVLProyect/impo/pais/paises.php">Pais</a></div>
                 <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-folder-tree"></i><br><br><a href="">Parametros Generales</a></div>
                 <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-arrows-to-dot"></i><br><br><a href="">Modo de Transporte</a></div>
                 <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-square-poll-horizontal"></i><br><br><a href="">Declarante</a></div>

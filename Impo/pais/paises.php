@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Incoterms</title>
+    <title>Paises</title>
     <script src="../general_scripts.js"></script>
     <script src="https://kit.fontawesome.com/5bcdd05e64.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="incoterms.css">
+    <link rel="stylesheet" href="paises.css">
 </head>
 <body >
 
@@ -57,10 +57,10 @@ function changedform2(parameter, param3){
 
 </script>
 
-    <form action="incoterms.php" method="post" id="miFormulario">
+    <form action="paises.php" method="post" id="miFormulario">
     <div class="container">
         <header class="header2">
-            <h1>Incoterms</h1>
+            <h1>Paises</h1>
         </header>
         
         <main>
@@ -78,14 +78,14 @@ function changedform2(parameter, param3){
 
             <div class="icon_Table_Functions">
                 <button name ="createReg"><i class="fa-solid fa-plus" id="icon_Table_Functions"></i></button>
-                <button name ="editReg" onclick="changedform1('incotermEdit.php', 'post')"><i class="fa-solid fa-pen" id="icon_Table_Functions" ></i></button>
+                <button name ="editReg" onclick="changedform1('paisEdit.php', 'post')"><i class="fa-solid fa-pen" id="icon_Table_Functions" ></i></button>
                 <button name="deletefrom"><i class="fa-solid fa-trash" id="icon_Table_Functions"></i></button>
                 <button name="statusfrom"><i class="fa-solid fa-rotate" id="icon_Table_Functions"></i></button>
 
             <?php 
 
                     if(isset($_POST['createReg'])){
-                        header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incotermCreate.php");
+                        header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/pais/paisCreate.php");
                     }
                     if(isset($_POST['editReg'])){
                         $editReg = $_POST['editReg'];
@@ -130,11 +130,11 @@ function changedform2(parameter, param3){
                                          "<td>" . htmlspecialchars($a['descpais']) . "</td>" .
                                          
                                          "<td>" . htmlspecialchars(strtoupper($a['estado'])) . "</td>" .
-                                         "<td><input type='checkbox' style='accent-color: yellow' class='checkboxitem' name='checkboxitemv[]' value='" . htmlspecialchars($a['codincoterm']) . "'></td>" .
+                                         "<td><input type='checkbox' style='accent-color: yellow' class='checkboxitem' name='checkboxitemv[]' value='" . htmlspecialchars($a['codigopais']) . "'></td>" .
                                          "</tr>";
                                 }
                             } else{
-                                $query2 = "SELECT * FROM siaincoterm";
+                                $query2 = "SELECT * FROM siapais";
                                 $resultquery2 = $conection->query($query2);
                             
                                 while($a = $resultquery2->fetch_assoc()) {
@@ -156,39 +156,39 @@ function changedform2(parameter, param3){
                                     $querydeleteresult = $conection->query($querydelete);
                                     
                                     if ($querydeleteresult) {
-                                        echo "<script>alert('Incoterm eliminado con éxito')</script>";
+                                        echo "<script>alert('Pais eliminado con éxito')</script>";
                                     } else {
-                                        echo "<script>alert('No se eliminó el Incoterm')</script>";
+                                        echo "<script>alert('No se eliminó el Pais')</script>";
                                     }
                                 }   
                             }
                                 if(isset($_POST['checkboxitemv']) && isset($_POST['statusfrom'])){
 
                                         foreach($_POST['checkboxitemv'] AS $keystatus1){
-                                            $querystatussql ="SELECT * FROM siaincoterm";
+                                            $querystatussql ="SELECT * FROM siapais";
                                             $resultquerystatussql = $conection->query($querystatussql);
                                             $statusInact = "INACTIVO";
                                             $statusAct = "ACTIVO";
 
                                                 while($keystatus2 = $resultquerystatussql->fetch_assoc()){ 
                                                     
-                                                    if($keystatus2['estado'] =="ACTIVO" && $keystatus1 == $keystatus2['codincoterm']){
+                                                    if($keystatus2['estado'] =="ACTIVO" && $keystatus1 == $keystatus2['codigopais']){
 
                                                         foreach($_POST['checkboxitemv'] AS $selectedIdstatus){
                                                             $selectedIdstatus = mysqli_real_escape_string($conection, $selectedIdstatus);
-                                                            $querystatus = "UPDATE siaincoterm SET estado = 'INACTIVO' WHERE codincoterm = '$selectedIdstatus'";
+                                                            $querystatus = "UPDATE siapais SET estado = 'INACTIVO' WHERE codigopais = '$selectedIdstatus'";
                                                             $resulrQuerystatus = $conection->query($querystatus);
-                                                            echo"<script>alert('Incoterm Inactivado exitosamente')</script>";
+                                                            echo"<script>alert('Pais Inactivado exitosamente')</script>";
                                                             break;
                                                         }
 
-                                                    }elseif($keystatus2['estado'] =="INACTIVO" && $keystatus1 == $keystatus2['codincoterm']){
+                                                    }elseif($keystatus2['estado'] =="INACTIVO" && $keystatus1 == $keystatus2['codigopais']){
 
                                                             foreach($_POST['checkboxitemv'] AS $selectedIdstatus){
                                                             $selectedIdstatus = mysqli_real_escape_string($conection, $selectedIdstatus);
-                                                            $querystatus2 = "UPDATE siaincoterm SET estado = 'ACTIVO' WHERE codincoterm = '$selectedIdstatus'";
+                                                            $querystatus2 = "UPDATE siapais SET estado = 'ACTIVO' WHERE codigopais = '$selectedIdstatus'";
                                                             $resulrQuerystatus = $conection->query($querystatus2);
-                                                            echo"<script>alert('Incoterm Activado exitosamente')</script>";
+                                                            echo"<script>alert('Pais Activado exitosamente')</script>";
                                                             break;
                                                             }
                                                         }
