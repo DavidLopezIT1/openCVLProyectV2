@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="importador.css">
-    <title>Importador</title>
+    <link rel="stylesheet" href="incoterm.css">
+    <title>Incoterm</title>
 </head>
 <body >
 
@@ -28,7 +28,7 @@
                 $sesionValue= "<strong class='Bienvenida'>Bienvenido : </strong>" . "<strong>$sesion</strong>";
                 echo $sesionValue;
 
-                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php' class='rutas'>Nivel anterior</a>";
+                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incoterms.php' class='rutas'>Nivel anterior</a>";
                             
                 $SpecificRouteVar = __FILE__;
 
@@ -52,16 +52,16 @@
         </button>
 </header>
 <main>
-        <form action="" method ="post">
+        <form action="incotermEdit.php" method ="post">
                 <fieldset>
                     
                     <div style="margin-bottom: 20px;">
-                        <strong style="color:#0D0D0D; font-size: 20px; margin-bottom: 10px;">Editar / Importador</strong>
+                        <strong style="color:#0D0D0D; font-size: 20px; margin-bottom: 10px;">Editar / Incoterm</strong>
                     </div>
 
                     <div class="headergeneral2">
                         <header  class="headergeneral3">
-                            <h1><p  style=" margin-bottom: 20px;">Editar Datos Importador</p></h1>
+                            <h1><p  style=" margin-bottom: 20px;">Editar Datos Incoterm</p></h1>
                         </header>
                     </div>
 
@@ -73,8 +73,9 @@
                 $rowID;
             }
             
-                  $impresionEditImportador = new ImportadorEdit($conection, $rowID);
-                    echo $impresionEditImportador->imprimirenpantallaEdit($conection, $rowID );
+                  
+                    $impresionEditIncoterm = new IncotermEdit($conection, $rowID);
+                    echo $impresionEditIncoterm->imprimirenpantallaIncotermEdit();
             
 ?>
             <div>
@@ -87,32 +88,26 @@
 
                 <br><br>
 
+
                     <div class="Buttons_Container_Send"> 
 
                         <button name="ExitForm" id="Salida_Segura2">
-                            <a href="importadores.php" class="Salida_Segura23" style ="font-size: 16px;">
+                            <a href="incoterms.php" class="Salida_Segura23" style ="font-size: 16px;">
                                 Salir
                             </a>
                         </button>
 
                                 <?php 
-                                if(isset($_POST['ExitForm'])){
-                                    $buttonfef=$_POST['ExitForm'];
-                                    header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php ");
-                                }
+                                    if(isset($_POST['ExitForm'])){
+                                        $buttonfef=$_POST['ExitForm'];
+                                        header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/incoterm/incoterms.php ");
+                                    }
                                 ?>
 
                     </div>
                     <div>
-            
-
         </form>
         </main>      
-        <?php 
-        
-        
-        ?>
-
 
 </div>
 </body>

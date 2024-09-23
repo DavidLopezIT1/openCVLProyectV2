@@ -77,7 +77,7 @@ function changedform2(parameter, param3){
                 <h2>Resultados de la Consulta</h2>
 
             <div class="icon_Table_Functions">
-                <button name ="createimport"><i class="fa-solid fa-plus" id="icon_Table_Functions"></i></button>
+                <button name ="createimport" ><i class="fa-solid fa-plus" id="icon_Table_Functions"></i></button>
                 <button name ="editimport" onclick="changedform1('proveedorEdit.php', 'post')"><i class="fa-solid fa-pen" id="icon_Table_Functions" ></i></button>
                 <button name="deletefrom"><i class="fa-solid fa-trash" id="icon_Table_Functions"></i></button>
                 <button name="statusfrom"><i class="fa-solid fa-rotate" id="icon_Table_Functions"></i></button>
@@ -86,6 +86,7 @@ function changedform2(parameter, param3){
 
                     if(isset($_POST['createimport'])){
                         header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/proveedor/CreateProveedor.php");
+                        // echo"<script>Javascript:window.open('http://localhost/Proyecto_soft/openCVLProyect/impo/proveedor/CreateProveedor.php','','width=1300, height=700')</script>";
                     }
                     if(isset($_POST['editimport'])){
                         $editimport = $_POST['editimport'];

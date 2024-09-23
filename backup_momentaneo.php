@@ -12,7 +12,7 @@
                                         $resultquery = $conection->query($query1);
 
                                         while ($a = $resultquery->fetch_assoc()) {
-                                            
+
                                             echo "<tr>" .
                                                  "<td><a href=''>" . htmlspecialchars($a['nit']) . "</a></td>" .
                                                  "<td>" . htmlspecialchars($a['razonsocial']) . "</td>" .
@@ -54,11 +54,6 @@
                                                                 }
 
                                         }  
-                                    
-                   
-
-
-
                                       
 
 class importadordator {

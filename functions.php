@@ -7,7 +7,7 @@
 
         public function __construct($conection){
             $this->conection =$conection;
-        } 
+        }  
 
                 public function imprimirenpantalla($conection){
                     echo "<div class ='ContainerGeneralImportador'>";
@@ -600,6 +600,10 @@
                                         echo "<script>alert('Datos del proveedor insertados con exito.')</script>";
                                         $constestatusImport = $conection->query($SelectEstadoDelProveedor);
                                         if($constestatusImport){
+                                            
+                                            //Opción para ventanas emergentes
+                                            // echo "<script>window.close()</script>";
+
                                             echo "<script>window.location.href = 'http://localhost/Proyecto_soft/openCVLProyect/impo/proveedor/proveedores.php';</script>";
                                         }
                                     }
@@ -607,6 +611,7 @@
                                     } 
                     }
                 }
+                
             }
 
             class ProveedorEdit {
