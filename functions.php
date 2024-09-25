@@ -1276,5 +1276,74 @@
                 }
             }
 
+            class PaisEdit {
+
+                public $conection;
+                public $parampostscript;
+            
+                public function __construct($conection, $parampostscript) {
+                    $this->conection = $conection;
+                    $this->parampostscript = $parampostscript;
+                }
+                public function imprimirenpantallaPaisEdit() {
+                    
+                    $queryBD = "SELECT * FROM siapais WHERE codigopais = '$this->parampostscript'";
+                    $ExecutequeryBD = $this->conection->query($queryBD);
+                    
+                    if ($ExecutequeryBD) {
+                        while ($varR = $ExecutequeryBD->fetch_assoc()) {
+
+                            $codigopais = htmlspecialchars(strtoupper($varR['codigopais']), ENT_QUOTES);
+                            $numeropais = htmlspecialchars(strtoupper($varR['numeropais']), ENT_QUOTES);
+                            $descpais = htmlspecialchars(strtoupper($varR['descpais']), ENT_QUOTES);
+                            
+                            $estado = htmlspecialchars(strtoupper($varR['estado']), ENT_QUOTES);
+
+                            // Mostrar el formulario con los datos actuales
+                            echo "<div class='ContainerGeneralImportador'>";
+                            echo "<form action='' method='POST'>";
+                            echo "<h3>Código Transportador</h3><input type='text' name='codigopais' class='datosinputimportador' value='$codigopais' disabled><br>";
+                            echo "<h3 class='datosinputimportador1'>Descripción Transportador</h3><input type='text' name='numeropais' class='datosinputimportador1' value='$numeropais' ><br>";
+                            echo "<h3>Cod. Pais Transportador</h3><input type='text' name='descpais' class='datosinputimportador' value='$descpais' ><br>";
+
+                            echo "<h3>Estado</h3><input type='text' name='estado' class='datosinputimportador' value='$estado' disabled><br>";
+                            echo "<input type='hidden' name='id' value='$this->parampostscript'>";
+                            echo "<input type='submit' name='update' value='Actualizar' class='Actualizar'>";
+                            
+                            echo "</form>";
+                            echo "</div>";
+                        }
+                    }
+
+                    if (isset($_POST['update'])) {
+                        $id = $this->conection->real_escape_string($_POST['id']);
+                        $codigopais = $this->conection->real_escape_string($_POST['codigopais']);
+                        $numeropais = $this->conection->real_escape_string($_POST['numeropais']);
+                        $descpais = $this->conection->real_escape_string($_POST['descpais']);
+                        
+                        $estado = $this->conection->real_escape_string($_POST['estado']);
+                        
+                        // Actualizar datos en la base de datos
+                        $selectqueryUpdate2 = "UPDATE siapais
+                                            SET numeropais = '$numeropais',
+                                                descpais = '$descpais'
+                                            WHERE codigopais = '$id'"; 
+                    
+                        $selectqueryUpdate2Execute = $this->conection->query($selectqueryUpdate2);
+                    
+                        if ($selectqueryUpdate2Execute) {
+                            echo "<script>alert('Datos del Pais actualizados con éxito');</script>";
+                            // Redirigir después de mostrar el mensaje
+                            echo "<script>window.location.href = 'http://localhost/Proyecto_soft/openCVLProyect/impo/pais/paises.php';</script>";
+                        } else{
+                            echo "<script>alert('Datos NO fueron Actualizados');</script>";
+                        }
+                        
+                    }
+                    
+                }
+            }
+
+
 
             
