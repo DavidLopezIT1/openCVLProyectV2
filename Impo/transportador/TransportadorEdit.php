@@ -22,7 +22,7 @@
                 if($sesion == null || $sesion ==""){
                     echo "<script>alert('Error grave de seguridad, Uster no tiene acceso para este sitio')</script>";
                     header("location:http://localhost/Proyecto_soft/openCVLProyect/cierre_sesion.php");
-                    die();     
+                    die();      
                 }
 
                 $sesionValue= "<strong class='Bienvenida'>Bienvenido : </strong>" . "<strong>$sesion</strong>";
@@ -52,7 +52,7 @@
         </button>
 </header>
 <main>
-        <form action="incotermEdit.php" method ="post">
+        <form action="TransportadorEdit.php" method ="post">
                 <fieldset>
                     
                     <div style="margin-bottom: 20px;">
@@ -92,7 +92,7 @@
                     <div class="Buttons_Container_Send"> 
 
                         <button name="ExitForm" id="Salida_Segura2">
-                            <a href="incoterms.php" class="Salida_Segura23" style ="font-size: 16px;">
+                            <a href="transportadores.php" class="Salida_Segura23" style ="font-size: 16px;">
                                 Salir
                             </a>
                         </button>

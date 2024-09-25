@@ -101,7 +101,7 @@ function changedform2(parameter, param3){
     </div>
         <table>
         <br>
-            <thead>
+            <thead> 
                 <th>Codigo</th>
                 <th>Proveedor</th>
                 <th>Email</th>

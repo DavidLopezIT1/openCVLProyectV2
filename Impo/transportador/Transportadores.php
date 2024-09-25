@@ -128,8 +128,8 @@ function changedform2(parameter, param3){
                                     echo "<tr>" .
                                     "<td><button class='deletebackground' name='deletebackgroundbutton' value='" . htmlspecialchars($a['codigotransportador']) . "' onclick=\"changedform2('TransportadorQuery.php', 'post')\">" . htmlspecialchars($a['codigotransportador']) . "</button></td>" . 
                                          "<td>" . htmlspecialchars(strtoupper($a['desctransportador'])) . "</td>" .
-                                         "<td>" . htmlspecialchars($a['paisprocedenciadescripcion']) . "</td>" .
-                                         "<td>" . htmlspecialchars($a['descsucursal']) . "</td>" .
+                                         "<td>" . htmlspecialchars(strtoupper($a['paisprocedenciadescripcion']) ). "</td>" .
+                                         "<td>" . htmlspecialchars(strtoupper($a['descsucursal'])) . "</td>" .
                                          "<td>" . htmlspecialchars(strtoupper($a['estado'])) . "</td>" .
                                          "<td><input type='checkbox' style='accent-color: yellow' class='checkboxitem' name='checkboxitemv[]' value='" . htmlspecialchars($a['codigotransportador']) . "'></td>" .
                                          "</tr>";
@@ -142,8 +142,8 @@ function changedform2(parameter, param3){
                                     echo "<tr>" .
                                         "<td><button class='deletebackground' name='deletebackgroundbutton' value='" . htmlspecialchars($a['codigotransportador']) . "' onclick=\"changedform2('TransportadorQuery.php', 'post')\">" . htmlspecialchars($a['codigotransportador']) . "</button></td>" . 
                                         "<td>" . htmlspecialchars(strtoupper($a['desctransportador'])) . "</td>" .
-                                        "<td>" . htmlspecialchars($a['paisprocedenciadescripcion']) . "</td>" .
-                                        "<td>" . htmlspecialchars($a['descsucursal']) . "</td>" .
+                                        "<td>" . htmlspecialchars(strtoupper($a['paisprocedenciadescripcion'])) . "</td>" .
+                                        "<td>" . htmlspecialchars(strtoupper($a['descsucursal'])) . "</td>" .
                                         "<td>" . "<span name = 'statusUpdate[]' value='" . htmlspecialchars(strtoupper($a['estado'])) . "'>" . htmlspecialchars(strtoupper($a['estado'])) . "</span>" . "</td>" .
                                         "<td><input type='checkbox' style='accent-color: yellow' class='checkboxitem' name='checkboxitemv[]' value='" . htmlspecialchars($a['codigotransportador']) . "'></td>" .
                                         "</tr>";
@@ -194,7 +194,6 @@ function changedform2(parameter, param3){
                                                             break;
                                                             }
                                                         }
-                                                
                                                 }
                                             }
                                     }  

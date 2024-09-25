@@ -62,7 +62,7 @@
                             <h1><p>Datos creación Transportador</p></h1>
                         </header>
                     </div>
-
+ 
         <?php
 
             echo imprimirenpantallaTransportadora($conection) ;

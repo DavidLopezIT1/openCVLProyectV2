@@ -1036,27 +1036,23 @@
                                                                                 '$idsucursal',
                                                                                 '$descsucursal',
                                                                                 '$estado')
-                                                                                )";
+                                                                                ";
                                 $insertqueryGExecute= $conection->query($insertqueryG);
 
                                 $estadotrasportadorAct = "ACTIVO";
                                 $alterstatusTrnaport = "UPDATE siatransportador SET estado = '$estadotrasportadorAct' WHERE codigotransportador = '$codigotransportador'";
                                 
                                 if($insertqueryGExecute){
-                                    echo "<script>alert('Datos del Incoterm insertados con exito.')</script>";
+                                    echo "<script>alert('Datos del Transportador insertados con exito.')</script>";
                                     $alterstatusTrnaportExecute = $conection->query($alterstatusTrnaport);
                                     if($alterstatusTrnaportExecute){
-
                                         echo "<script>window.location.href = 'http://localhost/Proyecto_soft/openCVLProyect/impo/transportador/transportadores.php';</script>";
-
                                     }
                                 }
                                 break;
                                 } 
                             }
                         }
-
-                    
                     
                     }
 
@@ -1091,7 +1087,7 @@
                                     echo "<form action='' method='POST'>";
                                     echo "<h3>Código Transportador</h3><input type='text' name='codigotransportador' class='datosinputimportador' value='$codigotransportador' disabled><br>";
                                     echo "<h3 class='datosinputimportador1'>Descripción Transportador</h3><input type='text' name='desctransportador' class='datosinputimportador1' value='$desctransportador' ><br>";
-                                    echo "<h3>Cod. Pais Transportador</h3><input type='text' name='paisprocedencia' class='datosinputimportador' value='$paisprocedencia' disabled><br>";
+                                    echo "<h3>Cod. Pais Transportador</h3><input type='text' name='paisprocedencia' class='datosinputimportador' value='$paisprocedencia' ><br>";
                                     echo "<h3 class='datosinputimportador1'>Pais Transportador</h3><input type='text' name='paisprocedenciadescripcion' class='datosinputimportador1' value='$paisprocedenciadescripcion' ><br>";
                                     echo "<h3>Id Sucursal</h3><input type='text' name='dsucursal' class='datosinputimportador' value='$dsucursal'><br>";
                                     echo "<h3 class='datosinputimportador1'>Desc. Sucursal</h3><input type='text' name='descsucursal' class='datosinputimportador1' value='$descsucursal'><br>";
@@ -1110,19 +1106,17 @@
                                 $desctransportador = $this->conection->real_escape_string($_POST['desctransportador']);
                                 $paisprocedencia = $this->conection->real_escape_string($_POST['paisprocedencia']);
                                 $paisprocedenciadescripcion = $this->conection->real_escape_string($_POST['paisprocedenciadescripcion']);
-                                $dsucursal = $this->conection->real_escape_string($_POST['dsucursal']);
+                                $dsucursal = $this->conection->real_escape_string($_POST['idsucursal']);
                                 $descsucursal = $this->conection->real_escape_string($_POST['descsucursal']);
                                 $estado = $this->conection->real_escape_string($_POST['estado']);
                                 
                                 // Actualizar datos en la base de datos
                                 $selectqueryUpdate2 = "UPDATE siatransportador
-                                                    SET codigotransportador = '$codigotransportador';
-                                                        desctransportador = '$desctransportador';
-                                                        paisprocedencia = '$paisprocedencia';
-                                                        paisprocedenciadescripcion = '$paisprocedenciadescripcion';
-                                                        dsucursal = '$dsucursal';
-                                                        descsucursal = '$descsucursal';
-                                                        estado = '$estado';
+                                                    SET desctransportador = '$desctransportador',
+                                                        paisprocedencia = '$paisprocedencia',
+                                                        paisprocedenciadescripcion = '$paisprocedenciadescripcion',
+                                                        idsucursal = '$dsucursal',
+                                                        descsucursal = '$descsucursal'
                                                     WHERE codigotransportador = '$id'"; 
                             
                                 $selectqueryUpdate2Execute = $this->conection->query($selectqueryUpdate2);
@@ -1131,10 +1125,10 @@
                                     echo "<script>alert('Datos del Transportador actualizados con éxito');</script>";
                                     // Redirigir después de mostrar el mensaje
                                     echo "<script>window.location.href = 'http://localhost/Proyecto_soft/openCVLProyect/impo/transportador/transportadores.php';</script>";
-                                } else {
-                                    echo "<script>alert('Error al actualizar los datos');</script>";
-                                    
+                                } else{
+                                    echo "<script>alert('Datos NO fueron Actualizados');</script>";
                                 }
+                                
                             }
                             
                         }
