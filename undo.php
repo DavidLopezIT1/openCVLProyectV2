@@ -42,18 +42,18 @@ include "conection.php";
                 
                 if(isset($_POST['send_Button'])){
                     // Consulta uno para validar el login
-                    $consulta = "SELECT * FROM users2";
+                    $consulta = "SELECT * FROM users2 where login2 = '$username'";
                     $resultconsulta = $conection->query($consulta);
                     if($resultconsulta){
                         $Existe = false;
                         while($a = $resultconsulta->fetch_assoc() ){
-                            if($a['login'] === $username){
+                            if($a['login2'] === $username){
                                 $Existe=true;
                             //    echo " <script>alert('Usuario SI Existe')</script>";
                                break;
                             }
                             if(!$Existe){
-                                // echo " <script>alert('Usuario NO Existe, Verifique')</script>";
+                                 echo " <script>alert('Usuario NO Existe, Verifique')</script>";
                                 break;
                             }
                         }
@@ -85,11 +85,17 @@ include "conection.php";
                                                 case true:
                                                      // echo " <script>alert('Usuario y Contraseña Existen en Base de datos, puede acceder.')</script>";
                                                      session_start();
-                                                     $_SESSION['nombre']='David L';
-                                                     $sesion= $_SESSION['nombre'];
+                                                     $consultaw = "SELECT user_name FROM users2 where login2= '$username'";
+                                                     $resultconsultaw = $conection->query($consultaw);
+                                                    while($a = $resultconsultaw->fetch_assoc()){
+                                                        $_SESSION['nombre']=$a['user_name'];
+                                                        // $sesion= $_SESSION['nombre'];
+
+                                                    
                                                 if($_SESSION){
                                                     // echo "Sesión iniciada";
                                                 }
+                                            }
                                                 header("location:http://localhost/Proyecto_soft/openCVLProyect/interfaz.php");
                                             
                                                 # code...

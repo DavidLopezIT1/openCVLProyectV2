@@ -15,6 +15,7 @@ include "conection.php";
     <div id="sidebar">
     <?php
         session_start();
+
         
         // echo 'Nombre del archivo anterior: ' . $GLOBALS['previous_file'];
         $sesion = $_SESSION['nombre'];
@@ -23,7 +24,16 @@ include "conection.php";
                 header("location:http://localhost/Proyecto_soft/openCVLProyect/cierre_sesion.php");
                 die();
                 }
-                    echo "Bienvenido : " . "<strong>$sesion</strong>";
+                    else{ 
+                        // $consultadatosUsuarioV1 = "SELECT * FROM users2";
+                        // $resultconsultadatosUsuarioV1 = $conection->query(query: $consultadatosUsuarioV1); 
+                        // foreach ($resultconsultadatosUsuarioV1 as $a) {
+                        //     $a = $_SESSION['nombre'];
+                            echo "Bienvenido : ". $_SESSION['nombre'];
+                        
+                    
+
+
                     $SpecificRouteVar = __FILE__;
             $palabraEspecifica = "htdocs";
             
@@ -41,7 +51,7 @@ include "conection.php";
                 $RutaAbsoluta = "http://localhost" . $resultado;
                 // echo $RutaAbsoluta;
             }   
-           
+        }
     ?>
         <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
         
@@ -51,7 +61,7 @@ include "conection.php";
             </div>
 
             <?php 
-            $consultadatosUsuario = "SELECT * FROM users2";
+            $consultadatosUsuario = "SELECT * FROM users2 where user_name = '$sesion'";
             $resultconsultadatosUsuario = $conection->query(query: $consultadatosUsuario); 
             ?>
 
