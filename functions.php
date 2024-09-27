@@ -1,14 +1,15 @@
-    <?php
+<?php
 
-    class importadordator {
+  
 
-
+class importadordator {
+        
         public $conection;
 
         public function __construct($conection){
             $this->conection =$conection;
-        }  
-
+        }     
+        
                 public function imprimirenpantalla($conection){
                     echo "<div class ='ContainerGeneralImportador'>";
                         echo "<h3>" . "Tipodocumento " . "</h3>" . "<input type='text' name='tipodocumento' class ='datosinputimportador' name='prueba1'>" . "<br>" ;
@@ -19,7 +20,7 @@
                         echo "<h3 class='datosinputimportador1'>" . "Telefono " . "</h3>" . "<input type='text' name='telefono' class ='datosinputimportador1' >" . "<br>" ;
                         echo "<h3>" . "Direccion " . "</h3>" . "<input type='text' name='direccion' class ='datosinputimportador' >" . "<br>" ;
                         echo "<h3 class='datosinputimportador1'>" . "Correoelectronico " . "</h3>" . "<input type='text' name='correoelectronico' class ='datosinputimportador1' >" . "<br>" ;
-                        echo "<h3>" . "Pais " . "</h3>" . "<input type='text' name='pais' class ='datosinputimportador' >" . "<br>" ;
+                        echo "<h3><a href='#' onclick='window.open(\"http://localhost/Proyecto_soft/openCVLProyect/impo/pais/listado_paises.php\", \"Paises\", \"width=600,height=400,top=100,left=100,scrollbars=yes,resizable=yes\"); return false;'>Pais</a></h3>" . "<input type='text' name='pais' class='datosinputimportador' >" . "<br>";
                         echo "<h3 class='datosinputimportador1'>" . "Depto " . "</h3>" . "<input type='text' name='depto' class ='datosinputimportador1' >" . "<br>" ;
                         echo "<h3>" . "Administracionmercancia " . "</h3>" . "<input type='text' name='administracionmercancia' class ='datosinputimportador' >" . "<br>" ;
                         echo "<h3 class='datosinputimportador1'>" . "CodigoOEA " . "</h3>" . "<input type='text' name='CodigoOEA' class ='datosinputimportador1' >" . "<br>" ;
@@ -35,7 +36,7 @@
                                                     </a>
                                                 </button>
                                             </div>  ";  
-
+                                            
                             if(isset($_POST['tipodocumento'])){
                                 $tipodocumento = strtoupper($_POST['tipodocumento']);
                             }else{
@@ -1343,7 +1344,6 @@
                     
                 }
             }
+ ?>
 
-
-
-            
+   

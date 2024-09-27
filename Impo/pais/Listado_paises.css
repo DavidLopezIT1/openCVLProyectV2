@@ -1,0 +1,63 @@
+html {
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    font-size: 12px;
+    background-color: #000000;
+
+}
+table {
+    width: 100%;
+    border-collapse: collapse; /* Unir bordes */
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif; /* Fuente moderna */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un toque tecnológico */
+    border:solid 4px #ffffff;
+
+}
+
+/* Estilo para las celdas de la tabla */
+th, td {
+    padding: 12px 15px; /* Espaciado interno */
+    text-align: left; /* Alineación a la izquierda */
+    border-bottom: 1px solid #ccc; /* Línea de separación */
+    
+}
+
+/* Encabezados de la tabla */
+th {
+    background-color: #010D26; /* Color rústico oscuro */
+    color: white; /* Texto blanco */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    font-size: 14px; /* Tamaño de fuente */
+}
+
+/* Filas alternas */
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Color claro para filas alternas */
+}
+
+/* Efecto al pasar el mouse sobre las filas */
+tr:hover {
+    background-color: #d9c4c4; /* Color al pasar el mouse */
+    
+}
+
+/* Checkbox */
+.checkboxitem {
+    transform: scale(1.5); /* Aumentar el tamaño del checkbox */
+    
+}
+.checkboxitem:hover{
+    cursor: pointer; /* Cambiar el cursor */
+}
+
+/* Estilo para las celdas de la tabla */
+td {
+    border: 1px solid #ccc; /* Bordes en las celdas */
+    background-color: #fefefe; /* Color de fondo claro */
+}
+
+/* Estilo para el texto */
+td, th {
+    font-family: 'Courier New', Courier, monospace; /* Fuente monoespaciada para un toque tecnológico */
+}
