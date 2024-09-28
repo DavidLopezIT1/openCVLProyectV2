@@ -1,16 +1,32 @@
 <?php
 
-  
+   
 
 class importadordator {
-        
+        public $parampostscript;        
         public $conection;
 
-        public function __construct($conection){
-            $this->conection =$conection;
-        }     
+        public function __construct($conection, $parampostscript) {
+            $this->conection = $conection;
+            $this->parampostscript = $parampostscript;
+        }  
         
-                public function imprimirenpantalla($conection){
+                public function imprimirenpantalla(){
+                    $pais ="";
+                    $queryBD_BFINIT ="SELECT * FROM siapais";
+                    $queryBD_BF = "SELECT descpais FROM siapais WHERE codigopais = '$this->parampostscript'";
+                    $ExecutequeryBD_BF = $this->conection->query($queryBD_BF);
+                    $ExecutequeryBD_BL2 = $this->conection->query($queryBD_BFINIT);
+
+                    if($queryBD_BFINIT){
+                        
+                            while($a = $ExecutequeryBD_BF->fetch_assoc()){
+                                $pais = htmlspecialchars(strtoupper($a['descpais']), ENT_QUOTES);                           
+                            }
+                        
+                    }
+
+
                     echo "<div class ='ContainerGeneralImportador'>";
                         echo "<h3>" . "Tipodocumento " . "</h3>" . "<input type='text' name='tipodocumento' class ='datosinputimportador' name='prueba1'>" . "<br>" ;
                         echo "<h3 class='datosinputimportador1'>" . "Nit " . "</h3>" . "<input type='text' name='nit' class ='datosinputimportador1' >" . "<br>" ;
@@ -20,7 +36,7 @@ class importadordator {
                         echo "<h3 class='datosinputimportador1'>" . "Telefono " . "</h3>" . "<input type='text' name='telefono' class ='datosinputimportador1' >" . "<br>" ;
                         echo "<h3>" . "Direccion " . "</h3>" . "<input type='text' name='direccion' class ='datosinputimportador' >" . "<br>" ;
                         echo "<h3 class='datosinputimportador1'>" . "Correoelectronico " . "</h3>" . "<input type='text' name='correoelectronico' class ='datosinputimportador1' >" . "<br>" ;
-                        echo "<h3><a href='#' onclick='window.open(\"http://localhost/Proyecto_soft/openCVLProyect/impo/pais/listado_paises.php\", \"Paises\", \"width=600,height=400,top=100,left=100,scrollbars=yes,resizable=yes\"); return false;'>Pais</a></h3>" . "<input type='text' name='pais' class='datosinputimportador' >" . "<br>";
+                        echo "<h3><a href='#' onclick='window.open(\"http://localhost/Proyecto_soft/openCVLProyect/impo/pais/listado_paises.php\", \"Paises\", \"width=600,height=400,top=100,left=100,scrollbars=yes,resizable=yes\"); return false;'>Pais</a></h3>" . "<input type='text' id='pais2' name='pais' class='datosinputimportador' value='' readonly>" . "<br>";
                         echo "<h3 class='datosinputimportador1'>" . "Depto " . "</h3>" . "<input type='text' name='depto' class ='datosinputimportador1' >" . "<br>" ;
                         echo "<h3>" . "Administracionmercancia " . "</h3>" . "<input type='text' name='administracionmercancia' class ='datosinputimportador' >" . "<br>" ;
                         echo "<h3 class='datosinputimportador1'>" . "CodigoOEA " . "</h3>" . "<input type='text' name='CodigoOEA' class ='datosinputimportador1' >" . "<br>" ;
@@ -122,7 +138,7 @@ class importadordator {
                             if(isset($_POST['SendInfo'])){ 
 
                             $selectImportador ="SELECT * FROM siaimportador";
-                            $Selectquery = $conection->query($selectImportador);
+                            $Selectquery = $this->conection->query($selectImportador);
 
                             $datosIguales=false;
                             $datosVacios = false;
@@ -273,14 +289,14 @@ class importadordator {
                                                     '$estado'
                                                     )";
         
-                                        $Insertquery = $conection->query($insertImportador);
+                                        $Insertquery = $this->conection->query($insertImportador);
 
                                         $estadoDelImportador = "ACTIVO";
                                         $SelectEstadoDelImportador = "UPDATE siaimportador SET estado ='$estadoDelImportador' WHERE nit = $nit";
 
                                         if($Insertquery){
                                             echo "<script>alert('Datos de importador insertados con exito.')</script>";
-                                            $constestatusImport=$conection->query($SelectEstadoDelImportador);
+                                            $constestatusImport=$this->conection->query($SelectEstadoDelImportador);
                                             if($constestatusImport){
                                                 echo "<script>window.location.href = 'http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php';</script>";
                                             }
@@ -291,24 +307,7 @@ class importadordator {
                     }
                 }           
     }
-            //  function ShowImportador($conection ){
-            //     $selectquerysearchimport = "SELECT * FROM siaimportador";
-            //     $resultselectquerysearchimport = $conection->query($selectquerysearchimport);
-
-            //             if($resultselectquerysearchimport->num_rows > 0){
-
-            //                 while($a = $resultselectquerysearchimport->fetch_assoc()){
-                                
-            //                     echo "<tr>" . "<td>" . $a['nit'] . "</td>" . 
-            //                         "<td>" . $a['razonsocial'] . "</td>" .
-            //                         "<td>" . $a['telefono'] . "</td>" .
-            //                         "<td>" . $a['direccion'] . "</td>" .
-            //                         "<td>" . $a['estado'] . "</td>" . "<tr>";
-            //                 }
-                            
-            //             }
-                        
-            // }
+           
 
             class ImportadorEdit {
 
@@ -325,7 +324,7 @@ class importadordator {
                     $queryBD = "SELECT * FROM siaimportador WHERE id = '$this->parampostscript'";
                     $ExecutequeryBD = $this->conection->query($queryBD);
             
-                    // Verifica si la consulta fue exitosa
+                    // Verifica si la consulta fue exitosa  
                     if ($ExecutequeryBD) {
                         while ($varR = $ExecutequeryBD->fetch_assoc()) {
                             $nit = htmlspecialchars($varR['nit'], ENT_QUOTES);
@@ -355,7 +354,7 @@ class importadordator {
                             echo "<h3 class='datosinputimportador1'>Telefono</h3><input type='text' name='telefono' class='datosinputimportador1' value='$telefono'><br>";
                             echo "<h3>Direccion</h3><input type='text' name='direccion' class='datosinputimportador' value='$direccion'><br>";
                             echo "<h3 class='datosinputimportador1'>Correoelectronico</h3><input type='text' name='correoelectronico' class='datosinputimportador1' value='$correoelectronico'><br>";
-                            echo "<h3>Pais</h3><input type='text' name='pais' class='datosinputimportador' value='$pais'><br>";
+                            echo "<h3><a href='#' onclick='window.open(\"http://localhost/Proyecto_soft/openCVLProyect/impo/pais/listado_paises.php\", \"Paises\", \"width=600,height=400,top=100,left=100,scrollbars=yes,resizable=yes\"); return false;' style='color:black; text-decoration:none;'>Pais</a></h3>" . "<input type='text' id='pais2' name='pais' class='datosinputimportador' value='$pais' readonly>" . "<br>";
                             echo "<h3 class='datosinputimportador1'>Depto</h3><input type='text' name='depto' class='datosinputimportador1' value='$depto'><br>";
                             echo "<h3>Administracionmercancia</h3><input type='text' name='administracionmercancia' class='datosinputimportador' value='$administracionmercancia'><br>";
                             echo "<h3 class='datosinputimportador1'>CodigoOEA</h3><input type='text' name='CodigoOEA' class='datosinputimportador1' value='$CodigoOEA'><br>";
