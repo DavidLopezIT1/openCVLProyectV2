@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="transportador.css">
-    <title>Incoterm</title>
+    <title>Transportador</title>
 </head>
 <body >
 
@@ -56,12 +56,12 @@
                 <fieldset>
                     
                     <div style="margin-bottom: 20px;">
-                        <strong style="color:#0D0D0D; font-size: 20px; margin-bottom: 10px;">Editar / Incoterm</strong>
+                        <strong style="color:#0D0D0D; font-size: 20px; margin-bottom: 10px;">Editar / Transportador</strong>
                     </div>
 
                     <div class="headergeneral2">
                         <header  class="headergeneral3">
-                            <h1><p  style=" margin-bottom: 20px;">Editar Datos Incoterm</p></h1>
+                            <h1><p  style=" margin-bottom: 20px;">Editar Datos Transportador</p></h1>
                         </header>
                     </div>
 
