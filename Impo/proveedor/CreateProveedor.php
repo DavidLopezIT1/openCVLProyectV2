@@ -45,7 +45,7 @@
                 $sesionValue= "<strong class='Bienvenida'>Bienvenido : </strong>" . "<strong>$sesion</strong>";
                 echo $sesionValue;
 
-                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php' class='rutas'>Nivel anterior</a>";
+                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/impo/proveedor/proveedores.php' class='rutas'>Nivel anterior</a>";
                             
                 /* The code snippet ` = __FILE__;  = "htdocs";` is
                 assigning the value of the magic constant `__FILE__` to the variable

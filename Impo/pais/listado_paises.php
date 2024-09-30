@@ -42,7 +42,7 @@
 
             while($a = $resultquery2->fetch_assoc()) {
                 echo "<tr style='font-size:13px'>" .
-                    "<td value='" . htmlspecialchars($a['codigopais']) . "' onclick=\"changedform1('importadorCreate.php', 'post');\">" . htmlspecialchars($a['codigopais']) . "</td>" . 
+                    "<td value='" . htmlspecialchars($a['codigopais']) . "'>" . htmlspecialchars($a['codigopais']) . "</td>" . 
                     "<td>" . htmlspecialchars(strtoupper($a['numeropais'])) . "</td>" .
                     "<td>" . htmlspecialchars($a['descpais']) . "</td>" .
                     "<td><input type='checkbox' style='accent-color: yellow' class='checkboxitem' name='checkboxitemv[]' value='" . htmlspecialchars($a['descpais']) . "'></td>" .
@@ -61,12 +61,7 @@
             alert('Por favor selecciona un país.');
         }">Seleccionar</button>
 
-    <?php 
-        // Procesa el formulario si se envió con un dato seleccionado
-        if(isset($_POST['Sender']) && isset($_POST['checkboxitemv'])){
-            $variableCheckbox = $_POST['checkboxitemv']; 
-        }
-    ?>
+    
 </form>
 
 </body>

@@ -418,17 +418,17 @@ class importadordator {
             
             function imprimirenpantallaProveedor($conection){
                 echo "<div class ='ContainerGeneralImportador'>";
-                    // echo"<form action='' method='POST'>";
+                    
                     echo "<h3>" . "Código Proveedor " . "</h3>" . "<input type='text' name='codigoproveedor' class ='datosinputimportador' name='prueba1'>" . "<br>" ;
                     echo "<h3 class='datosinputimportador1'>" . "Nombre Proveedor " . "</h3>" . "<input type='text' name='nombreproveedor' class ='datosinputimportador1' >" . "<br>" ;
-                    echo "<h3>" . "Pais " . "</h3>" . "<input type='text' name='pais' class ='datosinputimportador' >" . "<br>" ;
+                    echo "<h3><a href='#' onclick='window.open(\"http://localhost/Proyecto_soft/openCVLProyect/impo/pais/listado_paises.php\", \"Paises\", \"width=600,height=400,top=100,left=100,scrollbars=yes,resizable=yes\"); return false;'>Pais</a></h3>" . "<input type='text' id='pais2' name='pais' class='datosinputimportador' value='' readonly>" . "<br>";
                     echo "<h3 class='datosinputimportador1'>" . "Ciudad " . "</h3>" . "<input type='text' name='cuidad' class ='datosinputimportador1' >" . "<br>" ;
                     echo "<h3>" . "Teléfono " . "</h3>" . "<input type='text' name='Telefono' class ='datosinputimportador' >" . "<br>" ;
                     echo "<h3 class='datosinputimportador1'>" . "E-mail " . "</h3>" . "<input type='text' name='email' class ='datosinputimportador1' >" . "<br>" ;
                     echo "<h3>" . "Condicion Proveedor " . "</h3>" . "<input type='text' name='condicionproveedor' class ='datosinputimportador' >" . "<br>" ;
                     echo "<h3 class='datosinputimportador1'>" . "Especifique " . "</h3>" . "<input type='text' name='especifique' class ='datosinputimportador1' >" . "<br>" ;
                     echo "<h3>" . "Estado " . "</h3>" . "<input type='text' name='estado' class ='datosinputimportador' >" . "<br>" ;
-                    // echo "</form>";       
+                           
                     echo "</div>";
                     echo "<div class='Buttons_Container_Send'> 
                                             <button name='SendInfo' class='SendInfo'>Crear Prov</button>
@@ -647,7 +647,8 @@ class importadordator {
                             echo "<form method='POST' action=''>";
                             echo "<h3>Código Proveedor</h3><input type='text' name='codigoproveedor' class='datosinputimportador' value='$codigoproveedor' disabled><br>";
                             echo "<h3 class='datosinputimportador1'>Nombre Proveedor</h3><input type='text' name='nombreproveedor' class='datosinputimportador1' value='$nombreproveedor' ><br>";
-                            echo "<h3>Pais</h3><input type='text' name='pais' class='datosinputimportador' value='$pais'><br>";
+                            // echo "<h3>Pais</h3><input type='text' name='pais' class='datosinputimportador' value='$pais'><br>";
+                            echo "<h3><a href='#' onclick='window.open(\"http://localhost/Proyecto_soft/openCVLProyect/impo/pais/listado_paises.php\", \"Paises\", \"width=600,height=400,top=100,left=100,scrollbars=yes,resizable=yes\"); return false;' style='color:black; text-decoration:none;'>Pais</a></h3>" . "<input type='text' id='pais2' name='pais' class='datosinputimportador' value='$pais' readonly>" . "<br>";
                             echo "<h3 class='datosinputimportador1'>Ciudad</h3><input type='text' name='cuidad' class='datosinputimportador1' value='$cuidad'><br>";
                             echo "<h3>Telefono</h3><input type='text' name='Telefono' class='datosinputimportador' value='$Telefono'><br>";
                             echo "<h3 class='datosinputimportador1'>E-Mail</h3><input type='text' name='email' class='datosinputimportador1' value='$email'><br>";
@@ -903,7 +904,8 @@ class importadordator {
                 echo "<div class ='ContainerGeneralImportador'>";
                 echo "<h3>" . "Código Transportador " . "</h3>" . "<input type='text' name='codigotransportador' class ='datosinputimportador'>" . "<br>" ;
                 echo "<h3 class='datosinputimportador1'>" . "Nombre Transportador " . "</h3>" . "<input type='text' name='desctransportador' class ='datosinputimportador1' >" . "<br>" ;
-                echo "<h3>" . "Cod Pais Procedencia " . "</h3>" . "<input type='text' name='paisprocedencia' class ='datosinputimportador'>" . "<br>" ;
+                // echo "<h3>" . "Cod Pais Procedencia " . "</h3>" . "<input type='text' name='paisprocedencia' class ='datosinputimportador'>" . "<br>" ;
+                echo "<h3><a href='#' onclick='window.open(\"http://localhost/Proyecto_soft/openCVLProyect/impo/pais/listado_paises.php\", \"Paises\", \"width=600,height=400,top=100,left=100,scrollbars=yes,resizable=yes\"); return false;'>Cod. Pais Transportador</a></h3>" . "<input type='text' id='pais2' name='paisprocedencia' class='datosinputimportador' value='' readonly>" . "<br>";
                 echo "<h3 class='datosinputimportador1'>" . "Pais Procedencia " . "</h3>" . "<input type='text' name='paisprocedenciadescripcion' class ='datosinputimportador1' >" . "<br>" ;
                 echo "<h3>" . "Código Sucursal " . "</h3>" . "<input type='text' name='idsucursal' class ='datosinputimportador'>" . "<br>" ;
                 echo "<h3 class='datosinputimportador1'>" . "Sucursal" . "</h3>" . "<input type='text' name='descsucursal' class ='datosinputimportador1' >" . "<br>" ;
@@ -1087,7 +1089,7 @@ class importadordator {
                                     echo "<form action='' method='POST'>";
                                     echo "<h3>Código Transportador</h3><input type='text' name='codigotransportador' class='datosinputimportador' value='$codigotransportador' disabled><br>";
                                     echo "<h3 class='datosinputimportador1'>Descripción Transportador</h3><input type='text' name='desctransportador' class='datosinputimportador1' value='$desctransportador' ><br>";
-                                    echo "<h3>Cod. Pais Transportador</h3><input type='text' name='paisprocedencia' class='datosinputimportador' value='$paisprocedencia' ><br>";
+                                    echo "<h3><a href='#' onclick='window.open(\"http://localhost/Proyecto_soft/openCVLProyect/impo/pais/listado_paises.php\", \"Paises\", \"width=600,height=400,top=100,left=100,scrollbars=yes,resizable=yes\"); return false;' style='color:black; text-decoration:none;'>Pais</a></h3>" . "<input type='text' id='pais2' name='paisprocedencia' class='datosinputimportador' value='$paisprocedencia' readonly>" . "<br>";
                                     echo "<h3 class='datosinputimportador1'>Pais Transportador</h3><input type='text' name='paisprocedenciadescripcion' class='datosinputimportador1' value='$paisprocedenciadescripcion' ><br>";
                                     echo "<h3>Id Sucursal</h3><input type='text' name='dsucursal' class='datosinputimportador' value='$dsucursal'><br>";
                                     echo "<h3 class='datosinputimportador1'>Desc. Sucursal</h3><input type='text' name='descsucursal' class='datosinputimportador1' value='$descsucursal'><br>";

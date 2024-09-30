@@ -65,23 +65,10 @@
                     </div>
 
         <?php
-            if(isset($_POST['checkboxitemv'])){
-                $variableCheckbox = $_POST['checkboxitemv'];
-                foreach($variableCheckbox AS $aei){
-                    $aei = $aei ;
-            } 
-            }else {
-                $aei ="123";
-            }
-
-
-           
                 $Generalobject = new importadordator($conection,$aei);                               
                         echo $Generalobject->imprimirenpantalla() ;     
-      
         ?>            
             <footer>
-                <!-- <button><a href="ModuleImpo.php">volver</a></button><br><br> -->
                 <p>&copy; 2024 Importaciones - David L</p>
             </footer>
             
