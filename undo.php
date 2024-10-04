@@ -67,7 +67,6 @@ include "conection.php";
                                     while($e = $resultconsulta2->fetch_assoc() ){
                                         if($e['user_password'] === $passworduser){
                                             $ExisteP=true;
-                                            //    echo " <script>alert('Contraseña SI Existe')</script>";
                                         break;
                                         }
                                         if(!$ExisteP){  

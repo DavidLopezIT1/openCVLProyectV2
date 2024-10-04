@@ -65,6 +65,7 @@
                     </div>
 
         <?php
+        $aei ="";
                 $Generalobject = new importadordator($conection,$aei);                               
                         echo $Generalobject->imprimirenpantalla() ;     
         ?>            

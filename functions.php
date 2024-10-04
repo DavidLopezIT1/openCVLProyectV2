@@ -1055,7 +1055,6 @@ class importadordator {
                                 } 
                             }
                         }
-                    
                     }
 
 
@@ -1089,8 +1088,8 @@ class importadordator {
                                     echo "<form action='' method='POST'>";
                                     echo "<h3>Código Transportador</h3><input type='text' name='codigotransportador' class='datosinputimportador' value='$codigotransportador' disabled><br>";
                                     echo "<h3 class='datosinputimportador1'>Descripción Transportador</h3><input type='text' name='desctransportador' class='datosinputimportador1' value='$desctransportador' ><br>";
-                                    echo "<h3><a href='#' onclick='window.open(\"http://localhost/Proyecto_soft/openCVLProyect/impo/pais/listado_paises.php\", \"Paises\", \"width=600,height=400,top=100,left=100,scrollbars=yes,resizable=yes\"); return false;' style='color:black; text-decoration:none;'>Cod. Pais Transportador</a></h3>" . "<input type='text' id='pais2' name='paisprocedencia' class='datosinputimportador' value='$paisprocedencia' readonly>" . "<br>";
-                                    echo "<h3 class='datosinputimportador1'>Pais Transportador</h3><input type='text' name='paisprocedenciadescripcion' class='datosinputimportador1' value='$paisprocedenciadescripcion' ><br>";
+                                    echo "<h3><a href='#' onclick='window.open(\"http://localhost/Proyecto_soft/openCVLProyect/impo/pais/listado_paises2.php\", \"Paises\", \"width=600,height=400,top=100,left=100,scrollbars=yes,resizable=yes\"); return false;' style='color:black; text-decoration:none;'>Cod. Pais Transportador</a></h3>" . "<input type='text' id='pais2' name='paisprocedencia' class='datosinputimportador' value='$paisprocedencia' readonly>" . "<br>";
+                                    echo "<h3 class='datosinputimportador1'>Pais Transportador</h3><input type='text' id='pais3'  name='paisprocedenciadescripcion' class='datosinputimportador1' value='$paisprocedenciadescripcion' ><br>";
                                     echo "<h3>Id Sucursal</h3><input type='text' name='dsucursal' class='datosinputimportador' value='$dsucursal'><br>";
                                     echo "<h3 class='datosinputimportador1'>Desc. Sucursal</h3><input type='text' name='descsucursal' class='datosinputimportador1' value='$descsucursal'><br>";
                                     echo "<h3>Estado</h3><input type='text' name='estado' class='datosinputimportador' value='$estado' disabled><br>";
@@ -1135,11 +1134,7 @@ class importadordator {
                             
                         }
                     }
-        
-
-
-
-
+         
 
             function imprimirenpantallaPais($conection){
                 echo "<div class ='ContainerGeneralImportador'>";
@@ -1307,7 +1302,6 @@ class importadordator {
                             echo "<h3>Código Transportador</h3><input type='text' name='codigopais' class='datosinputimportador' value='$codigopais' disabled><br>";
                             echo "<h3 class='datosinputimportador1'>Descripción Transportador</h3><input type='text' name='numeropais' class='datosinputimportador1' value='$numeropais' ><br>";
                             echo "<h3>Cod. Pais Transportador</h3><input type='text' name='descpais' class='datosinputimportador' value='$descpais' ><br>";
-
                             echo "<h3>Estado</h3><input type='text' name='estado' class='datosinputimportador' value='$estado' disabled><br>";
                             echo "<input type='hidden' name='id' value='$this->parampostscript'>";
                             echo "<input type='submit' name='update' value='Actualizar' class='Actualizar'>";
@@ -1322,7 +1316,6 @@ class importadordator {
                         $codigopais = $this->conection->real_escape_string($_POST['codigopais']);
                         $numeropais = $this->conection->real_escape_string($_POST['numeropais']);
                         $descpais = $this->conection->real_escape_string($_POST['descpais']);
-                        
                         $estado = $this->conection->real_escape_string($_POST['estado']);
                         
                         // Actualizar datos en la base de datos
