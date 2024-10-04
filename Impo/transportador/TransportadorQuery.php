@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Transportador2.css">
+    <link rel="stylesheet" href="http://localhost/Proyecto_soft/openCVLProyect/Styles/GeneralStyleQuery.css">
     <title>Transportador</title>
 </head>
 <body >
@@ -78,10 +78,10 @@
                         
                         echo "<div class ='ContainerGeneralImportador'>";
                                             
-                                            echo "<h3>" . "Código Trasportadora " . "</h3>" . "<input type='text' name='codigotransportador' class ='datosinputimportador' value ='". strtoupper($l['codigotransportador'])."' disabled>" . "<br>" ;
-                                            echo "<h3>" . "Trasportadora" . "</h3>" . "<input type='text' name='desctransportador' class ='datosinputimportador1'  value ='{$l['desctransportador']}' disabled>" . "<br>" ;
-                                            echo "<h3 class='datosinputimportadorq'>" . "Pais Procedencia " . "</h3>" . "<input type='text' name='paisprocedenciadescripcion' class ='datosinputimportador' value ='".strtoupper($l['paisprocedencia'])."' disabled >" . "<br>" ;
-                                            echo "<h3 class='datosinputimportadorq'>" . "Pais Procedencia " . "</h3>" . "<input type='text' name='paisprocedenciadescripcion' class ='datosinputimportador1' value ='".strtoupper($l['paisprocedenciadescripcion'])."' disabled >" . "<br>" ;
+                                            echo "<h3 class='datosinputimportadorq'>" . "Código Trasportadora " . "</h3>" . "<input type='text' name='codigotransportador' class ='datosinputimportador' value ='". strtoupper($l['codigotransportador'])."' disabled>" . "<br>" ;
+                                            echo "<h3 class='datosinputimportador1'>" . "Trasportadora" . "</h3>" . "<input type='text' name='desctransportador' class ='datosinputimportador1'  value ='{$l['desctransportador']}' disabled>" . "<br>" ;
+                                            echo "<h3 class='datosinputimportadorq'>" . "Pais Procedencia Cod " . "</h3>" . "<input type='text' name='paisprocedenciadescripcion' class ='datosinputimportador' value ='".strtoupper($l['paisprocedencia'])."' disabled >" . "<br>" ;
+                                            echo "<h3 class='datosinputimportador1'>" . "Pais Procedencia " . "</h3>" . "<input type='text' name='paisprocedenciadescripcion' class ='datosinputimportador1' value ='".strtoupper($l['paisprocedenciadescripcion'])."' disabled >" . "<br>" ;
                                             echo "<h3 class='datosinputimportador'>" . "Sucursal" . "</h3>" . "<input type='text' name='descsucursal' class ='datosinputimportador' value ='".strtoupper($l['idsucursal'])."' disabled >" . "<br>" ;
                                             echo "<h3 class='datosinputimportador1'>" . "Sucursal" . "</h3>" . "<input type='text' name='descsucursal' class ='datosinputimportador1' value ='".strtoupper($l['descsucursal'])."' disabled >" . "<br>" ;
                                             echo "<h3>" . "Estado" . "</h3>" . "<input type='text' name='estado' class ='datosinputimportador'   value ='".strtoupper($l['estado'])."' disabled>" ;       

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src='general_scripts.js'></script>
-    <link rel="stylesheet" href="Listado_paises.css">
+    <link rel="stylesheet" href="http://localhost/Proyecto_soft/openCVLProyect/Styles/GeneralStyle_FormsSelector.css">
     <title>Listar Paises</title>
 </head>
 <body>

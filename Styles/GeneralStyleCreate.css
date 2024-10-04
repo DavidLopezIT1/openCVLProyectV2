@@ -1,8 +1,6 @@
 html{
     background: #0D0D0D;
-    
 }
-
 fieldset{
     margin-left: 20%;
     padding: 20px 0px 30px 50px;
@@ -35,18 +33,19 @@ input{
     margin-right: 40px;
 }
 form button {
-    padding: 10px 20px;
-    background-color: #007bff;
+    /* padding: 10px 20px; */
+    background-color: #033E8C;
     color: #ffffff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    margin-left: 1%;
+    margin-left: 10px;
     box-shadow: 2px 2px 6px rgba(11, 10, 10, 0.516);
+    width: 120px;
 }
 form button:hover {
-    background-color: #0056b3;   
+    background-color: #3DBCD9;
 }
 html{
     box-sizing: border-box;
@@ -62,10 +61,8 @@ html{
     width: 98.67%;
     position: fixed;
 }
-.HeaderImportador2{
-    border:none;
-}
-.HeaderImportador{
+
+.HeaderGeneral2{
     display: flex;
     justify-content: center;
     /* align-items: center; */
@@ -77,7 +74,7 @@ html{
     border: solid 1px black;
     border-radius: 3px;
 }
-.HeaderImportador > header > h1 > p{
+.HeaderGeneral2 > header > h1 > p{
     font-size: 25px;
     text-align: center;
     margin-top: 0px;
@@ -99,7 +96,6 @@ html{
 }
 a{
     text-decoration: none;
-    /* color: black; */
     font-family:  'Arial Narrow Bold', sans-serif;
     margin-top: 10px;
 }
@@ -135,27 +131,17 @@ main{
     display: flex;
     margin-top: 10px;
     margin-bottom: 25px;
-    justify-content: center;
-    width: 858px;
-    margin-left: 650px;
+    justify-content: end;
+    min-width: 55px;
+    min-height: 35px;
+    margin-right: 65px;
 }
-a{
-    color: #ffffff;
-}
-#Salida_Segura2{
-    background-color: #033E8C;
+.Salida_Segura2{
+    background-color: rgb(255, 255, 255);
     text-decoration: none;
-    padding : 10px;
-    width: 80px;
-    border:solid 2px #3DBCD9;
-    border-radius:5px;
+    background-color: #fefefe00;
     color: white;
-    margin-left: 143px;
 }
-#Salida_Segura2:hover{
-    background-color: #3DBCD9;
-}
-
 footer {
     width: 90%;
     text-align: center;
@@ -171,22 +157,14 @@ footer p {
     border-radius: 3px;
     color: #ffffff;
 }
-legend {
-    color:#007bff; 
-    font-size: 17px;
+.SendInfo{
+    width: 120px;
 }
-.Actualizar{
-    background-color: #033E8C;
-    text-decoration: none;
-    padding : 10px;
-    width: 80px;
-    height: auto;
-    border:solid 2px #3DBCD9;
-    border-radius:5px;
-    color: white;
-    margin-left: 40px;
+select{
+    height: 26px;
+    align-items: center;
+    border: solid 2px white;
+    box-shadow: 2px 2px 5px #434242 ;
+    margin-left: 12px;
 }
-.Actualizar:hover{
-    background-color: #3DBCD9;
-    cursor: pointer;
-}
+/* Estos estilos corresponden al importador3.css Corresponde a  */

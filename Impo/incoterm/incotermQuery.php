@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="incoterm2.css">
+    <link rel="stylesheet" href="http://localhost/Proyecto_soft/openCVLProyect/Styles/GeneralStyleQuery.css">
     <title>Incoterm</title>
 </head>
 <body >
 
 <header class="header2">
-         
+          
     <?php
 
     include 'C:/xampp\htdocs\Proyecto_soft\openCVLProyect/functions.php';

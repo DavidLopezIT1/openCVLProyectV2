@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="proveedor3.css">
+    <link rel="stylesheet" href="http://localhost/Proyecto_soft/openCVLProyect/Styles/GeneralStyleCreate.css">
     <title>Importador</title>
 </head>
 <body >
@@ -93,7 +93,7 @@
                     <p style=" color:#0D0D0D; font-size:20px; font-family:black;">Crear Proveedor</p>
                 </strong>
 
-                    <div class="HeaderImportador">
+                    <div class="HeaderGeneral2">
                         <header>
                             <h1><p>Datos creación Proveedor</p></h1>
                         </header>

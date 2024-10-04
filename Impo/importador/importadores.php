@@ -6,7 +6,7 @@
     <title>Interfaz de Consulta de Datos</title>
     <script src="../general_scripts.js"></script>
     <script src="https://kit.fontawesome.com/5bcdd05e64.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="importadores.css">
+    <link rel="stylesheet" href="http://localhost/Proyecto_soft/openCVLProyect/Styles/GeneralStyleEverithing.css">
 </head>
 <body >
 
@@ -121,7 +121,8 @@ function changedform1(parameter, param2){
                                 $variabledecontrol = true;
                             }
                             if($variabledecontrol && $querbd != "") {
-                                $query1 = "SELECT * FROM siaimportador WHERE nit = '" . mysqli_real_escape_string($conection, $querbd) . "'";
+                                $query1 = "SELECT * FROM siaimportador WHERE nit LIKE '%" . mysqli_real_escape_string($conection, $querbd) . "%' OR razonsocial LIKE '%" . mysqli_real_escape_string($conection, $querbd) . "%'" ;
+                                
                                 $resultquery = $conection->query($query1);
                             
                                 while($a = $resultquery->fetch_assoc()) {

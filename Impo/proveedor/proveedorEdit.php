@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="proveedor.css">
+    <link rel="stylesheet" href="http://localhost/Proyecto_soft/openCVLProyect/Styles/GeneralStyleEdit.css">
     <title>Importaciones - David L</title>
 </head>
 <body >
@@ -28,7 +28,7 @@
                 $sesionValue= "<strong class='Bienvenida'>Bienvenido : </strong>" . "<strong>$sesion</strong>";
                 echo $sesionValue;
 
-                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php' class='rutas'>Nivel anterior</a>";
+                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/impo/proveedor/proveedores.php' class='rutas'>Nivel anterior</a>";
                             
                 $SpecificRouteVar = __FILE__;
 
@@ -59,8 +59,8 @@
                         <strong style="color:#0D0D0D; font-size: 20px; margin-bottom: 10px;">Editar / Proveedor</strong>
                     </div>
 
-                    <div class="HeaderImportador">
-                        <header  class="HeaderImportador2">
+                    <div class="headergeneral2">
+                        <header  class="headergeneral3">
                             <h1><p  style=" margin-bottom: 20px;">Editar Datos Proveedor</p></h1>
                         </header>
                     </div>

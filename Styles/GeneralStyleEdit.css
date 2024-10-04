@@ -1,14 +1,16 @@
 html{
-    background-color: #0D0D0D;
-    
-}
+    background: #0D0D0D;  
+} 
+
 fieldset{
     margin-left: 20%;
     padding: 20px 0px 30px 50px;
-    background-color: #ffffff;
+    /* padding-left: 50px; */
     width:840px;
     box-shadow: 2px 2px 6px rgba(11, 10, 10, 0.516);
+    background-color: #ffffff;
     border-radius:10px;
+     
 }
 .ContainerGeneralImportador {
     display: grid;
@@ -33,7 +35,7 @@ input{
 }
 form button {
     padding: 10px 20px;
-    background-color: #033E8C;
+    background-color: #007bff;
     color: #ffffff;
     border: none;
     border-radius: 4px;
@@ -43,27 +45,47 @@ form button {
     box-shadow: 2px 2px 6px rgba(11, 10, 10, 0.516);
 }
 form button:hover {
-    background-color: #3DBCD9;
-    
+    background-color: #0056b3;   
 }
 html{
     box-sizing: border-box;
     font-size: 12px;
 }
-.header2{
-    /* margin-top: 10px; */
+.headergeneral{
+    border:solid 2px #3DBCD9;
     height: 50px;
     background-color: #010D26;
     margin-bottom: 2%;
     font-family:  'Arial Narrow Bold', sans-serif system-ui, -apple-system, BlinkMacSystemFont;
     font-weight: 2.7em;
-    border:solid 2px #3DBCD9;
-    position: fixed;
     width: 98.67%;
+    position: fixed;
+}
+.headergeneral3{
+    border:none;
+}
+.headergeneral2{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    height: 50px;
+    width: 93%;
+    background-color: #010D26;
+    margin-bottom: 2%;
+    padding-bottom: 10px;
+    border: solid 1px black;
+    border-radius: 3px;
+}
+.headergeneral2 > header > h1 > p{
+    font-size: 25px;
+    text-align: center;
+    margin-top: 0px;
+    color: aliceblue;
 }
 .Bienvenida{
-    margin-left: 20px;
+    margin-left: 18px;
 }
+
 .RutaGeneral{
     display: flex;
    margin-top: 10px;
@@ -102,26 +124,37 @@ i{
     margin-bottom: 14px;
 }
 strong{
-    color: azure;
+    color: azure; 
 }
 main{
     margin-bottom: 30px;
-    padding-top: 7em;
+    padding-top: 6em;
 }
 .Buttons_Container_Send{
     display: flex;
     margin-top: 10px;
     margin-bottom: 25px;
-    width:840px;
-    margin-left: 1100px;
-    
+    justify-content: center;
+    width: 858px;
+    margin-left: 650px;
 }
-.Salida_Segura2{
-    background-color: rgb(255, 255, 255);
+a{
+    color: #ffffff;
+}
+#Salida_Segura2{
+    background-color: #033E8C;
     text-decoration: none;
-    background-color: #fefefe00;
+    padding : 10px;
+    width: 80px;
+    border:solid 2px #3DBCD9;
+    border-radius:5px;
     color: white;
+    margin-left: 143px;
 }
+#Salida_Segura2:hover{
+    background-color: #3DBCD9;
+}
+
 footer {
     width: 90%;
     text-align: center;
@@ -129,28 +162,32 @@ footer {
     margin-top: 10px;
     border-top: 2px solid #ddd;
     border-radius: 3px;
-    background-color: #010D26;
+    background-color:#010D26;
     box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.311);
 }
 footer p {
     margin: 0;
     border-radius: 3px;
     color: #ffffff;
-}legend {
-    color:#ff0000; 
+}
+legend {
+    color:#007bff; 
     font-size: 17px;
 }
-.header3{
-    border:none;
-    height: 50px;
-    background-color: #010D26;
-    margin-bottom: 2%;
-    font-family:  'Arial Narrow Bold', sans-serif system-ui, -apple-system, BlinkMacSystemFont;
-    font-weight: 2.7em;
-    width: 93.6%;
-    color: #ffffff;
-    text-align: center;
-    padding-top: 1px;
-    padding-bottom: 18px;
-    
+.Actualizar{
+    background-color: #033E8C;
+    text-decoration: none;
+    padding : 10px;
+    width: 80px;
+    height: auto;
+    border:solid 2px #3DBCD9;
+    border-radius:5px;
+    color: white;
+    margin-left: 40px;
 }
+.Actualizar:hover{
+    background-color: #3DBCD9;
+    cursor: pointer;
+}
+
+/* Estos estilos corresponden al importador.css Corresponde a  */
