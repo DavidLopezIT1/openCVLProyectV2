@@ -309,8 +309,7 @@ class importadordator {
                         }
                     }
                 }           
-    }
-           
+    }   
 
             class ImportadorEdit {
 
@@ -534,7 +533,6 @@ class importadordator {
                                     die();
                                     }
                                 }
-
                         
                             if ($e['Telefono'] === $Telefono) {
                                 $datosIguales = true;
@@ -714,8 +712,6 @@ class importadordator {
                                                 </a>
                                             </button>
                                         </div>  ";  
-                    
-                
             
                         if(isset($_POST['codincoterm'])){
                             $codincoterm = strtoupper($_POST['codincoterm']);
@@ -900,7 +896,6 @@ class importadordator {
                 }
             }
 
-
             function imprimirenpantallaTransportadora($conection){
 
                 echo "<div class ='ContainerGeneralImportador'>";
@@ -1058,7 +1053,6 @@ class importadordator {
                         }
                     }
 
-
                     class TransportadorEdit {
 
                         public $conection;
@@ -1096,7 +1090,6 @@ class importadordator {
                                     echo "<h3>Estado</h3><input type='text' name='estado' class='datosinputimportador' value='$estado' disabled><br>";
                                     echo "<input type='hidden' name='id' value='$this->parampostscript'>";
                                     echo "<input type='submit' name='update' value='Actualizar' class='Actualizar'>";
-                                    
                                     echo "</form>";
                                     echo "</div>";
                                 }
@@ -1135,7 +1128,6 @@ class importadordator {
                             
                         }
                     }
-         
 
             function imprimirenpantallaPais($conection){
                 echo "<div class ='ContainerGeneralImportador'>";
@@ -1152,8 +1144,6 @@ class importadordator {
                                                 </a>
                                             </button>
                                         </div>  ";  
-                    
-                
             
                         if(isset($_POST['codigopais'])){
                             $codigopais = strtoupper($_POST['codigopais']);
@@ -1294,7 +1284,6 @@ class importadordator {
                             $codigopais = htmlspecialchars(strtoupper($varR['codigopais']), ENT_QUOTES);
                             $numeropais = htmlspecialchars(strtoupper($varR['numeropais']), ENT_QUOTES);
                             $descpais = htmlspecialchars(strtoupper($varR['descpais']), ENT_QUOTES);
-                            
                             $estado = htmlspecialchars(strtoupper($varR['estado']), ENT_QUOTES);
 
                             // Mostrar el formulario con los datos actuales

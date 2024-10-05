@@ -52,12 +52,9 @@
                                                                 }else{
                                                                     echo "<script>alert('No se eliminó el registro')</script>";
                                                                 }
-
                                         }  
                                       
-
 class importadordator {
-
 
     public $conection;
 

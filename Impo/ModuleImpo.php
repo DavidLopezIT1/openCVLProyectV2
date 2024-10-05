@@ -6,71 +6,55 @@
     <link rel="stylesheet" href="http://localhost/Proyecto_soft/openCVLProyect/Styles/impo.css">
     <script src="https://kit.fontawesome.com/5bcdd05e64.js" crossorigin="anonymous"></script>
     <title>Document</title>
+    
 </head>
 <body>
 <header>
-        
     <?php
-            session_start();
+        session_start();
+        $sesion = $_SESSION['nombre'];
+        if ($sesion == null || $sesion == "") {
+            echo "<script>alert('Error grave de seguridad, Usted no tiene acceso para este sitio')</script>";
+            header("location:http://localhost/Proyecto_soft/openCVLProyect/cierre_sesion.php");
+            die();
+        }   
+        $sesionValue = "<strong class='Bienvenida'>Bienvenido : </strong>" . "<strong>$sesion</strong>";
+        echo $sesionValue;
 
-            $sesion = $_SESSION['nombre'];
-                        if($sesion == null || $sesion ==""){
-                            echo "<script>alert('Error grave de seguridad, Uster no tiene acceso para este sitio')</script>";
-                            header("location:http://localhost/Proyecto_soft/openCVLProyect/cierre_sesion.php");
-                            die();
-                            }   
+        echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/interfaz.php' class='rutas'>Nivel anterior</a>";
 
-                $sesionValue= "<strong class='Bienvenida'>Bienvenido : </strong>" . "<strong>$sesion</strong>";
-                echo $sesionValue;
+        $SpecificRouteVar = __FILE__;
+        $palabraEspecifica = "htdocs";
+        $posicionname = strpos($SpecificRouteVar, $palabraEspecifica);
+        
+        if ($posicionname !== false) {
+            $posicionname += strlen($palabraEspecifica);
+            $resultado = substr($SpecificRouteVar, $posicionname);
+            $RutaAbsoluta = "http://localhost" . $resultado;
+        } 
 
-                echo "<a href='http://localhost/Proyecto_soft/openCVLProyect/interfaz.php' class='rutas'>Nivel anterior</a>";
-
-                $SpecificRouteVar = __FILE__;
-                $palabraEspecifica = "htdocs";
-
-                $posicionname = strpos($SpecificRouteVar, $palabraEspecifica);
-                
-                if ($posicionname !== false) {
-                    
-                    $posicionname += strlen($palabraEspecifica);
-                    
-                    $resultado = substr($SpecificRouteVar, $posicionname);
-                    
-                    $RutaAbsoluta = "http://localhost" . $resultado;
-                } 
-
-                    $ruta5 ="<a href='$RutaAbsoluta' class='rutas'>Nivel Anterior</a>";
-        ?>
-
+        $ruta5 = "<a href='$RutaAbsoluta' class='rutas'>Nivel Anterior</a>";
+    ?>
     <button class="Salida_Segura">
-
         <a href="http://localhost/Proyecto_soft/openCVLProyect/cierre_sesion.php" class="salida_segura_a">Salida Segura</a>
-
     </button>
-    
 </header>
 
 <main> 
-
-    <div>
-        <form action="">
+    <div class="form-container">
+        <form action="" class='form1'>
             <fieldset class="fieldset1"> 
-            <legend><strong>Elaboración de Formularios</strong></legend>
-
+                <legend><strong>Elaboración de Formularios</strong></legend>
                 <div class="Procesos">
                     <div class="Improceso"><i class="fa-regular fa-square-plus"></i><br><br><a href="">Operaciones</a></div>
                 </div>
-
             </fieldset>
         </form>
-    </div>
-     
-<div>
-    <form action=""> 
-        <fieldset>
-            <legend><strong>Parametrización</strong></legend>
-            
-            <div class="Parametros">
+
+        <form action="" class='form2'> 
+            <fieldset>
+                <legend><strong>Parametrización</strong></legend>
+                <div class="Parametros">
                 <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-user-secret"></i><br><br><a href="http://localhost/Proyecto_soft/openCVLProyect/impo/importador/importadores.php">Importador</a></div>
                 <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-sitemap"></i><br><br><a href="http://localhost/Proyecto_soft/openCVLProyect/impo/proveedor/proveedores.php">Proveedor</a></div>
                 <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-bullseye"></i><br><br><a href="">Productos</a></div>
@@ -98,17 +82,14 @@
                 <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-ticket"></i><br><br><a href="">Forma de pago</a></div>
                 <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-file-lines"></i><br><br><a href="">Descriptores res.057</a></div>
                 <div class="Imparametrica" name="parametrica"><i class="fa-solid fa-industry"></i><br><br><a href="">Nivel comercial</a></div>
-        </div>
+                </div>
+            </fieldset>
+        </form>
 
-    </fieldset>
-</form>
-</div>
-
-<div>
-    <form action="">    
-        <fieldset>
-            <legend><strong>Reportería</strong></legend>
-            <div class="Reportes">      
+        <form action="" class='form3'>    
+            <fieldset>
+                <legend><strong>Reportería</strong></legend>
+                <div class="Reportes">      
                 <div class="ImReporte" name="ImReporte"><i class="fa-solid fa-circle-info"></i><br><br><a href="">Consulta General</a></div>
                 <div class="ImReporte" name="ImReporte"><i class="fa-solid fa-qrcode"></i><br><br><a href="">Consulta Productos</a></div>
                 <div class="ImReporte" name="ImReporte"><i class="fa-solid fa-user-secret"></i><br><br><a href="">Consulta Importador</a></div>
@@ -126,21 +107,15 @@
                 <div class="ImReporte" name="ImReporte"><i class="fa-solid fa-circle-info"></i><br><br><a href="">Consulta Lugar ingreso</a></div>
                 <div class="ImReporte" name="ImReporte"><i class="fa-solid fa-circle-info"></i><br><br><a href="">Consulta Subpartidas</a></div>
                 <div class="ImReporte" name="ImReporte"><i class="fa-solid fa-circle-info"></i><br><br><a href="">Consulta Subpartidas</a></div>
-            </div>
-        </fieldset>
-    </form>
-    
-</div>
-
-<div>
-            <footer>
-                <p>&copy; 2024 Importaciones - David L</p>
-            </footer>
-</div>
-
-
-
+                </div>
+            </fieldset>
+        </form>
+    </div>
 </main>
+
+<footer>
+    <p>&copy; 2024 Importaciones - David L</p>
+</footer>
 
 </body>
 </html>
