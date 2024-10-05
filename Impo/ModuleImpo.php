@@ -44,8 +44,13 @@
     <div class="form-container">
         <form action="" class='form1'>
             <fieldset class="fieldset1"> 
-                <legend><strong>Elaboración de Formularios</strong></legend>
+                <legend><strong>    Formularios</strong></legend>
                 <div class="Procesos">
+                    <div class="Improceso"><i class="fa-regular fa-square-plus"></i><br><br><a href="">Operaciones</a></div>
+                    <div class="Improceso"><i class="fa-regular fa-square-plus"></i><br><br><a href="">Operaciones</a></div>
+                    <div class="Improceso"><i class="fa-regular fa-square-plus"></i><br><br><a href="">Operaciones</a></div>
+                    <div class="Improceso"><i class="fa-regular fa-square-plus"></i><br><br><a href="">Operaciones</a></div>
+                    <div class="Improceso"><i class="fa-regular fa-square-plus"></i><br><br><a href="">Operaciones</a></div>
                     <div class="Improceso"><i class="fa-regular fa-square-plus"></i><br><br><a href="">Operaciones</a></div>
                 </div>
             </fieldset>
@@ -88,7 +93,7 @@
 
         <form action="" class='form3'>    
             <fieldset>
-                <legend><strong>Reportería</strong></legend>
+                <legend><strong>Informes</strong></legend>
                 <div class="Reportes">      
                 <div class="ImReporte" name="ImReporte"><i class="fa-solid fa-circle-info"></i><br><br><a href="">Consulta General</a></div>
                 <div class="ImReporte" name="ImReporte"><i class="fa-solid fa-qrcode"></i><br><br><a href="">Consulta Productos</a></div>
@@ -116,6 +121,9 @@
 <footer>
     <p>&copy; 2024 Importaciones - David L</p>
 </footer>
+
+<!-- Tu idea de front end es dejar un panel gigante (paramétricas, y los otros dos uno arriba del otro en el 40% de la pantalla, el otro 60% es para las parametricas) -->
+<!-- Adicionalmente lo vas a organizar de diferentes formas, vas a encerrar en divs cada contenedor y vas a agrupar varias parametricas -->
 
 </body>
 </html>

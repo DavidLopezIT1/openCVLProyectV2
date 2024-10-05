@@ -168,10 +168,10 @@ table {
 th, td {
     padding: 10px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #080808db;
 }
 thead {
-    background-color: #010D26;
+    background-color: #010d26fa;
     color: white;
     position: sticky;
     top: 0;
