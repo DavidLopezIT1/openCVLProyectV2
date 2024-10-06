@@ -189,5 +189,11 @@ legend {
     background-color: #3DBCD9;
     cursor: pointer;
 }
-
+select{
+    height: 26px;
+    align-items: center;
+    border: solid 2px white;
+    box-shadow: 2px 2px 5px #434242 ;
+    margin-left: 12px;
+}
 /* Estos estilos corresponden al importador.css Corresponde a  */

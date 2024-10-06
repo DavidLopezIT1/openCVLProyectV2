@@ -161,14 +161,24 @@ strong{
 }
 table {
     width: 100%;
-    /* border-collapse: collapse; */
-    border-top-left-radius: 5%;
-    border-top-right-radius: 5px;
+    border-collapse: collapse;
+    /* border-style:groove; */
+    /* border-top-left-radius: 5%;
+    border-top-right-radius: 5px; */
+    /* border-left: 2px solid black; 
+    border-right: 2px solid black;  */
 }
 th, td {
+    border-collapse: separate;
     padding: 10px;
-    text-align: left;
+    text-align: center;
     border-bottom: 1px solid #080808db;
+    border: 1px solid rgba(0, 0, 0, 0.45);
+    border: 1px solid #333333;
+    font-size: 10px;
+}
+td > button {
+    font-size: 10px;
 }
 thead {
     background-color: #010d26fa;
@@ -176,7 +186,9 @@ thead {
     position: sticky;
     top: 0;
     z-index: 1;
-    
+}
+th{
+    font-size: 12px;
 }
 .icon_Table_Functions > button > #icon_Table_Functions{
     color: #0567cf;
@@ -191,8 +203,14 @@ thead {
     background-color: #ffffff00;
     border: none;
 }
+.deletebackground:hover{ 
+    color: #0599cf;
+    cursor:pointer;
+}
 form{
     padding-top: 6em;
 }
-
+.etiquetaA{
+    color: black;
+}
 /* Estos estilos corresponden al importadores.css Corresponde a  */

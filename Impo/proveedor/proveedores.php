@@ -61,7 +61,7 @@ function changedform2(parameter, param3){
     <form action="proveedores.php" method="post" id="miFormulario">
     <div class="container">
         <header class="header2">
-            <h1>Proveedores</h1>
+            <h1>PROVEEDORES</h1>
         </header>
         
         <main>
@@ -75,17 +75,17 @@ function changedform2(parameter, param3){
             </div>
             
             <section class="results">
-                <h2>Resultados de la Consulta</h2>
+                <h2>RESULTADOS DE LA CONSULTA</h2>
 
-            <div class="icon_Table_Functions">
-                <button name ="createimport" ><i class="fa-solid fa-plus" id="icon_Table_Functions"></i></button>
-                <button name ="editimport" onclick="changedform1('proveedorEdit.php', 'post')"><i class="fa-solid fa-pen" id="icon_Table_Functions" ></i></button>
-                <button name="deletefrom"><i class="fa-solid fa-trash" id="icon_Table_Functions"></i></button>
-                <button name="statusfrom"><i class="fa-solid fa-rotate" id="icon_Table_Functions"></i></button>
+            <div class="icon_Table_Functions"> 
+            <button name ="createReg" title="Crear"><i class="fa-solid fa-plus" id="icon_Table_Functions"></i></button>
+                <button name ="editReg" title="Editar" onclick="changedform1('ProveedorEdit.php', 'post')"><i class="fa-solid fa-pen" id="icon_Table_Functions" ></i></button>
+                <button name="deletefrom" title="Eliminar"><i class="fa-solid fa-trash" id="icon_Table_Functions"></i></button>
+                <button name="statusfrom" title="Cabiar Estado"><i class="fa-solid fa-rotate" id="icon_Table_Functions"></i></button>
 
             <?php 
 
-                    if(isset($_POST['createimport'])){
+                    if(isset($_POST['createReg'])){
                         header("location:http://localhost/Proyecto_soft/openCVLProyect/impo/proveedor/CreateProveedor.php");
                         // echo"<script>Javascript:window.open('http://localhost/Proyecto_soft/openCVLProyect/impo/proveedor/CreateProveedor.php','','width=1300, height=700')</script>";
                     }
@@ -103,11 +103,11 @@ function changedform2(parameter, param3){
         <table>
         <br>
             <thead> 
-                <th>Codigo</th>
-                <th>Proveedor</th>
-                <th>Email</th>
-                <th>Pais</th>
-                <th>Estado</th>
+                <th>CÓDIGO</th>
+                <th>PROVEEDOR</th>
+                <th>EMAIL</th>
+                <th>PAIS</th>
+                <th>ESTADO</th>
                 <th><input type="checkbox" style=" accent-color: yellow;" id="generalCheckbox" onclick="selectorChecked ()"></th>
             </thead>
             
@@ -228,7 +228,8 @@ function changedform2(parameter, param3){
 </main>
         
 <footer>
-    <p>&copy; 2024 Importaciones - David L</p>
+    <p>&copy; 2024 IMPORTACIONES - DAVID L</p>
+    
 </footer>
     </div>
 

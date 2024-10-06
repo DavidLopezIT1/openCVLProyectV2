@@ -60,7 +60,7 @@ function changedform2(parameter, param3){
     <form action="Transportadores.php" method="post" id="miFormulario">
     <div class="container">
         <header class="header2">
-            <h1>Transportadores</h1>
+            <h1>TRANSPORTADORES</h1>
         </header>
         
         <main>
@@ -74,13 +74,13 @@ function changedform2(parameter, param3){
             </div>
             
             <section class="results">
-                <h2>Resultados de la Consulta</h2>
+            <h2>RESULTADOS DE LA CONSULTA</h2>
 
             <div class="icon_Table_Functions">
-                <button name ="createReg"><i class="fa-solid fa-plus" id="icon_Table_Functions"></i></button>
-                <button name ="editReg" onclick="changedform1('TransportadorEdit.php', 'post')"><i class="fa-solid fa-pen" id="icon_Table_Functions" ></i></button>
-                <button name="deletefrom"><i class="fa-solid fa-trash" id="icon_Table_Functions"></i></button>
-                <button name="statusfrom"><i class="fa-solid fa-rotate" id="icon_Table_Functions"></i></button>
+            <button name ="createReg" title="Crear"><i class="fa-solid fa-plus" id="icon_Table_Functions"></i></button>
+                <button name ="editReg" title="Editar" onclick="changedform1('TransportadorEdit.php', 'post')"><i class="fa-solid fa-pen" id="icon_Table_Functions" ></i></button>
+                <button name="deletefrom" title="Eliminar"><i class="fa-solid fa-trash" id="icon_Table_Functions"></i></button>
+                <button name="statusfrom" title="Cabiar Estado"><i class="fa-solid fa-rotate" id="icon_Table_Functions"></i></button>
 
             <?php 
 
@@ -101,11 +101,11 @@ function changedform2(parameter, param3){
         <table>
         <br>
             <thead>
-                <th>Código Transportadora</th>
-                <th>Transportadora</th>
-                <th>Pais Procedencia</th>
-                <th>Sucursal</th>
-                <th>Estado</th>
+                <th>CÓDIGO</th>
+                <th>TRANSPORTADORA</th>
+                <th>PAOS PROCEDENCIA</th>
+                <th>SUCURSAL</th>
+                <th>ESTADO</th>
                 <th><input type="checkbox" style=" accent-color: yellow;" id="generalCheckbox" onclick="selectorChecked ()"></th>
             </thead>
             
@@ -219,7 +219,7 @@ function changedform2(parameter, param3){
 </main>
         
 <footer>
-    <p>&copy; 2024 Importaciones - David L</p>
+<p>&copy; 2024 IMPORTACIONES - DAVID L</p>
 </footer>
     </div>
 
